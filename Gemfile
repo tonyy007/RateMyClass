@@ -21,3 +21,4 @@ group :test do
   gem 'rspec-rails'
   gem 'webmock'
 end
+gem "puma", "~> 5.5"
