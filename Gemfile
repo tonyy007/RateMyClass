@@ -22,3 +22,4 @@ group :test do
   gem 'webmock'
 end
 gem "puma", "~> 5.5"
+gem 'pg'

@@ -206,3 +206,13 @@ Cannot render console from 166.172.58.231! Allowed networks: 127.0.0.0/127.255.2
   
 ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
   
+Started GET "/" for 166.172.58.231 at 2022-01-04 11:07:56 +0000
+Cannot render console from 166.172.58.231! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 9.2ms | Allocations: 2193)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 2484)
+Completed 200 OK in 21ms (Views: 17.3ms | Allocations: 4667)
+
+
