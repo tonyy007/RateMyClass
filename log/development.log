@@ -1124,3 +1124,23 @@ Processing by RatemyclassController#login as */*
 Completed 200 OK in 19ms (Views: 14.9ms | Allocations: 4826)
 
 
+Started GET "/" for 188.164.201.34 at 2022-01-04 17:27:50 +0000
+Cannot render console from 188.164.201.34! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 6.0ms | Allocations: 2256)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 2566)
+Completed 200 OK in 22ms (Views: 18.7ms | Allocations: 6052)
+
+
+Started GET "/" for 188.164.201.34 at 2022-01-04 17:47:43 +0000
+Cannot render console from 188.164.201.34! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 6.0ms | Allocations: 2256)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 2566)
+Completed 200 OK in 25ms (Views: 21.5ms | Allocations: 6052)
+
+
