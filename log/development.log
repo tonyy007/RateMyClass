@@ -1,0 +1,208 @@
+Started GET "/" for 107.77.213.213 at 2022-01-04 09:25:08 +0000
+Cannot render console from 107.77.213.213! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 5.9ms | Allocations: 997)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 1288)
+Completed 200 OK in 17ms (Views: 13.3ms | Allocations: 3471)
+
+
+Started GET "/_static127.0.0.1:8080" for 107.77.213.213 at 2022-01-04 09:26:56 +0000
+Cannot render console from 107.77.213.213! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/_static127.0.0.1:8080"):
+  
+Started GET "/_static127.0.0.1:8080" for 107.77.234.143 at 2022-01-04 09:32:49 +0000
+Cannot render console from 107.77.234.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/_static127.0.0.1:8080"):
+  
+Started GET "/" for 107.77.234.143 at 2022-01-04 09:34:39 +0000
+Cannot render console from 107.77.234.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1010)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 1301)
+Completed 200 OK in 13ms (Views: 11.3ms | Allocations: 3484)
+
+
+Started GET "/_static127.0.0.1:8080" for 107.77.234.143 at 2022-01-04 09:34:55 +0000
+Cannot render console from 107.77.234.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/_static127.0.0.1:8080"):
+  
+Started GET "/_static127.0.0.1:8080" for 107.77.234.143 at 2022-01-04 09:35:22 +0000
+Cannot render console from 107.77.234.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ArgumentError (Invalid route name, already in use: 'login' 
+You may have defined two routes with the same name using the `:as` option, or you may be overriding a route already defined by a resource with the same naming. For the latter, you can restrict the routes created with `resources` as explained here: 
+https://guides.rubyonrails.org/routing.html#restricting-the-routes-created):
+  
+config/routes.rb:12:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/_static127.0.0.1:8080" for 107.77.234.143 at 2022-01-04 09:36:04 +0000
+Cannot render console from 107.77.234.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/_static127.0.0.1:8080"):
+  
+Started GET "/_static127.0.0.1:8080" for 107.77.234.143 at 2022-01-04 09:36:24 +0000
+Cannot render console from 107.77.234.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/_static127.0.0.1:8080"):
+  
+Started GET "/" for 107.77.234.143 at 2022-01-04 09:40:08 +0000
+Cannot render console from 107.77.234.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 5.2ms | Allocations: 997)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 1288)
+Completed 200 OK in 14ms (Views: 12.2ms | Allocations: 3471)
+
+
+Started GET "/" for 107.77.234.143 at 2022-01-04 09:44:49 +0000
+Cannot render console from 107.77.234.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 6.1ms | Allocations: 997)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 1288)
+Completed 200 OK in 13ms (Views: 11.8ms | Allocations: 3471)
+
+
+Started GET "/_static127.0.0.1:8080" for 107.77.234.143 at 2022-01-04 09:45:04 +0000
+Cannot render console from 107.77.234.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/_static127.0.0.1:8080"):
+  
+Started GET "/_static127.0.0.1:8080" for 107.77.234.143 at 2022-01-04 09:56:06 +0000
+Cannot render console from 107.77.234.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/_static127.0.0.1:8080"):
+  
+Started GET "/_static127.0.0.1:8080" for 107.77.234.143 at 2022-01-04 09:57:28 +0000
+Cannot render console from 107.77.234.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Parameters: {"8080"=>":8080"}
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 1.0ms | Allocations: 620)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 887)
+Completed 200 OK in 9ms (Views: 8.2ms | Allocations: 2111)
+
+
+Started GET "/_static127.0.0.1:8080" for 107.77.234.143 at 2022-01-04 09:57:52 +0000
+Cannot render console from 107.77.234.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Parameters: {"8080"=>":8080"}
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 11.2ms | Allocations: 1000)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 1294)
+Completed 200 OK in 20ms (Views: 18.1ms | Allocations: 3477)
+
+
+Started GET "/_static127.0.0.1:8080" for 107.77.234.143 at 2022-01-04 09:58:31 +0000
+Cannot render console from 107.77.234.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Parameters: {"8080"=>":8080"}
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 0.5ms | Allocations: 212)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 341)
+Completed 200 OK in 3ms (Views: 3.0ms | Allocations: 608)
+
+
+Started GET "/favicon.ico" for 107.77.234.143 at 2022-01-04 09:58:34 +0000
+Cannot render console from 107.77.234.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 107.77.234.143 at 2022-01-04 09:58:45 +0000
+Cannot render console from 107.77.234.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1422)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1550)
+Completed 200 OK in 4ms (Views: 3.7ms | Allocations: 1824)
+
+
+Started GET "/" for 107.77.234.143 at 2022-01-04 09:59:12 +0000
+Cannot render console from 107.77.234.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 12.0ms | Allocations: 2234)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 2528)
+Completed 200 OK in 20ms (Views: 18.7ms | Allocations: 4711)
+
+
+Started GET "/favicon.ico" for 107.77.234.143 at 2022-01-04 09:59:14 +0000
+Cannot render console from 107.77.234.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started POST "/login" for 107.77.234.143 at 2022-01-04 10:01:47 +0000
+Cannot render console from 107.77.234.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wgOf+utXICBpbOEOkVtRP1LjR0bRHSgN60f/HKGBU8PqLLRdE2bdsPgbuQKNS+ej0Sf75P9VlW3inBkLKRnCpg==", "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 1.2ms | Allocations: 713)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1004)
+Completed 200 OK in 13ms (Views: 6.7ms | Allocations: 4477)
+
+
+Started GET "/" for 107.77.234.143 at 2022-01-04 10:03:21 +0000
+Cannot render console from 107.77.234.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 1.1ms | Allocations: 474)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 728)
+Completed 200 OK in 5ms (Views: 4.6ms | Allocations: 1704)
+
+
+Started GET "/" for 107.77.234.143 at 2022-01-04 10:04:34 +0000
+Cannot render console from 107.77.234.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 5.2ms | Allocations: 994)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 1285)
+Completed 200 OK in 12ms (Views: 10.9ms | Allocations: 3469)
+
+
+Started GET "/" for 166.172.58.231 at 2022-01-04 10:04:55 +0000
+Cannot render console from 166.172.58.231! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 5.1ms | Allocations: 959)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 1250)
+Completed 200 OK in 12ms (Views: 10.6ms | Allocations: 3432)
+
+
+Started GET "/favicon.ico" for 166.172.58.231 at 2022-01-04 10:04:57 +0000
+Cannot render console from 166.172.58.231! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 166.172.58.231 at 2022-01-04 10:06:43 +0000
+Cannot render console from 166.172.58.231! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 5.2ms | Allocations: 959)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 1250)
+Completed 200 OK in 13ms (Views: 11.3ms | Allocations: 3432)
+
+
+Started GET "/favicon.ico" for 166.172.58.231 at 2022-01-04 10:06:45 +0000
+Cannot render console from 166.172.58.231! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
