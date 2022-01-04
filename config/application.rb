@@ -2,6 +2,7 @@ require File.expand_path('../boot', __FILE__)
 
 require "rails"
 require 'digest'
+require 'rails/all'
 # Pick the frameworks you want:
 require "active_model/railtie"
 require "active_job/railtie"
@@ -18,6 +19,10 @@ Bundler.require(*Rails.groups)
 
 module RateMyClassRails
   class Application < Rails::Application
+    #config.web_console.permissions = '107.127.10.114', '107.127.10.115'
+    #config.web_console.whitelisted_ips = '107.127.0.0/16'
+    #Rails.application.config.assets.paths << Rails.root.join("app", "views", "images")
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

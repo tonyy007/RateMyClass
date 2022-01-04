@@ -1,5 +1,14 @@
 <%= form_tag login_path, :method => :post do %>
-  <div class="form-row py-3 border-top">
+  <div class="form-group py-1">
+    <!--<div style="background-image: url('#{asset_path('logo.png')}')"></div>-->
+    <label for="username">Username</label>
+    <input type="text" class="form-control" id="username">
+  </div>
+  <div class="form-group py-0">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="password">
+  </div>
+  <div>
     <%= submit_tag 'Log in', :class => "col-md-2 offset-md-5 btn btn-primary form-control" %>
   </div>
 <% end %>

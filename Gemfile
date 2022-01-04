@@ -3,8 +3,10 @@ source 'https://rubygems.org'
 ruby '3.0.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+#gem 'rails', '~> 4.2.1'
 gem 'rails'
 gem 'digest'
+gem "sprockets", "~> 3.7.2" 
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
