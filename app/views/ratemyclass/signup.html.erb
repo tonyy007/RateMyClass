@@ -1,9 +1,9 @@
 <%= form_tag homepage_path, :method => :get do %>
   <head>
-    <title>RateMyClass Log in</title>
+    <title>RateMyClass Sign in</title>
   </head>
   <div class="form-group py-1">
-    <div><b>Log In</b></div>
+    <div><b>Sign In</b></div>
     <label for="username">Username</label>
     <!--<input type="text" class="form-control" id="username">-->
     <%= text_field(:user, :field) %>
@@ -17,9 +17,6 @@
     <p style="color:red;", id="notice"><%= notice %></p>
   </div>
   <div>
-    <%= submit_tag 'Log in', :class => "col-md-2 offset-md-5 btn btn-primary form-control" %>
-  </div>
-  <div style="text-align:center;">
-    <%= link_to "Don't Have An Account? Sign Up Here", signup_path %>
+    <%= submit_tag 'Sign up', :class => "col-md-2 offset-md-5 btn btn-primary form-control" %>
   </div>
 <% end %>

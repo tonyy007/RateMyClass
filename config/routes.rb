@@ -9,7 +9,9 @@ Rails.application.routes.draw do
 #   root 'word_guesser_games#new'
 
     #get '_static127.0.0.1:8080' => 'ratemyclass#login'
-    post 'login'   => 'ratemyclass#login',       :as => 'login'
+    get 'login'   => 'ratemyclass#login',       :as => 'login'
+    get 'signup'   => 'ratemyclass#signup',      :as => 'signup'
+    get 'homepage' => 'ratemyclass#homepage',    :as => 'homepage'
     
     root 'ratemyclass#login'
 end
