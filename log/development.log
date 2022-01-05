@@ -1144,3 +1144,439 @@ Processing by RatemyclassController#login as HTML
 Completed 200 OK in 25ms (Views: 21.5ms | Allocations: 6052)
 
 
+Started GET "/" for 107.127.10.18 at 2022-01-04 17:54:46 +0000
+Cannot render console from 107.127.10.18! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2256)
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 2566)
+Completed 200 OK in 28ms (Views: 23.0ms | Allocations: 6052)
+
+
+Started GET "/" for 107.127.10.19 at 2022-01-04 17:58:21 +0000
+Cannot render console from 107.127.10.19! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 6.2ms | Allocations: 2256)
+DEPRECATION WARNING: The asset "logo.png" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__3071094219301016077_13000 at /home/ubuntu/RateMyClass/app/views/layouts/application.html.erb:13)
+  Rendered layout layouts/application.html.erb (Duration: 175.4ms | Allocations: 273186)
+Completed 200 OK in 184ms (Views: 180.0ms | Allocations: 276672)
+
+
+Started GET "/images/logo.png" for 107.127.10.19 at 2022-01-04 17:58:21 +0000
+Cannot render console from 107.127.10.19! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  
+Started GET "/" for 107.127.10.17 at 2022-01-04 17:59:07 +0000
+Cannot render console from 107.127.10.17! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1471)
+DEPRECATION WARNING: The asset "logo.png" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__3071094219301016077_13000 at /home/ubuntu/RateMyClass/app/views/layouts/application.html.erb:13)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 2083)
+Completed 200 OK in 9ms (Views: 8.7ms | Allocations: 2454)
+
+
+Started GET "/images/logo.png" for 107.127.10.17 at 2022-01-04 17:59:08 +0000
+Cannot render console from 107.127.10.17! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  
+Started GET "/" for 107.127.10.18 at 2022-01-04 18:00:01 +0000
+Cannot render console from 107.127.10.18! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+DEPRECATION WARNING: The asset "logo.png" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from block in _app_views_ratemyclass_login_html_erb___830365334023983264_13600 at /home/ubuntu/RateMyClass/app/views/ratemyclass/login.html.erb:2)
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 17.5ms | Allocations: 2230)
+DEPRECATION WARNING: The asset "logo.png" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__3071094219301016077_13620 at /home/ubuntu/RateMyClass/app/views/layouts/application.html.erb:13)
+  Rendered layout layouts/application.html.erb (Duration: 26.1ms | Allocations: 2876)
+Completed 200 OK in 36ms (Views: 35.0ms | Allocations: 4073)
+
+
+Started GET "/images/logo.png" for 107.127.10.18 at 2022-01-04 18:00:01 +0000
+Cannot render console from 107.127.10.18! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  
+Started GET "/" for 107.127.10.18 at 2022-01-04 18:01:01 +0000
+Cannot render console from 107.127.10.18! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 174.9ms | Allocations: 274744)
+  Rendered layout layouts/application.html.erb (Duration: 177.7ms | Allocations: 275276)
+Completed 200 OK in 186ms (Views: 182.3ms | Allocations: 278762)
+
+
+Started GET "/" for 107.127.10.19 at 2022-01-04 18:57:38 +0000
+Cannot render console from 107.127.10.19! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 169.5ms | Allocations: 273919)
+  Rendered layout layouts/application.html.erb (Duration: 171.6ms | Allocations: 274453)
+Completed 200 OK in 195ms (Views: 179.3ms | Allocations: 277939)
+
+
+Started GET "/assets/logo-dd07f7f01a3d9c8c23f3d944c380c0e6c05860bbad8a0559185db6c0b2d17025.png" for 107.127.10.19 at 2022-01-04 18:57:39 +0000
+Cannot render console from 107.127.10.19! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/" for 107.127.10.19 at 2022-01-04 18:58:05 +0000
+Cannot render console from 107.127.10.19! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1727)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2623)
+Completed 200 OK in 7ms (Views: 6.4ms | Allocations: 3881)
+
+
+Started GET "/" for 107.127.10.19 at 2022-01-04 19:00:35 +0000
+Cannot render console from 107.127.10.19! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1727)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 2662)
+Completed 200 OK in 8ms (Views: 7.1ms | Allocations: 3895)
+
+
+Started GET "/" for 107.127.10.19 at 2022-01-04 19:00:49 +0000
+Cannot render console from 107.127.10.19! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1727)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2631)
+Completed 200 OK in 7ms (Views: 6.6ms | Allocations: 3835)
+
+
+Started GET "/" for 107.127.10.19 at 2022-01-04 19:00:58 +0000
+Cannot render console from 107.127.10.19! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1727)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2632)
+Completed 200 OK in 7ms (Views: 6.5ms | Allocations: 3846)
+
+
+Started GET "/" for 107.127.10.19 at 2022-01-04 19:04:07 +0000
+Cannot render console from 107.127.10.19! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1727)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 3273)
+Completed 500 Internal Server Error in 9ms (Allocations: 4488)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check  <html>
+  <head>
+    <!--<img src="images/logo.png" alt="ratemyclassimg" width="500" height="333">-->
+    <!--<div style="background-image: url('#{asset_path('logo.png')}')" ></div>-->
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <!--<div style="background-image: url('#{asset_path('logo.png')}')"></div>-->
+    <div class="jumbotron">
+      <h1 class="display-4">Play WordGuesser!</h1>
+      <%= image_tag "logo.png", style: 'height:100%;width:100%;' :align=> 'middle' %>
+      <p class="lead">Random word generator provided by Watchout4snakes.com</p>
+    </div>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>
+):
+1:     <html>
+2:      <head>
+3:        <!--<img src="images/logo.png" alt="ratemyclassimg" width="500" height="333">-->
+4:        <!--<div style="background-image: url('#{asset_path('logo.png')}')" ></div>-->
+5:        <!-- Latest compiled and minified Bootstrap CSS -->
+6:        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+7:        <%= csrf_meta_tags %>
+8:      </head>
+9:      <body>
+10:        <!--<div style="background-image: url('#{asset_path('logo.png')}')"></div>-->
+11:        <div class="jumbotron">
+12:          <h1 class="display-4">Play WordGuesser!</h1>
+13:          <%= image_tag "logo.png", style: 'height:100%;width:100%;' :align=> 'middle' %>
+14:          <p class="lead">Random word generator provided by Watchout4snakes.com</p>
+15:        </div>
+16:        <div class="container">
+17:          <%= yield %>
+18:        </div>
+19:      </body>
+20:    </html>
+  
+app/views/layouts/application.html.erb:13: syntax error, unexpected ':', expecting ')'
+app/views/layouts/application.html.erb:13: void value expression
+app/views/layouts/application.html.erb:13: syntax error, unexpected ':', expecting ')'
+app/views/layouts/application.html.erb:13: void value expression
+app/views/layouts/application.html.erb:13: syntax error, unexpected ':', expecting ')'
+app/views/layouts/application.html.erb:13: void value expression
+app/views/layouts/application.html.erb:13: syntax error, unexpected ':', expecting ')'
+app/views/layouts/application.html.erb:13: void value expression
+app/views/layouts/application.html.erb:13: syntax error, unexpected ':', expecting ')'
+app/views/layouts/application.html.erb:13: void value expression
+app/views/layouts/application.html.erb:13: syntax error, unexpected ':', expecting ')'
+app/views/layouts/application.html.erb:13: void value expression
+Started GET "/" for 107.127.10.19 at 2022-01-04 19:05:27 +0000
+Cannot render console from 107.127.10.19! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1727)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 2672)
+Completed 200 OK in 9ms (Views: 7.8ms | Allocations: 3903)
+
+
+Started GET "/" for 107.127.10.19 at 2022-01-04 19:05:44 +0000
+Cannot render console from 107.127.10.19! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1727)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2638)
+Completed 200 OK in 7ms (Views: 6.7ms | Allocations: 3852)
+
+
+Started GET "/" for 107.127.10.20 at 2022-01-04 19:08:43 +0000
+Cannot render console from 107.127.10.20! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1727)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 3446)
+Completed 500 Internal Server Error in 9ms (Allocations: 4638)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 3, expected 1..2)):
+    11:     <div class="jumbotron">
+    12:       <h1 class="display-4">Play WordGuesser!</h1>
+    13:       <!--<%= image_tag "logo.png", style: 'height:80%;width:80%;' %>-->
+    14:       <%= image_tag "logo.png", height="80", width="80"%>
+    15:       <p class="lead">Random word generator provided by Watchout4snakes.com</p>
+    16:     </div>
+    17:     <div class="container">
+  
+app/views/layouts/application.html.erb:14
+Started GET "/" for 107.127.10.20 at 2022-01-04 19:09:23 +0000
+Cannot render console from 107.127.10.20! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1727)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 3407)
+Completed 500 Internal Server Error in 9ms (Allocations: 4566)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 3, expected 1..2)):
+    11:     <div class="jumbotron">
+    12:       <h1 class="display-4">Play WordGuesser!</h1>
+    13:       <!--<%= image_tag"logo.png", style: 'height:80%;width:80%;' %>-->
+    14:       <%= image_tag("logo.png", height="80", width="80") %>
+    15:       <p class="lead">Random word generator provided by Watchout4snakes.com</p>
+    16:     </div>
+    17:     <div class="container">
+  
+app/views/layouts/application.html.erb:14
+Started GET "/" for 107.127.10.20 at 2022-01-04 19:09:58 +0000
+Cannot render console from 107.127.10.20! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1727)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 2893)
+Completed 200 OK in 9ms (Views: 8.1ms | Allocations: 4116)
+
+
+Started GET "/" for 107.127.10.20 at 2022-01-04 19:10:45 +0000
+Cannot render console from 107.127.10.20! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1727)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 2896)
+Completed 200 OK in 9ms (Views: 8.0ms | Allocations: 4129)
+
+
+Started GET "/" for 107.127.10.20 at 2022-01-04 19:10:49 +0000
+Cannot render console from 107.127.10.20! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1447)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2282)
+Completed 200 OK in 5ms (Views: 4.8ms | Allocations: 2622)
+
+
+Started GET "/" for 107.127.10.20 at 2022-01-04 19:10:57 +0000
+Cannot render console from 107.127.10.20! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1727)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2784)
+Completed 500 Internal Server Error in 7ms (Allocations: 3938)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check  <html>
+  <head>
+    <!--<img src="images/logo.png" alt="ratemyclassimg" width="500" height="333">-->
+    <!--<div style="background-image: url('#{asset_path('logo.png')}')" ></div>-->
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <!--<div style="background-image: url('#{asset_path('logo.png')}')"></div>-->
+    <div class="jumbotron">
+      <h1 class="display-4">Play WordGuesser!</h1>
+      <!--<%= image_tag"logo.png", style: 'height:80%;width:80%;' %>-->
+      <%= image_tag("logo.png", height:"80", width:"80", class="center") %>
+      <p class="lead">Random word generator provided by Watchout4snakes.com</p>
+    </div>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>
+):
+1:     <html>
+2:      <head>
+3:        <!--<img src="images/logo.png" alt="ratemyclassimg" width="500" height="333">-->
+4:        <!--<div style="background-image: url('#{asset_path('logo.png')}')" ></div>-->
+5:        <!-- Latest compiled and minified Bootstrap CSS -->
+6:        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+7:        <%= csrf_meta_tags %>
+8:      </head>
+9:      <body>
+10:        <!--<div style="background-image: url('#{asset_path('logo.png')}')"></div>-->
+11:        <div class="jumbotron">
+12:          <h1 class="display-4">Play WordGuesser!</h1>
+13:          <!--<%= image_tag"logo.png", style: 'height:80%;width:80%;' %>-->
+14:          <%= image_tag("logo.png", height:"80", width:"80", class="center") %>
+15:          <p class="lead">Random word generator provided by Watchout4snakes.com</p>
+16:        </div>
+17:        <div class="container">
+18:          <%= yield %>
+19:        </div>
+20:      </body>
+21:    </html>
+  
+app/views/layouts/application.html.erb:14: syntax error, unexpected '='
+app/views/layouts/application.html.erb:14: syntax error, unexpected ')', expecting `end'
+app/views/layouts/application.html.erb:14: syntax error, unexpected '='
+app/views/layouts/application.html.erb:14: syntax error, unexpected ')', expecting `end'
+app/views/layouts/application.html.erb:14: syntax error, unexpected '='
+app/views/layouts/application.html.erb:14: syntax error, unexpected ')', expecting `end'
+app/views/layouts/application.html.erb:14: syntax error, unexpected '='
+app/views/layouts/application.html.erb:14: syntax error, unexpected ')', expecting `end'
+app/views/layouts/application.html.erb:14: syntax error, unexpected '='
+app/views/layouts/application.html.erb:14: syntax error, unexpected ')', expecting `end'
+app/views/layouts/application.html.erb:14: syntax error, unexpected '='
+app/views/layouts/application.html.erb:14: syntax error, unexpected ')', expecting `end'
+Started GET "/" for 107.127.10.20 at 2022-01-04 19:12:23 +0000
+Cannot render console from 107.127.10.20! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1727)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2899)
+Completed 200 OK in 9ms (Views: 7.9ms | Allocations: 4132)
+
+
+Started GET "/" for 107.127.10.20 at 2022-01-04 19:12:42 +0000
+Cannot render console from 107.127.10.20! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1727)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2864)
+Completed 200 OK in 8ms (Views: 7.4ms | Allocations: 4078)
+
+
+Started GET "/" for 107.127.10.20 at 2022-01-04 19:13:05 +0000
+Cannot render console from 107.127.10.20! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1727)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2864)
+Completed 200 OK in 9ms (Views: 7.7ms | Allocations: 4078)
+
+
+Started GET "/" for 107.127.10.20 at 2022-01-04 19:14:02 +0000
+Cannot render console from 107.127.10.20! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1727)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 2617)
+Completed 200 OK in 8ms (Views: 7.1ms | Allocations: 3831)
+
+
+Started POST "/login" for 107.127.10.19 at 2022-01-04 19:16:34 +0000
+Cannot render console from 107.127.10.19! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1NTTfaM5vJLFNSnnkPtZmHvp1gliPHgaw5tdNZRtKvCDuBazAQnJtPuwp8kLKyy9tAYDZhsOgKqrDGJIxapOkg==", "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 0.4ms | Allocations: 156)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 868)
+Completed 200 OK in 6ms (Views: 4.4ms | Allocations: 2408)
+
+
+  [1m[35m (69.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2123889184994538255)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-01-04 19:18:55.270679"], ["updated_at", "2022-01-04 19:18:55.270679"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2123889184994538255)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 166.172.57.72 at 2022-01-05 07:07:21 +0000
+Cannot render console from 166.172.57.72! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 6.7ms | Allocations: 2246)
+  Rendered layout layouts/application.html.erb (Duration: 191.5ms | Allocations: 274225)
+Completed 200 OK in 207ms (Views: 198.7ms | Allocations: 277711)
+
+
