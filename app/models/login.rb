@@ -1,10 +1,17 @@
 require 'pg'
+require 'digest'
+
 class Login
+    attr_accessor :username, :password_hash_login, :password_hash_user
+    
     def initialize(user, pass)
         @username = user
         
         #***TODO: PULL @username FROM DATABASE
         #VERIFY PASSWORD***
+        @salt = '' #pulled from database
+        @password_hash_login = Digest::SHA256.hexdigest(pass + @salt)
+        @password_hash_user = '' #pulled from database
     end
 end
 

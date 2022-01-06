@@ -29,7 +29,7 @@ class RatemyclassController < ApplicationController
             params[:user].each do |value|
                 if value[1].empty?
                     flash[:notice] = "Invalid Username or Password"
-                    redirect_to({ :action=>'signup' }, :alert => "Incorrect Username")
+                    redirect_to({ :action=>'signup' }, :alert => "Invalid Username")
                 else
                     @username = value[1]
                 end
@@ -37,7 +37,7 @@ class RatemyclassController < ApplicationController
             params[:pass].each do |value|
                 if value[1].empty?
                     flash[:notice] = "Invalid Username or Password"
-                    redirect_to({ :action=>'signup' }, :alert => "Incorrect Password")
+                    redirect_to({ :action=>'signup' }, :alert => "Invalid Password")
                 else
                     @password = value[1]
                 end

@@ -21,6 +21,9 @@ group :test do
   gem 'cucumber-rails', :require => false
   gem 'rspec-rails'
   gem 'webmock'
+  gem 'capybara', '3.1'
+  gem 'rack-test', '0.6.3'
+  gem 'rack_session_access', '0.1.1'
 end
 gem "puma", "~> 5.5"
 gem 'pg'

@@ -16245,3 +16245,159 @@ Processing by RatemyclassController#homepage as HTML
 Completed 200 OK in 5ms (Views: 4.1ms | Allocations: 2427)
 
 
+Started GET "/" for 188.164.201.34 at 2022-01-06 09:54:58 +0000
+Cannot render console from 188.164.201.34! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 9.2ms | Allocations: 2516)
+  Rendered layout layouts/application.html.erb (Duration: 186.2ms | Allocations: 274566)
+Completed 200 OK in 208ms (Views: 194.9ms | Allocations: 278052)
+
+
+Started GET "/homepage?utf8=%E2%9C%93&user%5Bfield%5D=sadasd&pass%5Bfield%5D=asda&commit=Log+in" for 188.164.201.34 at 2022-01-06 09:55:03 +0000
+Cannot render console from 188.164.201.34! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#homepage as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"field"=>"sadasd"}, "pass"=>{"field"=>"asda"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/homepage.html.erb within layouts/application
+  Rendered ratemyclass/homepage.html.erb within layouts/application (Duration: 0.9ms | Allocations: 98)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 2147)
+Completed 200 OK in 11ms (Views: 5.6ms | Allocations: 3737)
+
+
+Started GET "/signup" for 188.164.201.34 at 2022-01-06 09:55:08 +0000
+Cannot render console from 188.164.201.34! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#signup as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/signup.html.erb within layouts/application
+  Rendered ratemyclass/signup.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1655)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 2294)
+Completed 200 OK in 6ms (Views: 5.6ms | Allocations: 2745)
+
+
+Started GET "/homepage?utf8=%E2%9C%93&user%5Bfield%5D=asdasd&pass%5Bfield%5D=asdas&commit=Sign+up" for 188.164.201.34 at 2022-01-06 09:55:12 +0000
+Cannot render console from 188.164.201.34! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#homepage as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"field"=>"asdasd"}, "pass"=>{"field"=>"asdas"}, "commit"=>"Sign up"}
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/homepage.html.erb within layouts/application
+  Rendered ratemyclass/homepage.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 1895)
+Completed 200 OK in 5ms (Views: 4.2ms | Allocations: 2429)
+
+
+Started GET "/" for 188.164.201.34 at 2022-01-06 09:56:10 +0000
+Cannot render console from 188.164.201.34! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2516)
+  Rendered layout layouts/application.html.erb (Duration: 161.5ms | Allocations: 274562)
+Completed 200 OK in 170ms (Views: 166.5ms | Allocations: 278048)
+
+
+Started GET "/homepage?utf8=%E2%9C%93&user%5Bfield%5D=abc&pass%5Bfield%5D=&commit=Log+in" for 188.164.201.34 at 2022-01-06 09:56:18 +0000
+Cannot render console from 188.164.201.34! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#homepage as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"field"=>"abc"}, "pass"=>{"field"=>""}, "commit"=>"Log in"}
+Redirected to http://ec2-3-145-181-151.us-east-2.compute.amazonaws.com:8080/login
+Completed 302 Found in 6ms (Allocations: 2771)
+
+
+Started GET "/login" for 188.164.201.34 at 2022-01-06 09:56:18 +0000
+Cannot render console from 188.164.201.34! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1525)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2254)
+Completed 200 OK in 5ms (Views: 4.9ms | Allocations: 2621)
+
+
+Started GET "/homepage?utf8=%E2%9C%93&user%5Bfield%5D=&pass%5Bfield%5D=asd&commit=Log+in" for 188.164.201.34 at 2022-01-06 09:56:23 +0000
+Cannot render console from 188.164.201.34! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#homepage as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"field"=>""}, "pass"=>{"field"=>"asd"}, "commit"=>"Log in"}
+Redirected to http://ec2-3-145-181-151.us-east-2.compute.amazonaws.com:8080/login
+Completed 302 Found in 2ms (Allocations: 1316)
+
+
+Started GET "/login" for 188.164.201.34 at 2022-01-06 09:56:23 +0000
+Cannot render console from 188.164.201.34! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/login.html.erb within layouts/application
+  Rendered ratemyclass/login.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1495)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2134)
+Completed 200 OK in 5ms (Views: 4.6ms | Allocations: 2457)
+
+
+Started GET "/signup" for 188.164.201.34 at 2022-01-06 09:56:26 +0000
+Cannot render console from 188.164.201.34! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#signup as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/signup.html.erb within layouts/application
+  Rendered ratemyclass/signup.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1653)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 2292)
+Completed 200 OK in 6ms (Views: 4.9ms | Allocations: 2773)
+
+
+Started GET "/homepage?utf8=%E2%9C%93&user%5Bfield%5D=asd&pass%5Bfield%5D=asd&commit=Sign+up" for 188.164.201.34 at 2022-01-06 09:56:30 +0000
+Cannot render console from 188.164.201.34! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#homepage as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"field"=>"asd"}, "pass"=>{"field"=>"asd"}, "commit"=>"Sign up"}
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/homepage.html.erb within layouts/application
+  Rendered ratemyclass/homepage.html.erb within layouts/application (Duration: 0.3ms | Allocations: 74)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1965)
+Completed 200 OK in 5ms (Views: 4.3ms | Allocations: 2624)
+
+
+Started GET "/homepage?utf8=%E2%9C%93&user%5Bfield%5D=&pass%5Bfield%5D=asd&commit=Sign+up" for 188.164.201.34 at 2022-01-06 09:56:34 +0000
+Cannot render console from 188.164.201.34! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#homepage as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"field"=>""}, "pass"=>{"field"=>"asd"}, "commit"=>"Sign up"}
+Redirected to http://ec2-3-145-181-151.us-east-2.compute.amazonaws.com:8080/signup
+Completed 302 Found in 2ms (Allocations: 1406)
+
+
+Started GET "/signup" for 188.164.201.34 at 2022-01-06 09:56:35 +0000
+Cannot render console from 188.164.201.34! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#signup as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/signup.html.erb within layouts/application
+  Rendered ratemyclass/signup.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1477)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2116)
+Completed 200 OK in 5ms (Views: 4.6ms | Allocations: 2439)
+
+
+Started GET "/homepage?utf8=%E2%9C%93&user%5Bfield%5D=&pass%5Bfield%5D=asda&commit=Sign+up" for 188.164.201.34 at 2022-01-06 09:56:40 +0000
+Cannot render console from 188.164.201.34! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#homepage as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"field"=>""}, "pass"=>{"field"=>"asda"}, "commit"=>"Sign up"}
+Redirected to http://ec2-3-145-181-151.us-east-2.compute.amazonaws.com:8080/signup
+Completed 302 Found in 2ms (Allocations: 1414)
+
+
+Started GET "/signup" for 188.164.201.34 at 2022-01-06 09:56:40 +0000
+Cannot render console from 188.164.201.34! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#signup as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/signup.html.erb within layouts/application
+  Rendered ratemyclass/signup.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1477)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2117)
+Completed 200 OK in 11ms (Views: 10.6ms | Allocations: 2441)
+
+
+Started GET "/homepage?utf8=%E2%9C%93&user%5Bfield%5D=asda&pass%5Bfield%5D=as&commit=Sign+up" for 188.164.201.34 at 2022-01-06 09:56:44 +0000
+Cannot render console from 188.164.201.34! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RatemyclassController#homepage as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"field"=>"asda"}, "pass"=>{"field"=>"as"}, "commit"=>"Sign up"}
+  Rendering layout layouts/application.html.erb
+  Rendering ratemyclass/homepage.html.erb within layouts/application
+  Rendered ratemyclass/homepage.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 1899)
+Completed 200 OK in 5ms (Views: 4.6ms | Allocations: 2433)
+
+
