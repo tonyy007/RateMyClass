@@ -27,5 +27,5 @@ group :test do
 end
 gem "puma", "~> 5.5"
 gem 'pg'
-gem 'sassc-rails', "~>2.1.0"
 gem 'actionview'
+gem 'simplecov', require: false, group: :test

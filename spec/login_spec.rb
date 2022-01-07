@@ -1,9 +1,12 @@
+require 'simplecov'
+SimpleCov.start
 $LOAD_PATH << File.dirname("~/RateMyClass/app/models/login.rb")
 $LOAD_PATH << File.dirname("~/RateMyClass/app/models/user.rb")
 $LOAD_PATH << File.dirname("~/RateMyClass/app/models/signup.rb")
 require 'login'
 require 'user'
 require 'signup'
+
 
 RSpec.describe Login do
     context 'correctly' do
