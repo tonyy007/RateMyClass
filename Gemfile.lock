@@ -202,7 +202,8 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  activerecord (~> 6.1, >= 6.1.4.4)
+  activemodel
+  activerecord
   activesupport
   bootsnap (>= 1.4.4)
   byebug

@@ -52,9 +52,11 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'activesupport'
+gem 'activemodel'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
 gem 'importmap-rails'
-gem 'activerecord', '~> 6.1', '>= 6.1.4.4'
+#gem 'activerecord', '~> 6.1', '>= 6.1.4.4'
+gem 'activerecord'
