@@ -57,4 +57,4 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
 gem 'importmap-rails'
-gem 'activerecord', '~> 6.1', '>= 6.1.4.4'
+#gem 'activerecord', '~> 6.1', '>= 6.1.4.4'
