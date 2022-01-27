@@ -10,14 +10,18 @@
       </ul>
     </div>
   <% end %>
+  <!--<img src="./project/RateMyClass/app/assets/images/logo.png" alt="..." height="100">-->
+  <%= image_tag("logo.png", height:"60%", width:"60%") %>
 
+
+  <!-- Questions -->
   <div class="field">
-    <%= form.label :workTime %>
+    <%= form.label 'Q1: On average, how many hours did you spend on assignments/homework for this course per week?' %>
     <%= form.text_field :workTime %>
   </div>
 
   <div class="field">
-    <%= form.label :studyTime %>
+    <%= form.label 'Q2: On average, how many hours did you spend on studying/test preparation for this course per week?' %>
     <%= form.text_field :studyTime %>
   </div>
 
