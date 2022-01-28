@@ -22,6 +22,10 @@ ActiveRecord::Schema.define(version: 2022_01_26_031909) do
     t.integer "timeWish"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    #t.string "course_title"
+    #t.string "course_code"
+    #t.string "professor"
+    #t.string "university"  # Should we add this? May help with this. Require student to put uni to post.
   end
 
   create_table "users", primary_key: "username", id: :string, force: :cascade do |t|
