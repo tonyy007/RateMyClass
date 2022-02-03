@@ -14,14 +14,20 @@ RSpec.describe HomepageController, type: :controller do
     #               :rating => "PG", :release_date => "2014-11-07")
     end
     
-# describe "when trying to find movies by the same director" do
-#     it "returns a valid collection when a valid director is present" do
-#       get :show_by_director, params:{:id => Movie.find_by_title("Iron Man")}
-#       expect(assigns(:movies)).to eq([Movie.find_by_title("Spider-Man: Homecoming")])
-#       expect(response).to render_template "show_by_director"
-#     end
+    # describe "when trying to find movies by the same director" do
+    #     it "returns a valid collection when a valid director is present" do
+    #       get :show_by_director, params:{:id => Movie.find_by_title("Iron Man")}
+    #       expect(assigns(:movies)).to eq([Movie.find_by_title("Spider-Man: Homecoming")])
+    #       expect(response).to render_template "show_by_director"
+    #     end
+        
+    #     end
     
-#     end
+    # describe "when trying to sign up" do
+    #   it "creates a user" do 
+          
+    #     end
+    # end
     
     
   end

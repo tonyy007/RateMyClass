@@ -33,6 +33,10 @@ group :development, :test do
   gem 'rspec-rails'
   # Needed for Cucumber tests
   gem 'database_cleaner'
+  gem 'rspec'
+  gem 'rspec-autotest'
+  gem 'autotest-rails'
+  gem 'autotest'
 
 end
 
