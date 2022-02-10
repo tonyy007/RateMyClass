@@ -12,6 +12,13 @@ module NavigationHelpers
     when /^homepage$/
         homepage_path
         
+    when /^login page$/
+        login_path
+        
+    when /^reviews page$/
+      reviews_path
+    when /^new reviews page$/
+      new_review_path
     # when /^the (RottenPotatoes )?home\s?page$/ then '/movies'
 
 

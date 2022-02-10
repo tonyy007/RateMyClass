@@ -15,4 +15,6 @@ When /^(?:|I )press "([^"]*)"$/ do |button|
   click_button(button)
 end
 
+
+
 # @password = Digest::SHA256.hexdigest ______
