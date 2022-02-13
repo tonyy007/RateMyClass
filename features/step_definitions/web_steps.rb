@@ -15,6 +15,8 @@ When /^(?:|I )press "([^"]*)"$/ do |button|
   click_button(button)
 end
 
-
-
-# @password = Digest::SHA256.hexdigest ______
+When /^(?:|I )check "([^\"]*)"$/ do |field|
+  # with_scope(selector) do
+    choose(field)
+  # end
+end

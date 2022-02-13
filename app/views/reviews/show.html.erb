@@ -20,5 +20,25 @@
   <%= @review.timeWish %>
 </p>
 
+<p>
+  <strong>course_code:</strong>
+  <%= @review.course_code %>
+</p>
+
+<p>
+  <strong>course_title:</strong>
+  <%= @review.course_title %>
+</p>
+
+<p>
+  <strong>professor_name:</strong>
+  <%= @review.professor_name %>
+</p>
+
+<p>
+  <strong>university_name:</strong>
+  <%= @review.university_name %>
+</p>
+
 <%= link_to 'Edit', edit_review_path(@review) %> |
 <%= link_to 'Back', reviews_path %>

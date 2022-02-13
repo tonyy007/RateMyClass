@@ -3,7 +3,21 @@ class ReviewsController < ApplicationController
 
   # GET /reviews or /reviews.json
   def index
-    @reviews = Review.all
+    if params[:search] != nil
+      params[:search].each do |value|
+        @searchval = "/" + value[1].to_s + "/"
+      end
+      @reviews = Review.all
+      @reviews_search = Array.new
+      @reviews.each do |review|
+        if (@searchval.match(review.course_code.to_s) != nil) or (@searchval.match(review.course_title.to_s) != nil) #choose what to sort by here
+          @reviews_search.push(review) 
+        end
+      end
+      @reviews = @reviews_search #from this list combine reviews whose course, prof, uni, etc are equal and display a set of matches to the user
+    else
+      @reviews = Review.all
+    end
   end
 
   # GET /reviews/1 or /reviews/1.json
@@ -65,6 +79,6 @@ class ReviewsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def review_params
-      params.require(:review).permit(:workTime, :studyTime, :diffculty, :timeWish)
+      params.require(:review).permit(:workTime, :studyTime, :diffculty, :timeWish, :course_code, :course_title, :professor_name, :university_name)
     end
 end

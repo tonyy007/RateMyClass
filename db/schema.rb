@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_26_031909) do
+ActiveRecord::Schema.define(version: 2022_02_12_235240) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,10 +22,10 @@ ActiveRecord::Schema.define(version: 2022_01_26_031909) do
     t.integer "timeWish"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    #t.string "course_title"
-    #t.string "course_code"
-    #t.string "professor"
-    #t.string "university"  # Should we add this? May help with this. Require student to put uni to post.
+    t.string "course_code"
+    t.string "course_title"
+    t.string "professor_name"
+    t.string "university_name"
   end
 
   create_table "users", primary_key: "username", id: :string, force: :cascade do |t|

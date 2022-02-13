@@ -1,6 +1,21 @@
 <head>
-    <h1>Homepage</h1>
+    <h1>Rate My Class</h1>
 </head>
-<%= link_to 'Users database', users_path %>
-<%= link_to 'Review database', reviews_path %>
-<%= link_to 'New Review', new_review_path %>
+<body>
+    <%= link_to 'Users database', users_path %>
+    <%= link_to 'Review database', reviews_path %>
+    <br>
+    <%= link_to 'New Review', new_review_path %>
+    <br>
+    <%= link_to 'Log in', login_path %>
+    <%= link_to 'Sign up', signup_path %>
+    <br><br>
+    <%= form_tag reviews_path, :method => :get do %> <!--This path will probably change-->
+        <div class="form-group py-0">
+            <label for="search">Search for a Class</label>
+            <%= text_field(:search, :field) %>
+        </div>
+        <br>
+        <%= submit_tag 'Search', :class => "col-md-2 offset-md-5 btn btn-primary form-control" %>
+    <% end %>
+</body>
