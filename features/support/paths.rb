@@ -8,13 +8,13 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
     when /^the signup page$/
-        signup_path
+      signup_path
     when /^homepage$/
-        homepage_path
-        
+      homepage_path
+    when /^users database page$/
+      users_path
     when /^login page$/
-        login_path
-        
+      login_path
     when /^reviews page$/
       reviews_path
     when /^new reviews page$/

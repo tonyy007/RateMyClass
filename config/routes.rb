@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'login' => 'login#login', :as => 'login'
   get 'signup' => 'signup#signup', :as => 'signup'
   get 'homepage' => 'homepage#homepage', :as => 'homepage'
+  get 'indexlower' => 'reviews#indexlower', :as =>'indexlower'
   #root "login#login"
   #root "users#index"
   root "homepage#homepage"

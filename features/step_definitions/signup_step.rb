@@ -4,11 +4,13 @@
 #   end
 # end
 require 'digest'
-Given /the following users exist/ do |users_table|
-  users_table.hashes.each do |user|
-    User.create user
-  end
-end
+
+# Creates users for all of the seeded info
+# Given /the following users exist/ do |users_table|
+#   users_table.hashes.each do |user|
+#     User.create user
+#   end
+# end
 
 Then /^a user with the name "(.+)" with a password "(.+)" exists$/ do |username, password|
   expect(User.find_by(:username => username).username).to eq(username)
@@ -33,13 +35,6 @@ end
 Then /^I should not be logged in$/ do
   page.should have_content('Incorrect Username or Password')
 end
-
-Then /^(?:|I )should be on the (.+)$/ do |page_name|
-  visit path_to(page_name)
-end
-
-# Then /^I should see reviews that exist$/ do
-  
 
 # Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
 #   #  ensure that that e1 occurs before e2.

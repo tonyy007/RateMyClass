@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
 
   # GET /reviews or /reviews.json
   def index
-    if params[:search] != nil
+    if params[:search] != nil #search bar used
       params[:search].each do |value|
         @searchval = "/" + value[1].to_s + "/"
       end
@@ -11,13 +11,35 @@ class ReviewsController < ApplicationController
       @reviews_search = Array.new
       @reviews.each do |review|
         if (@searchval.match(review.course_code.to_s) != nil) or (@searchval.match(review.course_title.to_s) != nil) #choose what to sort by here
-          @reviews_search.push(review) 
+          @reviews_search.append(review) 
         end
       end
       @reviews = @reviews_search #from this list combine reviews whose course, prof, uni, etc are equal and display a set of matches to the user
-    else
+    else #search bar not used
+      @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name)
+      @reviews_grouped = Array.new #outer layer array for set of grouped reviews of same type
+      @reviews_singular = Array.new #inner layer array for grouped reviews of same type
+      @i = 0
+      @reviews.each do |review|
+        if(@i == 0)
+          @reviews_singular.append(review)
+        elsif((review.course_code == @reviews_singular[@i - 1].course_code) and (review.course_title == @reviews_singular[@i - 1].course_title) and (review.professor_name == @reviews_singular[@i - 1].professor_name) and (review.university_name == @reviews_singular[@i - 1].university_name)) 
+          @reviews_singular.append(review)
+        else
+          @reviews_grouped.append(@reviews_singular.clone)
+          @reviews_singular.clear()
+          @reviews_singular.append(review)
+          @i = 0
+        end
+        @i += 1
+      end
+      @reviews_grouped.append(@reviews_singular.clone)
+      #@reviews = @reviews_grouped
       @reviews = Review.all
     end
+  end
+  
+  def indexlower
   end
 
   # GET /reviews/1 or /reviews/1.json

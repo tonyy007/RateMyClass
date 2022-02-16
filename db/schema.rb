@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_12_235240) do
+ActiveRecord::Schema.define(version: 2022_02_13_010521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2022_02_12_235240) do
     t.string "course_title"
     t.string "professor_name"
     t.string "university_name"
+    t.string "users_id"
+    t.index ["users_id"], name: "index_reviews_on_users_id"
   end
 
   create_table "users", primary_key: "username", id: :string, force: :cascade do |t|

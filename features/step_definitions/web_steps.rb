@@ -16,7 +16,24 @@ When /^(?:|I )press "([^"]*)"$/ do |button|
 end
 
 When /^(?:|I )check "([^\"]*)"$/ do |field|
-  # with_scope(selector) do
-    choose(field)
-  # end
+  choose(field)
+end
+
+Then /^(?:|I )should be on the (.+)$/ do |page_name|
+  visit path_to(page_name)
+end
+
+Then /^(?:|I )should see "([^"]]*)$/ do |text|
+  page.should have_content(text)
+end
+
+Then /^(?:|I )should not see "([^"]]*)$/ do |text|
+  page.should_not have_content(text)
+end
+
+Given /^I am logged in as "([^"]*)" with password "([^\"]*)"$/ do |username, password|
+    step %{I go to the login page}
+    step %{I fill in "user_field" with "#{username}"}
+    step %{I fill in "pass_field" with "#{password}"}
+    step %{I press "Log in"}
 end
