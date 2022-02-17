@@ -34,8 +34,8 @@ class ReviewsController < ApplicationController
         @i += 1
       end
       @reviews_grouped.append(@reviews_singular.clone)
-      #@reviews = @reviews_grouped
-      @reviews = Review.all
+      @reviews = @reviews_grouped
+      #@reviews = Review.all
     end
   end
   

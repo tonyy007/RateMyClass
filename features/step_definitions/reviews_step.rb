@@ -1,11 +1,11 @@
 require 'digest'
 
 # Creates reviews for all of the seeded info
-# Given /the following reviews exist/ do |reviews_table|
-#   reviews_table.hashes.each do |review|
-#     Review.create review
-#   end
-# end
+Given /the following reviews exist/ do |reviews_table|
+  reviews_table.hashes.each do |review|
+    Review.create review
+  end
+end
 
 # Then /^a review with "(.+)", "(.+)", "(.+)", "(.+)", "(.+)", "(.+)", "(.+)", "(.+)", "(.+)", "(.+)", "(.+)", "(.+)"  exists$/ do |review_course_title, review_course_code, review_professor_name, review_university_name, review_workTime, review_studyTime, review_diffculty, review_timeWish|
 #   expect(Review.find_by(:review_professor_name => review_professor_name).review_course_title).to eq(review_course_title)

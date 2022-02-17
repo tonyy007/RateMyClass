@@ -9,9 +9,9 @@ Look at reviews
 Background:
   Given I am logged in as "defaultaccount1" with password "defaultaccount1"
   
-  # Given the following reviews exist:
-  # | review_course_title | review_course_code | review_professor_name | review_university_name | review_workTime | review_studyTime | review_diffculty   | review_timeWish |
-  # | csce                | 121                | Robert Lightfoot      | Texas A&M University   | 10              | 5                | review_diffculty_4 | 10              |
+  Given the following reviews exist:
+  | course_title | course_code | professor_name   | university_name        | workTime | studyTime | diffculty          | timeWish        |
+  | csce         | 121         | Robert Lightfoot | Texas A&M University   | 10       | 5         | review_diffculty_4 | 10              |
 
 Scenario: Creating a new review
   When I go to new reviews page
