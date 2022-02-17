@@ -7,10 +7,12 @@
     <br>
     <%= link_to 'New Review', new_review_path %>
     <br>
+    <%= link_to 'Reviews (user view)', indexupper_path %>
+    <br>
     <%= link_to 'Log in', login_path %>
     <%= link_to 'Sign up', signup_path %>
     <br><br>
-    <%= form_tag reviews_path, :method => :get do %> <!--This path will probably change-->
+    <%= form_tag indexupper_path, :method => :get do %> <!--This path will probably change-->
         <div class="form-group py-0">
             <label for="search">Search for a Class</label>
             <%= text_field(:search, :field) %>

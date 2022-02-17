@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'signup' => 'signup#signup', :as => 'signup'
   get 'homepage' => 'homepage#homepage', :as => 'homepage'
   get 'indexlower' => 'reviews#indexlower', :as =>'indexlower'
+  get 'indexupper' => 'reviews#indexupper', :as =>'indexupper'
   #root "login#login"
   #root "users#index"
   root "homepage#homepage"

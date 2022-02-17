@@ -18,16 +18,16 @@
   </thead>
   
   <tbody>
-    <% @reviews.each do |review| %>
+    <% @reviews[@index].each_with_index do |review, index| %>
       <tr>
-        <td><%= review[0].workTime %></td>
-        <td><%= review[0].studyTime %></td>
-        <td><%= review[0].diffculty %></td>
-        <td><%= review[0].timeWish %></td>
-        <td><%= review[0].course_code %></td>
-        <td><%= review[0].course_title %></td>
-        <td><%= review[0].professor_name %></td>
-        <td><%= review[0].university_name %></td>
+        <td><%= review.workTime %></td>
+        <td><%= review.studyTime %></td>
+        <td><%= review.diffculty %></td>
+        <td><%= review.timeWish %></td>
+        <td><%= review.course_code %></td>
+        <td><%= review.course_title %></td>
+        <td><%= review.professor_name %></td>
+        <td><%= review.university_name %></td>
         <!--<td><#%= link_to 'Show', review %></td>-->
         <!--<td><#%= link_to 'Edit', edit_review_path(review) %></td>-->
         <!--<td><#%= button_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
