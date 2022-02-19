@@ -98,6 +98,7 @@ class ReviewsController < ApplicationController
   end
   
   def indexlower
+    @comment = $comment
     @reviews = $reviews_global
     @index = params[:index].to_i
   end
