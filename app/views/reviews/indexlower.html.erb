@@ -1,7 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Reviews</h1>
+<h1>Reviews for <%= @reviews[@index][0].course_title + " " + @reviews[@index][0].course_code%></h1>
 
+<h2>Average Review Scores</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Worktime</th>
+      <th>Studytime</th>
+      <th>Diffculty</th>
+      <th>Timewish</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <tr>
+      <td><%= sprintf('%.2f', @reviews_averaged[0]) %></td>
+      <td><%= sprintf('%.2f', @reviews_averaged[1]) %></td>
+      <td><%= sprintf('%.2f', @reviews_averaged[2]) %></td>
+      <td><%= sprintf('%.2f', @reviews_averaged[3]) %></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Reviews</h2>
 <table>
   <thead>
     <tr>
@@ -13,6 +36,7 @@
       <th>course_title</th>
       <th>professor_name</th>
       <th>university_name</th>
+      <th>Thought</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -28,6 +52,7 @@
         <td><%= review.course_title %></td>
         <td><%= review.professor_name %></td>
         <td><%= review.university_name %></td>
+        <td><%= review.thought %></td>
         <!--<td><#%= link_to 'Show', review %></td>-->
         <!--<td><#%= link_to 'Edit', edit_review_path(review) %></td>-->
         <!--<td><#%= button_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
@@ -51,6 +76,10 @@
               <strong>Comment:</strong>
               <%= comment.body %>
             </p>
+            <p>
+              <%= button_to "Destroy Comment", [comment.review, comment], method: :delete, data: {turbo_confirm: "Are you sure?"}, params: {index: @index}%>
+            </p>
+
           <% end %>
         <% end %>
     <% end %>

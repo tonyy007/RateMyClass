@@ -22,6 +22,12 @@
           null
         ]
       },
+      "/home/ubuntu/project/RateMyClass/app/helpers/comments_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/home/ubuntu/project/RateMyClass/app/helpers/reviews_helper.rb": {
         "lines": [
           1,
@@ -126,42 +132,84 @@
           null,
           1,
           5,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          null,
-          5,
-          5,
-          5,
-          5,
-          5,
-          1,
-          1,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          1,
-          null,
-          5,
-          null,
-          5,
-          null,
           null,
           null,
           1,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
           null,
           null,
           null,
@@ -231,6 +279,7 @@
       "/home/ubuntu/project/RateMyClass/app/models/review.rb": {
         "lines": [
           1,
+          1,
           null
         ]
       },
@@ -238,6 +287,13 @@
         "lines": [
           1,
           null,
+          1,
+          null
+        ]
+      },
+      "/home/ubuntu/project/RateMyClass/app/models/comment.rb": {
+        "lines": [
+          1,
           1,
           null
         ]
@@ -345,6 +401,33 @@
         "branches": {
         }
       },
+      "/home/ubuntu/project/RateMyClass/app/controllers/comments_controller.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/home/ubuntu/project/RateMyClass/app/jobs/application_job.rb": {
         "lines": [
           0,
@@ -369,6 +452,6 @@
         }
       }
     },
-    "timestamp": 1645059899
+    "timestamp": 1645394552
   }
 }

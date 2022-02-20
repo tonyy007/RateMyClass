@@ -3,40 +3,6 @@ class ReviewsController < ApplicationController
 
   # GET /reviews or /reviews.json
   def index
-    # if params[:search] != nil #search bar used
-    #   params[:search].each do |value|
-    #     @searchval = "/" + value[1].to_s + "/"
-    #   end
-    #   @reviews = Review.all
-    #   @reviews_search = Array.new
-    #   @reviews.each do |review|
-    #     if (@searchval.match(review.course_code.to_s) != nil) or (@searchval.match(review.course_title.to_s) != nil) #choose what to sort by here
-    #       @reviews_search.append(review) 
-    #     end
-    #   end
-    #   @reviews = @reviews_search #from this list combine reviews whose course, prof, uni, etc are equal and display a set of matches to the user
-    # else #search bar not used
-    #   @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name)
-    #   @reviews_grouped = Array.new #outer layer array for set of grouped reviews of same type
-    #   @reviews_singular = Array.new #inner layer array for grouped reviews of same type
-    #   @i = 0
-    #   @reviews.each do |review|
-    #     if(@i == 0)
-    #       @reviews_singular.append(review)
-    #     elsif((review.course_code == @reviews_singular[@i - 1].course_code) and (review.course_title == @reviews_singular[@i - 1].course_title) and (review.professor_name == @reviews_singular[@i - 1].professor_name) and (review.university_name == @reviews_singular[@i - 1].university_name)) 
-    #       @reviews_singular.append(review)
-    #     else
-    #       @reviews_grouped.append(@reviews_singular.clone)
-    #       @reviews_singular.clear()
-    #       @reviews_singular.append(review)
-    #       @i = 0
-    #     end
-    #     @i += 1
-    #   end
-    #   @reviews_grouped.append(@reviews_singular.clone)
-    #   #@reviews = @reviews_grouped
-    #   @reviews = Review.all
-    # end
     @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name)
   end
   
@@ -101,6 +67,21 @@ class ReviewsController < ApplicationController
     @comment = $comment
     @reviews = $reviews_global
     @index = params[:index].to_i
+    workTimearr = Array.new
+    studyTimearr = Array.new
+    difficultyarr = Array.new
+    timeWisharr = Array.new
+    @reviews_averaged = Array.new #[workTime, studyTime, difficulty, timeWish]
+    @reviews[@index].each_with_index do |review, index|
+      workTimearr.append(review.workTime)
+      studyTimearr.append(review.studyTime)
+      difficultyarr.append(review.diffculty)
+      timeWisharr.append(review.timeWish)
+    end
+    @reviews_averaged.insert(0, workTimearr.inject{ |sum, el| sum + el }.to_f / workTimearr.size)
+    @reviews_averaged.insert(1, studyTimearr.inject{ |sum, el| sum + el }.to_f / studyTimearr.size)
+    @reviews_averaged.insert(2, difficultyarr.inject{ |sum, el| sum + el }.to_f / difficultyarr.size)
+    @reviews_averaged.insert(3, timeWisharr.inject{ |sum, el| sum + el }.to_f / timeWisharr.size)
   end
 
   # GET /reviews/1 or /reviews/1.json
@@ -162,6 +143,6 @@ class ReviewsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def review_params
-      params.require(:review).permit(:workTime, :studyTime, :diffculty, :timeWish, :course_code, :course_title, :professor_name, :university_name)
+      params.require(:review).permit(:workTime, :studyTime, :diffculty, :timeWish, :course_code, :course_title, :professor_name, :university_name, :thought)
     end
 end

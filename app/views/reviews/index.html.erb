@@ -28,6 +28,7 @@
         <td><%= review.course_title %></td>
         <td><%= review.professor_name %></td>
         <td><%= review.university_name %></td>
+        <td><%= review.thought %></td>
         <td><%= link_to 'Show', review %></td>
         <td><%= link_to 'Edit', edit_review_path(review) %></td>
         <td><%= button_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -47,6 +48,12 @@
           <p>
             <strong>Comment:</strong>
             <%= comment.body %>
+          </p>
+          <p>
+              <%= button_to "Destroy Comment", [comment.review, comment], data: {
+                            turbo_method: :delete,
+                            turbo_confirm: "Are you sure?"
+                          } %>
           </p>
         <% end %>
     <% end %>
