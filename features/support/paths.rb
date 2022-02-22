@@ -13,6 +13,8 @@ module NavigationHelpers
       homepage_path
     when /^users database page$/
       users_path
+    when /^indexupper page$/
+      indexupper_path
     when /^login page$/
       login_path
     when /^reviews page$/

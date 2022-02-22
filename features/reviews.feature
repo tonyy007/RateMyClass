@@ -43,13 +43,18 @@ Scenario: Creating a comment on a review that exists
   Given I go to homepage
   When I fill in "search_field" with "CSCE 121"
   And I press "Search"
-  # Then I should be on the reviews page
-  # And I should be on the indexupper page
   And I go to the indexupper page
   And I follow the first link "Show"
-  # Then I should be on the indexupper
-  # And I create a comment with "Random Comment"
   And I fill in "comment_body" with "Test Comment."
   And I press "Create Comment"
   
-# Scenario: Wh
+  
+Scenario: Destory an existing comment
+  Given I go to homepage
+  When I fill in "search_field" with "CSCE 121"
+  And I press "Search"
+  Then I should be on the indexupper page
+  And I follow the first link "Show"
+  And I fill in "comment_body" with "Test Comment 2."
+  And I press "Create Comment"
+  And I press "Destroy Comment"

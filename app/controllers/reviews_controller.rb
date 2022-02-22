@@ -13,9 +13,11 @@ class ReviewsController < ApplicationController
       end
       @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name)
       @reviews_search = Array.new
-      @reviews.each do |review|
+      @reviews.each_with_index do |review, index|
         if (@searchval.match(review.course_code.to_s.downcase) != nil) or (@searchval.match(review.course_title.to_s.downcase) != nil) #choose what to sort by here
           @reviews_search.append(review) 
+        elsif (index == @reviews.length - 1) and (@reviews_search.empty?)
+          #@reviews_search.append(Array.new(1, "")) NEED TO FIX THIS FOR EMPTY SEARCH RESULTS
         end
       end
       @reviews = @reviews_search #from this list combine reviews whose course, prof, uni, etc are equal and display a set of matches to the user
