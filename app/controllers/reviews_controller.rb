@@ -9,12 +9,12 @@ class ReviewsController < ApplicationController
   def indexupper
     if params[:search] != nil #search bar used
       params[:search].each do |value|
-        @searchval = "/" + value[1].to_s + "/"
+        @searchval = "/" + value[1].to_s.downcase + "/"
       end
       @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name)
       @reviews_search = Array.new
       @reviews.each do |review|
-        if (@searchval.match(review.course_code.to_s) != nil) or (@searchval.match(review.course_title.to_s) != nil) #choose what to sort by here
+        if (@searchval.match(review.course_code.to_s.downcase) != nil) or (@searchval.match(review.course_title.to_s.downcase) != nil) #choose what to sort by here
           @reviews_search.append(review) 
         end
       end

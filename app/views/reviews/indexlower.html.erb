@@ -93,8 +93,27 @@
 
 <h2>Reviews</h2>
     <% @reviews[@index].each_with_index do |review, index| %>
-      <h3>Worktime StudyTime Difficulty TimeWish Thought</h3>
-      <%= review.workTime.to_s + " " + review.studyTime.to_s + " " + review.diffculty.to_s + " " + review.timeWish.to_s + " " + review.thought.to_s %>
+      <table>
+        <thead>
+          <tr>
+            <th>Worktime</th>
+            <th>Studytime</th>
+            <th>Diffculty</th>
+            <th>Timewish</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= review.workTime %></td>
+            <td><%= review.studyTime %></td>
+            <td><%= review.diffculty %></td>
+            <td><%= review.timeWish %></td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>Thoughts about the class</h4>
+      <%= review.thought %>
         <h3>Comments</h3>
         <% review.reload %>
         <% review.comments.each_with_index do |comment, index| %>
@@ -123,7 +142,5 @@
             <%= form.submit %>
           </p>
         <% end %>
+        <br>
     <% end %>
-  </tbody>
-</table>
-<br>
