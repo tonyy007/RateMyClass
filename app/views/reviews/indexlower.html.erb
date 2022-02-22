@@ -24,70 +24,70 @@
   </tbody>
 </table>
 
-<h2>Reviews</h2>
-<table>
-  <thead>
-    <tr>
-      <th>Worktime</th>
-      <th>Studytime</th>
-      <th>Diffculty</th>
-      <th>Timewish</th>
-      <th>course_code</th>
-      <th>course_title</th>
-      <th>professor_name</th>
-      <th>university_name</th>
-      <th>Thought</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<!--<h2>Reviews</h2>-->
+<!--<table>-->
+<!--  <thead>-->
+<!--    <tr>-->
+<!--      <th>Worktime</th>-->
+<!--      <th>Studytime</th>-->
+<!--      <th>Diffculty</th>-->
+<!--      <th>Timewish</th>-->
+<!--      <th>course_code</th>-->
+<!--      <th>course_title</th>-->
+<!--      <th>professor_name</th>-->
+<!--      <th>university_name</th>-->
+<!--      <th>Thought</th>-->
+<!--      <th colspan="3"></th>-->
+<!--    </tr>-->
+<!--  </thead>-->
   
-  <tbody>
-    <% @reviews[@index].each_with_index do |review, index| %>
-      <tr>
-        <td><%= review.workTime %></td>
-        <td><%= review.studyTime %></td>
-        <td><%= review.diffculty %></td>
-        <td><%= review.timeWish %></td>
-        <td><%= review.course_code %></td>
-        <td><%= review.course_title %></td>
-        <td><%= review.professor_name %></td>
-        <td><%= review.university_name %></td>
-        <td><%= review.thought %></td>
+<!--  <tbody>-->
+<!--    <#% @reviews[@index].each_with_index do |review, index| %>-->
+<!--      <tr>-->
+<!--        <td><#%= review.workTime %></td>-->
+<!--        <td><#%= review.studyTime %></td>-->
+<!--        <td><#%= review.diffculty %></td>-->
+<!--        <td><#%= review.timeWish %></td>-->
+<!--        <td><#%= review.course_code %></td>-->
+<!--        <td><#%= review.course_title %></td>-->
+<!--        <td><#%= review.professor_name %></td>-->
+<!--        <td><#%= review.university_name %></td>-->
+<!--        <td><#%= review.thought %></td>-->
         <!--<td><#%= link_to 'Show', review %></td>-->
         <!--<td><#%= link_to 'Edit', edit_review_path(review) %></td>-->
         <!--<td><#%= button_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
-      </tr>
-      <h2>Add a comment:</h2>
-      <%= form_with model: [ review, review.comments.build ] do |form| %>
-          <p>
-            <%= form.label :body %><br>
-            <%= form.text_area :body %>
-          </p>
-          <p>
-            <%= form.hidden_field :index, :value => @index %>
-            <%= form.submit %>
-          </p>
-      <% end %>
-      <h2>Comments</h2>
-        <% review.reload %>
-        <% review.comments.each_with_index do |comment, index| %>
-          <% if comment.body != nil %>
-            <p>
-              <strong>Comment:</strong>
-              <%= comment.body %>
-            </p>
-            <p>
-              <%= link_to "Edit Comment", edit_review_comment_path(review, comment, :index => index, :indexupper => @index), method: :edit, data: {turbo_confirm: "Are you sure?"}%>
-            </p>
-            <p>
-              <%= button_to "Destroy Comment", [comment.review, comment], method: :delete, data: {turbo_confirm: "Are you sure?"}, params: {index: @index}%>
-            </p>
+<!--      </tr>-->
+<!--      <h2>Add a comment:</h2>-->
+<!--      <#%= form_with model: [ review, review.comments.build ] do |form| %>-->
+<!--          <p>-->
+<!--            <#%= form.label :body %><br>-->
+<!--            <#%= form.text_area :body %>-->
+<!--          </p>-->
+<!--          <p>-->
+<!--            <#%= form.hidden_field :index, :value => @index %>-->
+<!--            <#%= form.submit %>-->
+<!--          </p>-->
+<!--      <#% end %>-->
+<!--      <h2>Comments</h2>-->
+<!--        <#% review.reload %>-->
+<!--        <#% review.comments.each_with_index do |comment, index| %>-->
+<!--          <#% if comment.body != nil %>-->
+<!--            <p>-->
+<!--              <strong>Comment:</strong>-->
+<!--              <#%= comment.body %>-->
+<!--            </p>-->
+<!--            <p>-->
+<!--              <#%= link_to "Edit Comment", edit_review_comment_path(review, comment, :index => index, :indexupper => @index), method: :edit, data: {turbo_confirm: "Are you sure?"}%>-->
+<!--            </p>-->
+<!--            <p>-->
+<!--              <#%= button_to "Destroy Comment", [comment.review, comment], method: :delete, data: {turbo_confirm: "Are you sure?"}, params: {index: @index}%>-->
+<!--            </p>-->
 
-          <% end %>
-        <% end %>
-    <% end %>
-  </tbody>
-</table>
+<!--          <#% end %>-->
+<!--        <#% end %>-->
+<!--    <#% end %>-->
+<!--  </tbody>-->
+<!--</table>-->
 
 
 
