@@ -18,7 +18,7 @@ RSpec.describe Comment, type: :model do
     #     end
     # end
     subject {
-    described_class.new(body: "Lorem ipsum",
+    Comment.new(body: "Lorem ipsum",
                         review_id: 0,
                         created_at: DateTime.now,
                         updated_at: DateTime.now + 1.week)
@@ -37,6 +37,22 @@ RSpec.describe Comment, type: :model do
         
         it "A comment cannot exist without being tied to a review" do
             subject.review_id = nil
+            expect(subject).to_not be_valid
+        end
+        
+        
+        it "A comment must exist with a valid review id" do
+            subject.review_id = -1
+            expect(subject).to_not be_valid
+        end
+        
+        it "A comment cannot be too long" do
+            subject.body = 'c' * 1000000
+            expect(subject).to_not be_valid
+        end
+        
+        it "A comment cannot be too short" do
+            subject.body = 'b'
             expect(subject).to_not be_valid
         end
         

@@ -5,12 +5,12 @@ RSpec.describe UsersController, type: :controller do
         # User.create({:username => 'testuser1', :password_hash => 'passwordpasswordpasswordpasswordpasswordpassword', :type_of_user => 'student'}) 
     # end
     
-    # subject { 
-    #      described_class.new(username: "some_username",
-    #                         password_hash: "some_password", 
-    #                         type_of_user: "student"
-    #      )  
-    #   }
+    subject { 
+         UsersController.new(username: "some_username",
+                            password_hash: "some_password", 
+                            type_of_user: "student"
+         )  
+      }
       
     # describe "Addional User Validations" do
     #     it "valid attributes met" do
@@ -35,11 +35,19 @@ RSpec.describe UsersController, type: :controller do
     end
     
     
+# describe "show" do
+#     it "movie's show method" do 
+#       get :show, params:{:user => {:username => "some_username2", :password_hash => "some_password2", :type_of_user => "student"}}
+#       expect(response).to render_template "show"
+#     end
+#   end
     
     # describe "create" do
     #     it "create Rendering" do
-    #         get :create, params:{:username => "testuser1", :password_hash => "testuser1", :type_of_user => "student"}
-    #         expect(response).to render_template "create"
+    #         # @user = User.create({:username => 'testuser10', :password_hash => 'testuser10', :type_of_user => 'student'}) 
+    #         get :create, params:{:user => {:username => "some_username2", :password_hash => "some_password2", :type_of_user => "student"}}
+    #         # expect(response).to render_template "create"
+    #         expect(response).to redirect_to user_url(@user)
     #     end
     # end
     
@@ -50,12 +58,66 @@ RSpec.describe UsersController, type: :controller do
     #     end
     # end
     
+    describe "when trying to update a user" do
+        it "updates a user's password" do
+            @user = User.create({:username => 'testuser9', :password_hash => 'passwordpasswordpasswordpasswordpasswordpassword', :type_of_user => 'student'})
+            @user.update({:password_hash => 'testuser9'})
+            expect(@user.username).to eq('testuser9')
+            expect(@user.password_hash).to eq('testuser9')
+            expect(@user.type_of_user).to eq('student') 
+        end
+        
+        it "updates a user's username" do
+            @user = User.create({:username => 'testuser90', :password_hash => 'passwordpasswordpasswordpasswordpasswordpassword', :type_of_user => 'student'})
+            @user.update({:username => 'testuser9'})
+            expect(@user.username).to eq('testuser9')
+            expect(@user.password_hash).to eq('passwordpasswordpasswordpasswordpasswordpassword')
+            expect(@user.type_of_user).to eq('student') 
+        end
+        
+        it "updates a user's type" do
+            @user = User.create({:username => 'testuser0', :password_hash => 'passwordpasswordpasswordpasswordpasswordpassword', :type_of_user => 'student'})
+            @user.update({:type_of_user => 'admin'})
+            expect(@user.username).to eq('testuser0')
+            expect(@user.password_hash).to eq('passwordpasswordpasswordpasswordpasswordpassword')
+            expect(@user.type_of_user).to eq('admin') 
+        end
+    end
+    
+    # describe "when trying to destroy a user" do
+    #     it "a user is destroyed" do
+    #         @user = User.create({:username => 'testuser9', :password_hash => 'testuser9', :type_of_user => 'student'})
+    #         @user.destroy()
+    #         # expect(@user.username).to eq('testuser9')
+    #         # expect(@user.password_hash).to eq('testuser9')
+    #         # expect(@user.type_of_user).to eq('student') 
+    #         # expect(response).to redirect_to users_url
+    #         # expect(flash[:notice]).to match(/User was successfully destroyed./)
+    #     end
+    # end
+
+    # describe "destroy" do
+    #         it "returns a valid user" do
+    #         @user = controller.new()
+    #         get :destroy
+    #         expect(response).to redirect_to users_url
+    #     end
+    # end
+    
     describe "when trying to create a user" do
         it "returns a valid user" do
             @user = User.create({:username => 'testuser2', :password_hash => 'passwordpasswordpasswordpasswordpasswordpassword', :type_of_user => 'student'})
             #@user = controller.create({:username => 'testuser3', :password_hash => 'passwordpasswordpasswordpasswordpasswordpassword', :type_of_user => 'student'})
             expect(@user.username).to eq('testuser2')
             expect(@user.password_hash).to eq('passwordpasswordpasswordpasswordpasswordpassword')
+            expect(@user.type_of_user).to eq('student') 
+        end
+        
+        it "returns another valid user" do
+            @user = User.create({:username => 'testuser30', :password_hash => 'testuser30', :type_of_user => 'student'})
+            #@user = controller.create({:username => 'testuser3', :password_hash => 'passwordpasswordpasswordpasswordpasswordpassword', :type_of_user => 'student'})
+            expect(@user.username).to eq('testuser30')
+            expect(@user.password_hash).to eq('testuser30')
             expect(@user.type_of_user).to eq('student') 
         end
         
