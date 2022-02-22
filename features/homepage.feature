@@ -41,9 +41,9 @@ Scenario: At the homepage, I am able to go to the Users Database
 Scenario: At the homepage, The course look up works on an existing class
   When I fill in "search_field" with "CSCE 121"
   And I press "Search"
-  Then I should be on the reviews page
+  Then I should be on the indexupper page
 
 Scenario: At the homepage, The course look up should not work on a class that does not exist
   When I fill in "search_field" with "Random 152324324"
   And I press "Search"
-  Then I should not be on the reviews page
+  Then I should not be on the indexupper page
