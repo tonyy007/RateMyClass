@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Reviews for <%= @reviews[@index][0].course_title + " " + @reviews[@index][0].course_code%></h1>
+<h1>Reviews for <%= @reviews[@index][0].course_title + " " + @reviews[@index][0].course_code + " with " + @reviews[@index][0].professor_name + " at " + @reviews[@index][0].university_name %></h1>
 
 <h2>Average Review Scores</h2>
 <table>
@@ -77,6 +77,9 @@
               <%= comment.body %>
             </p>
             <p>
+              <%= link_to "Edit Comment", edit_review_comment_path(review, comment, :index => index, :indexupper => @index), method: :edit, data: {turbo_confirm: "Are you sure?"}%>
+            </p>
+            <p>
               <%= button_to "Destroy Comment", [comment.review, comment], method: :delete, data: {turbo_confirm: "Are you sure?"}, params: {index: @index}%>
             </p>
 
@@ -86,4 +89,41 @@
   </tbody>
 </table>
 
+
+
+<h2>Reviews</h2>
+    <% @reviews[@index].each_with_index do |review, index| %>
+      <h3>Worktime StudyTime Difficulty TimeWish Thought</h3>
+      <%= review.workTime.to_s + " " + review.studyTime.to_s + " " + review.diffculty.to_s + " " + review.timeWish.to_s + " " + review.thought.to_s %>
+        <h3>Comments</h3>
+        <% review.reload %>
+        <% review.comments.each_with_index do |comment, index| %>
+          <% if comment.body != nil %>
+            <p>
+              <strong>Comment:</strong>
+              <%= comment.body %>
+            </p>
+            <p>
+              <%= link_to "Edit Comment", edit_review_comment_path(review, comment, :index => index, :indexupper => @index), method: :edit, data: {turbo_confirm: "Are you sure?"}%>
+            </p>
+            <p>
+              <%= button_to "Destroy Comment", [comment.review, comment], method: :delete, data: {turbo_confirm: "Are you sure?"}, params: {index: @index}%>
+            </p>
+
+          <% end %>
+        <% end %>
+        
+        <h4>Add a comment:</h4>
+        <%= form_with model: [ review, review.comments.build ] do |form| %>
+          <p>
+            <%= form.text_area :body %>
+          </p>
+          <p>
+            <%= form.hidden_field :index, :value => @index %>
+            <%= form.submit %>
+          </p>
+        <% end %>
+    <% end %>
+  </tbody>
+</table>
 <br>

@@ -1,0 +1,13 @@
+<h1>Editing Comment</h1>
+
+<%= form_with model: [@review, @review.comments[@index]] do |form| %>
+          <p>
+            <%= form.label :body %><br>
+            <%= form.text_area :body, :value => @review.comments[@index].body %>
+          </p>
+          <p>
+            <%= form.hidden_field :index, :value => @index %>
+            <%= form.hidden_field :indexupper, :value => @indexupper %>
+            <%= form.submit %>
+          </p>
+<% end %>

@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-02-20T23:08:36+00:00">2022-02-20T23:08:36+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-02-21T00:12:02+00:00">2022-02-21T00:12:02+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="red">
-  42.25%
+  40.0%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.32
+         1.25
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>213</b> relevant lines,
+    <b>225</b> relevant lines,
     <span class="green"><b>90</b> lines covered</span> and
-    <span class="red"><b>123</b> lines missed. </span>
+    <span class="red"><b>135</b> lines missed. </span>
     (<span class="red">
-  42.25%
+  40.0%
 </span>
 )
   </div>
@@ -106,10 +106,10 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#f19dbca77929d86a3a5fce71f2714ad8e4adbba7" class="src_link" title="app/controllers/comments_controller.rb">app/controllers/comments_controller.rb</a></td>
             <td class="red strong cell--number t-file__coverage">0.00 %</td>
-            <td class="cell--number">21</td>
-            <td class="cell--number">17</td>
+            <td class="cell--number">46</td>
+            <td class="cell--number">29</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">17</td>
+            <td class="cell--number">29</td>
             <td class="cell--number">0.00</td>
             
           </tr>
@@ -291,14 +291,14 @@
     <span class="group_name">Controllers</span>
     (<span class="covered_percent">
       <span class="red">
-  42.02%
+  39.5%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.44
+         1.35
        </span>
     </span> hits/line
     )
@@ -311,11 +311,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>188</b> relevant lines,
+    <b>200</b> relevant lines,
     <span class="green"><b>79</b> lines covered</span> and
-    <span class="red"><b>109</b> lines missed. </span>
+    <span class="red"><b>121</b> lines missed. </span>
     (<span class="red">
-  42.02%
+  39.5%
 </span>
 )
   </div>
@@ -352,10 +352,10 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#f19dbca77929d86a3a5fce71f2714ad8e4adbba7" class="src_link" title="app/controllers/comments_controller.rb">app/controllers/comments_controller.rb</a></td>
             <td class="red strong cell--number t-file__coverage">0.00 %</td>
-            <td class="cell--number">21</td>
-            <td class="cell--number">17</td>
+            <td class="cell--number">46</td>
+            <td class="cell--number">29</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">17</td>
+            <td class="cell--number">29</td>
             <td class="cell--number">0.00</td>
             
           </tr>
@@ -1128,9 +1128,9 @@
     
 
     <div class="t-line-summary">
-      <b>17</b> relevant lines.
+      <b>29</b> relevant lines.
       <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>17</b> lines missed.</span>
+      <span class="red"><b>29</b> lines missed.</span>
     </div>
 
     
@@ -1169,18 +1169,18 @@
 
             
 
-            <code class="ruby">    def create</code>
+            <code class="ruby">    def show</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="4">
+          <li class="never" data-hits="" data-linenumber="4">
             
             
 
             
 
-            <code class="ruby">        @review = Review.find(params[:review_id])</code>
+            <code class="ruby">        </code>
           </li>
         </div>
       
@@ -1191,18 +1191,18 @@
 
             
 
-            <code class="ruby">        $comment = @review.comments.create(comment_params)</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="6">
+          <li class="never" data-hits="" data-linenumber="6">
             
             
 
             
 
-            <code class="ruby">        redirect_to (indexlower_path + &quot;?index=&quot; + params[:comment][:index])</code>
+            <code class="ruby">    </code>
           </li>
         </div>
       
@@ -1213,34 +1213,12 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">    def create</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="8">
-            
-            
-
-            
-
-            <code class="ruby">    </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="9">
-            
-            
-
-            
-
-            <code class="ruby">     def destroy</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="10">
+          <li class="missed" data-hits="0" data-linenumber="8">
             
             
 
@@ -1251,62 +1229,40 @@
         </div>
       
         <div>
+          <li class="missed" data-hits="0" data-linenumber="9">
+            
+            
+
+            
+
+            <code class="ruby">        $comment = @review.comments.create(comment_params)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="10">
+            
+            
+
+            
+
+            <code class="ruby">        redirect_to (indexlower_path + &quot;?index=&quot; + params[:comment][:index])</code>
+          </li>
+        </div>
+      
+        <div>
           <li class="missed" data-hits="0" data-linenumber="11">
             
             
 
             
 
-            <code class="ruby">        @comment = @review.comments.find(params[:id])</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="12">
-            
-            
-
-            
-
-            <code class="ruby">        @comment.destroy</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="13">
-            
-            
-
-            
-
-            <code class="ruby">        redirect_to (indexlower_path + &quot;?index=&quot; + params[:index])</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="14">
-            
-            
-
-            
-
-            <code class="ruby">     end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="15">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="16">
+          <li class="never" data-hits="" data-linenumber="12">
             
             
 
@@ -1317,13 +1273,57 @@
         </div>
       
         <div>
+          <li class="missed" data-hits="0" data-linenumber="13">
+            
+            
+
+            
+
+            <code class="ruby">    def destroy</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="14">
+            
+            
+
+            
+
+            <code class="ruby">        @review = Review.find(params[:review_id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="15">
+            
+            
+
+            
+
+            <code class="ruby">        @comment = @review.comments.find(params[:id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="16">
+            
+            
+
+            
+
+            <code class="ruby">        @comment.destroy</code>
+          </li>
+        </div>
+      
+        <div>
           <li class="missed" data-hits="0" data-linenumber="17">
             
             
 
             
 
-            <code class="ruby">    private</code>
+            <code class="ruby">        redirect_to (indexlower_path + &quot;?index=&quot; + params[:index])</code>
           </li>
         </div>
       
@@ -1334,18 +1334,18 @@
 
             
 
-            <code class="ruby">        def comment_params</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="19">
+          <li class="never" data-hits="" data-linenumber="19">
             
             
 
             
 
-            <code class="ruby">          params.require(:comment).permit(:body)</code>
+            <code class="ruby">    </code>
           </li>
         </div>
       
@@ -1356,12 +1356,287 @@
 
             
 
-            <code class="ruby">        end</code>
+            <code class="ruby">    def edit</code>
           </li>
         </div>
       
         <div>
           <li class="missed" data-hits="0" data-linenumber="21">
+            
+            
+
+            
+
+            <code class="ruby">        @review = Review.find(params[:review_id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="22">
+            
+            
+
+            
+
+            <code class="ruby">        @comment = @review.comments.find(params[:id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="23">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="24">
+            
+            
+
+            
+
+            <code class="ruby">    </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="25">
+            
+            
+
+            
+
+            <code class="ruby">    def update</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="26">
+            
+            
+
+            
+
+            <code class="ruby">        @review = Review.find(params[:review_id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="27">
+            
+            
+
+            
+
+            <code class="ruby">        @comment = @review.comments.find(params[:id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="28">
+            
+            
+
+            
+
+            <code class="ruby">        @comment.update(comment_params)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="29">
+            
+            
+
+            
+
+            <code class="ruby">        redirect_to (indexlower_path + &quot;?index=&quot; + params[:index])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="30">
+            
+            
+
+            
+
+            <code class="ruby">    #     respond_to do |format|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="31">
+            
+            
+
+            
+
+            <code class="ruby">    #       if @review.update(comment_params)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="32">
+            
+            
+
+            
+
+            <code class="ruby">    #         format.html { redirect_to (indexlower_path + &quot;?index=&quot; + params[:index]), notice: &quot;Review was successfully updated.&quot; }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="33">
+            
+            
+
+            
+
+            <code class="ruby">    #         format.json { render :show, status: :ok, location: @review }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="34">
+            
+            
+
+            
+
+            <code class="ruby">    #       else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="35">
+            
+            
+
+            
+
+            <code class="ruby">    #         format.html { render :edit, status: :unprocessable_entity }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="36">
+            
+            
+
+            
+
+            <code class="ruby">    #         format.json { render json: @review.errors, status: :unprocessable_entity }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="37">
+            
+            
+
+            
+
+            <code class="ruby">    #       end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="38">
+            
+            
+
+            
+
+            <code class="ruby">    #     end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="39">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="40">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="41">
+            
+            
+
+            
+
+            <code class="ruby">    </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="42">
+            
+            
+
+            
+
+            <code class="ruby">    private</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="43">
+            
+            
+
+            
+
+            <code class="ruby">        def comment_params</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="44">
+            
+            
+
+            
+
+            <code class="ruby">          params.require(:comment).permit(:body)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="45">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="46">
             
             
 
