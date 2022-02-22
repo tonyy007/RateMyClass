@@ -18,9 +18,7 @@ RSpec.describe UsersController, type: :controller do
     describe "when trying to show all users" do
         it "returns all valid users" do
             @users = controller.index()
-            expect(@users[0].username).to eq('testuser1')
-            expect(@users[0].password_hash).to eq('passwordpasswordpasswordpasswordpasswordpassword')
-            expect(@users[0].type_of_user).to eq('student') 
+            expect(@users.all.length()).to eq 0
         end
     end
     

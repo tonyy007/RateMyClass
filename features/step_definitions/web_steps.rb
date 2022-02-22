@@ -7,9 +7,25 @@ When /^(?:|I )go to (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
+# Fill in a string
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
   fill_in(field, :with => value)
 end
+
+When /^(?:|I )follow "([^"]*)"$/ do |link|
+  click_link(link)
+end
+
+
+When /^(?:|I )follow the first link "([^"]*)"$/ do |link|
+  first(:link, link).click
+end
+
+
+# Fill in a numeric value
+# When /^(?:|I )fill in "([^"]*)" with ([^"]*)$/ do |field, value|
+#   fill_in(field, :with => value)
+# end
 
 When /^(?:|I )press "([^"]*)"$/ do |button|
   click_button(button)
@@ -37,3 +53,11 @@ Given /^I am logged in as "([^"]*)" with password "([^\"]*)"$/ do |username, pas
     step %{I fill in "pass_field" with "#{password}"}
     step %{I press "Log in"}
 end
+
+
+# Then /^the "([^"]*)" field(?: within (.*))? should contain "([^"]*)"$/ do |field, parent, value|
+#   with_scope(parent) do
+#     field = find_field(field)
+#     field_value = (field.tag_name == 'textarea') ? field.text : field.value
+#   end
+# end

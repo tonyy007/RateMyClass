@@ -32,14 +32,18 @@ Scenario: At the homepage, I am able to make a new review
   And I check "review_diffculty_4"
   And I fill in "review_timeWish" with "10"
   And I press "Create Review"
-  # Then the review should exists   #FIXME
   Then I should be on the reviews page
   
 Scenario: At the homepage, I am able to go to the Users Database
   When I go to users database page
   Then I should be on the users database page
   
-# Scenario: At the homepage, and as an Admin, I am able to go to the Users Database and delete a user from database
-#   When I go to users database page
-#   FIXME, DO LATER
-#   Then I should see "User was successfully destroyed."
+Scenario: At the homepage, The course look up works on an existing class
+  When I fill in "search_field" with "CSCE 121"
+  And I press "Search"
+  Then I should be on the reviews page
+
+Scenario: At the homepage, The course look up should not work on a class that does not exist
+  When I fill in "search_field" with "Random 152324324"
+  And I press "Search"
+  Then I should not be on the reviews page

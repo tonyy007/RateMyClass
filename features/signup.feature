@@ -17,7 +17,6 @@ Scenario: Another Signup Successful, meeting all required criteria
   And I fill in "pass_field" with "account2"
   And I press "Sign up"
   Then a user with the name "account2" with a password "account2" exists
-  
 
 Scenario: Signup Failed, password did not meet all required criteria
   When I go to the signup page
@@ -60,6 +59,14 @@ Scenario: Login Failed, password is wrong
   And I fill in "pass_field" with "reugierohgiw"
   And I press "Log in"
   Then I should not be logged in
+  
+  
+Scenario: User click Login but then clicks sign up
+  When I go to the login page
+  And I fill in "user_field" with "account1"
+  And I fill in "pass_field" with "account1"
+  And I follow "Don't Have An Account? Sign Up Here"
+  Then I should be on the homepage
 
 Scenario: Login Successful, username and password correct
   When I go to the signup page

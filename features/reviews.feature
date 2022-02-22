@@ -13,7 +13,7 @@ Background:
   | course_title | course_code | professor_name   | university_name        | workTime | studyTime | diffculty          | timeWish        |
   | csce         | 121         | Robert Lightfoot | Texas A&M University   | 10       | 5         | review_diffculty_4 | 10              |
 
-Scenario: Creating a new review
+Scenario: Creating a new review, meets all requirements
   When I go to new reviews page
   And I fill in "review_course_title" with "csce"
   And I fill in "review_course_code" with "121"
@@ -24,6 +24,28 @@ Scenario: Creating a new review
   And I check "review_diffculty_4"
   And I fill in "review_timeWish" with "7"
   And I press "Create Review"
-  # Then a review with "review_course_title", "review_course_code", "review_professor_name", "review_university_name", "review_workTime", "review_studyTime", "review_diffculty_4", "review_timeWish" exists
+  Then a review with "csce", "121", "Lightfoot", "Texas A&M University", "30", "12", "review_diffculty_4", "7" exists
   
-
+Scenario: Creating a new review, does not meet all requirements
+  When I go to new reviews page
+  And I fill in "review_course_title" with "csce"
+  And I fill in "review_course_code" with "121"
+  And I fill in "review_professor_name" with "Lightfoot"
+  And I fill in "review_university_name" with "Texas A&M University"
+  And I fill in "review_workTime" with "2000"
+  And I fill in "review_studyTime" with "1000000"
+  And I check "review_diffculty_4"
+  And I fill in "review_timeWish" with "-12412"
+  And I press "Create Review"
+  Then a review with "csce", "121", "Lightfoot", "Texas A&M University", "2000", "1000000", "review_diffculty_4", "-12412" should not exist
+  
+Scenario: Creating a comment on a review that exists
+  Given I go to homepage
+  When I fill in "search_field" with "CSCE 121"
+  And I press "Search"
+  Then I should be on the reviews page
+  And I follow the first link "Show"
+  # And I create a comment with "Random Comment"
+  # And I press "Create Comment"
+  
+# Scenario: Wh
