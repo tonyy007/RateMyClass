@@ -5,6 +5,22 @@ RSpec.describe ReviewsController, type: :controller do
         Review.create({:workTime => 5, :studyTime => 6, :diffculty => 7, :timeWish => 8}) 
     end
     
+    describe "Index" do
+        it "Index Rendering" do
+            get :index
+            expect(response).to render_template "index"
+        end
+    end
+    
+    
+    describe "New" do
+        it "New Rendering" do
+            get :new
+            expect(response).to render_template "new"
+        end
+    end
+    
+    
     describe "when trying to create a review" do
         it "returns a valid review" do
             @review = Review.create({:workTime => 5, :studyTime => 6, :diffculty => 7, :timeWish => 8})

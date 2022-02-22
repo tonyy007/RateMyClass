@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe HomepageController, type: :controller do
-  before(:all) do
+  # before(:all) do
     # if Movie.where(:director => "Jon Favreau").empty?
     #   Movie.create(:title => "Iron Man", :director => "Jon Favreau",
     #               :rating => "PG-13", :release_date => "2008-05-02")
@@ -12,7 +12,7 @@ RSpec.describe HomepageController, type: :controller do
     # if Movie.where(:title => "Big Hero 6").empty?
     #   Movie.create(:title => "Big Hero 6", 
     #               :rating => "PG", :release_date => "2014-11-07")
-    end
+    # end
     
     # describe "when trying to find movies by the same director" do
     #     it "returns a valid collection when a valid director is present" do
@@ -28,6 +28,11 @@ RSpec.describe HomepageController, type: :controller do
           
     #     end
     # end
-    
+    describe "Proper Rendering of Pages" do
+      it "Homepage Template Rendered" do
+        get :homepage
+        expect(response).to render_template "homepage"
+      end
+    end
     
   end

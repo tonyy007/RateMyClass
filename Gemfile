@@ -31,6 +31,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Added Rspec Gem
   gem 'rspec-rails'
+  gem 'rails-controller-testing'
   # Needed for Cucumber tests
   gem 'database_cleaner'
   gem 'rspec'
