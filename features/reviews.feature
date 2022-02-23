@@ -23,6 +23,7 @@ Scenario: Creating a new review, meets all requirements
   And I fill in "review_studyTime" with "12"
   And I check "review_diffculty_4"
   And I fill in "review_timeWish" with "7"
+  And I fill in "review_thought" with "I liked the class."
   And I press "Create Review"
   Then a review with "csce", "121", "Lightfoot", "Texas A&M University", "30", "12", "review_diffculty_4", "7" exists
   
@@ -36,6 +37,7 @@ Scenario: Creating a new review, does not meet all requirements
   And I fill in "review_studyTime" with "1000000"
   And I check "review_diffculty_4"
   And I fill in "review_timeWish" with "-12412"
+  And I fill in "review_thought" with "I did not like the class."
   And I press "Create Review"
   Then a review with "csce", "121", "Lightfoot", "Texas A&M University", "2000", "1000000", "review_diffculty_4", "-12412" should not exist
   

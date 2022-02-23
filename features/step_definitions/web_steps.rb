@@ -21,6 +21,10 @@ When /^(?:|I )follow the first link "([^"]*)"$/ do |link|
   first(:link, link).click
 end
 
+When /^(?:|I )press the button "([^"]*)"$/ do |button|
+  %{I press (button)}
+end
+
 
 # Fill in a numeric value
 # When /^(?:|I )fill in "([^"]*)" with ([^"]*)$/ do |field, value|
