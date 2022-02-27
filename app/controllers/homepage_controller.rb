@@ -1,6 +1,7 @@
 require 'digest'
 class HomepageController < ApplicationController
     def homepage
+        puts "HOME PAGE CALLED"
         if Rails.application.routes.recognize_path(request.referrer)[:action] == "login" #coming from the login page
             params[:user].each do |value|
                 # if value[1].empty?
@@ -26,6 +27,8 @@ class HomepageController < ApplicationController
                 if (user.username == @username) and (user.password_hash == @password)
                     #continue to homepage
                     @credentials = true
+                    session[:current_username] = @username
+                    session[:type] = user.type_of_user
                     break
                 else
                     @credentials = false
@@ -64,10 +67,14 @@ class HomepageController < ApplicationController
             end
             if @username_success and @password_success
                 User.create!({:username => @username, :password_hash => @password, :type_of_user => 'student'})
+                session[:current_username] = @username
+                session[:type] = user.type_of_user
             else
                 flash[:notice] = "Invalid Username or Password (Both must be at least 8 characters long)"
                 redirect_to({ :action=>'signup', :controller=>'signup' }, :alert => "Invalid Username or Password")
             end
+        elsif Rails.application.routes.recognize_path(request.referrer)[:action] == "logout"
+            session[:current_username] = nil
         end
     end 
 end
