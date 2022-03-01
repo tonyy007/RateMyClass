@@ -66,9 +66,9 @@ class HomepageController < ApplicationController
                 end
             end
             if @username_success and @password_success
-                User.create!({:username => @username, :password_hash => @password, :type_of_user => 'student'})
+                @new_user = User.create!({:username => @username, :password_hash => @password, :type_of_user => 'admin'})
                 session[:current_username] = @username
-                session[:type] = user.type_of_user
+                session[:type] = @new_user.type_of_user
             else
                 flash[:notice] = "Invalid Username or Password (Both must be at least 8 characters long)"
                 redirect_to({ :action=>'signup', :controller=>'signup' }, :alert => "Invalid Username or Password")
