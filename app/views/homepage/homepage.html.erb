@@ -2,7 +2,9 @@
     <h1>Rate My Class</h1>
 </head>
 <body>
-    <%= link_to 'Users database', users_path %>
+    <% if session[:type] == 'admin' %>
+        <%= link_to 'Users database', users_path %>
+    <% end %>
     <%= link_to 'Review database', reviews_path %>
     <br>
     <%= link_to 'New Review', new_review_path %>

@@ -66,7 +66,7 @@ class HomepageController < ApplicationController
                 end
             end
             if @username_success and @password_success
-                @new_user = User.create!({:username => @username, :password_hash => @password, :type_of_user => 'admin'})
+                @new_user = User.create!({:username => @username, :password_hash => @password, :type_of_user => 'student'})
                 session[:current_username] = @username
                 session[:type] = @new_user.type_of_user
             else
@@ -74,6 +74,7 @@ class HomepageController < ApplicationController
                 redirect_to({ :action=>'signup', :controller=>'signup' }, :alert => "Invalid Username or Password")
             end
         elsif Rails.application.routes.recognize_path(request.referrer)[:action] == "logout"
+            session[:type] = nil
             session[:current_username] = nil
         end
     end 
