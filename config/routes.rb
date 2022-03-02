@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   resources :reviews do
     resources :comments
   end
@@ -15,4 +16,5 @@ Rails.application.routes.draw do
   #root "login#login"
   #root "users#index"
   root "homepage#homepage"
+  get '*path', :to => 'application#routing_error'
 end

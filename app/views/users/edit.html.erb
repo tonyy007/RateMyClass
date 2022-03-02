@@ -1,6 +1,8 @@
 <h1>Editing User</h1>
-
-<%= render 'form', user: @user %>
-
+<% if session[:current_username] == @user.username or session[:type] == 'admin' %>
+    <%= render 'form', user: @user %>
+<% else %>
+    <h1>You are not allowed to edit this user</h1>
+<% end %>
 <%= link_to 'Show', @user %> |
 <%= link_to 'Back', users_path %>

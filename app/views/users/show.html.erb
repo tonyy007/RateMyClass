@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<% if session[:current_username] == @user.username or session[:type] == 'admin' %>
 <p>
   <strong>Username:</strong>
   <%= @user.username %>
@@ -16,4 +16,7 @@
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
+<% else %>
+<h1>You are not allowed to view this person's login credentials</h1>
+<% end %>
 <%= link_to 'Back', users_path %>
