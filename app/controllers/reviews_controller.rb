@@ -2,6 +2,10 @@ class ReviewsController < ApplicationController
   before_action :set_review, only: %i[ show edit update destroy ]
 
   # GET /reviews or /reviews.json
+  def noreview
+    
+  end
+  
   def index
     @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name)
   end
@@ -9,6 +13,7 @@ class ReviewsController < ApplicationController
   def indexupper
     if params[:search] != nil #search bar used
       params[:search].each do |value|
+        $searchvalstr = value[1].to_s.downcase
         @searchval = "/" + value[1].to_s.downcase + "/"
       end
       @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name)
@@ -17,7 +22,7 @@ class ReviewsController < ApplicationController
         if (@searchval.match(review.course_code.to_s.downcase) != nil) or (@searchval.match(review.course_title.to_s.downcase) != nil) #choose what to sort by here
           @reviews_search.append(review) 
         elsif (index == @reviews.length - 1) and (@reviews_search.empty?)
-          #@reviews_search.append(Array.new(1, "")) NEED TO FIX THIS FOR EMPTY SEARCH RESULTS
+          redirect_to({ :action=>'noreview', :controller=>'reviews' })
         end
       end
       @reviews = @reviews_search #from this list combine reviews whose course, prof, uni, etc are equal and display a set of matches to the user
@@ -102,7 +107,8 @@ class ReviewsController < ApplicationController
   # POST /reviews or /reviews.json
   def create
     @review = Review.new(review_params)
-
+    @review.users_id = session[:current_username]
+    puts @review.users_id
     respond_to do |format|
       if @review.save
         format.html { redirect_to review_url(@review), notice: "Review was successfully created." }

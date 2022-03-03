@@ -11,10 +11,11 @@ Rails.application.routes.draw do
   get 'logout' => 'logout#logout', :as => 'logout'
   get 'signup' => 'signup#signup', :as => 'signup'
   get 'homepage' => 'homepage#homepage', :as => 'homepage'
+  get 'homepage_s' => 'homepage#homepage_s', :as => 'homepage_s'
+  post 'homepage' => 'homepage#homepage', :as => 'homepage_p'
   get 'indexlower' => 'reviews#indexlower', :as =>'indexlower'
   get 'indexupper' => 'reviews#indexupper', :as =>'indexupper'
-  #root "login#login"
-  #root "users#index"
+  get 'noreview' => 'reviews#noreview', :as =>'noreview'
   root "homepage#homepage"
   get '*path', :to => 'application#routing_error'
 end

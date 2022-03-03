@@ -1,0 +1,32 @@
+<head>
+    <h1>Rate My Class</h1>
+    <div>
+    <p style="color:red;", id="notice"><%= notice %></p>
+  </div>
+</head>
+<body>
+    <% if session[:type] == 'admin' %>
+        <%= link_to 'Users database', users_path %>
+    <% end %>
+    <%= link_to 'Review database', reviews_path %>
+    <br>
+    <%= link_to 'New Review', new_review_path %>
+    <br>
+    <%= link_to 'Reviews (user view)', indexupper_path %>
+    <br>
+    <% if !session[:current_username] %>
+        <%= link_to 'Log in', login_path %>
+        <%= link_to 'Sign up', signup_path %>
+    <% else %>
+        <%= link_to 'Log out', logout_path %>
+    <% end %>
+    <br><br>
+    <%= form_tag indexupper_path, :method => :get do %> <!--This path will probably change-->
+        <div class="form-group py-0">
+            <label for="search">Search for a Class</label>
+            <%= text_field(:search, :field) %>
+        </div>
+        <br>
+        <%= submit_tag 'Search', :class => "col-md-2 offset-md-5 btn btn-primary form-control" %>
+    <% end %>
+</body>

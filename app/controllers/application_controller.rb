@@ -3,4 +3,5 @@ class ApplicationController < ActionController::Base
         flash[:notice] = "Invalid Path"
         redirect_to(homepage_path)
     end
+
 end

@@ -1,5 +1,8 @@
 require 'digest'
 class HomepageController < ApplicationController
+    def homepage_s
+        
+    end
     def homepage
         if Rails.application.routes.recognize_path(request.referrer)[:action] == "login" #coming from the login page
             params[:user].each do |value|
@@ -36,6 +39,8 @@ class HomepageController < ApplicationController
             if @credentials == false
                 flash[:notice] = "Incorrect Username or Password"
                 redirect_to({ :action=>'login', :controller=>'login' }, :alert => "Incorrect Username or Password")
+            else
+                redirect_to({ :action=>'homepage_s', :controller=>'homepage' })
             end
             #redirect_to(homepage_path)
         elsif Rails.application.routes.recognize_path(request.referrer)[:action] == "signup" #coming from the signup page
@@ -81,6 +86,7 @@ class HomepageController < ApplicationController
                 @new_user = User.create!({:username => @username, :password_hash => @password, :type_of_user => 'student'})
                 session[:current_username] = @username
                 session[:type] = @new_user.type_of_user
+                redirect_to({ :action=>'homepage_s', :controller=>'homepage' })
             elsif @duplicate == true
                 flash[:notice] = "Username already exists"
                 redirect_to({ :action=>'signup', :controller=>'signup' }, :alert => "Username already exists")
