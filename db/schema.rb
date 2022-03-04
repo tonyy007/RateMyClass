@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_03_025255) do
+ActiveRecord::Schema.define(version: 2022_03_04_035238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 2022_03_03_025255) do
     t.string "university_name"
     t.string "users_id"
     t.text "thought"
+    t.boolean "flag", default: false
+    t.boolean "pin", default: false
     t.index ["users_id"], name: "index_reviews_on_users_id"
   end
 

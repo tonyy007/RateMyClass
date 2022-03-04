@@ -6,6 +6,34 @@ class ReviewsController < ApplicationController
     
   end
   
+  def flagpost
+    @review = Review.find(params[:review])
+    @review.flag = true
+    @review.save
+    redirect_to(indexlower_path + "?index=" + params[:indexupper])
+  end
+  
+  def unflagpost
+    @review = Review.find(params[:review])
+    @review.flag = false
+    @review.save
+    redirect_to(indexlower_path + "?index=" + params[:indexupper])
+  end
+  
+  def pin
+    @review = Review.find(params[:review])
+    @review.pin = true
+    @review.save
+    redirect_to(indexlower_path + "?index=" + params[:indexupper])
+  end
+  
+  def unpin
+    @review = Review.find(params[:review])
+    @review.pin = false
+    @review.save
+    redirect_to(indexlower_path + "?index=" + params[:indexupper])
+  end
+  
   def index
     @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name)
   end
@@ -74,6 +102,12 @@ class ReviewsController < ApplicationController
     @comment = $comment
     @reviews = $reviews_global
     @index = params[:index].to_i
+    @reviews[@index].each do |review|
+      review.reload
+      if review.pin == true
+        @reviews[@index].insert(0, @reviews[@index].delete(review))
+      end
+    end
     workTimearr = Array.new
     studyTimearr = Array.new
     difficultyarr = Array.new
