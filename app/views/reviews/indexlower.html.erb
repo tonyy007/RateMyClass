@@ -76,10 +76,10 @@
         <% review.comments.each_with_index do |comment, index| %>
           <% if comment.body != nil %>
             <p>
-              <strong>
-                <%= "[" + comment.users_id + "]" %>
-                <%= "[" + User.find(comment.users_id).type_of_user + "]" %>
-              </strong>
+              <!--<strong>-->
+              <!--  <#%= "[" + comment.users_id + "]" %>-->
+              <!--  <#%= "[" + User.find(comment.users_id).type_of_user + "]" %>-->
+              <!--</strong>-->
               <%= comment.body %>
             </p>
             <% if comment.users_id == session[:current_username] %>
