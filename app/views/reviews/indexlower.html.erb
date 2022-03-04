@@ -57,6 +57,9 @@
         <%= review.users_id %>
         <td><%= link_to 'Edit', edit_review_path(review) %></td>
       <% end %>
+      <% if review.users_id == session[:current_username] or session[:type] == 'admin' %>
+        <td><%= button_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
       <h4>Thoughts about the class</h4>
       <%= review.thought %>
       <% if review.flag == false %>
@@ -76,10 +79,10 @@
         <% review.comments.each_with_index do |comment, index| %>
           <% if comment.body != nil %>
             <p>
-              <!--<strong>-->
-              <!--  <#%= "[" + comment.users_id + "]" %>-->
-              <!--  <#%= "[" + User.find(comment.users_id).type_of_user + "]" %>-->
-              <!--</strong>-->
+              <strong>
+                <%= "[" + comment.users_id + "]" %>
+                <%= "[" + User.find(comment.users_id).type_of_user + "]" %>
+              </strong>
               <%= comment.body %>
             </p>
             <% if comment.users_id == session[:current_username] %>
