@@ -124,8 +124,8 @@
           <% if comment.body != nil %>
             <p>
               <strong>Comment:</strong>
-              <%= comment.users_id %>
-              <!--<#%= User.find(comment.users_id).type_of_user %>-->
+              <%= "[" + comment.users_id + "]" %>
+              <%= "[" + User.find(comment.users_id).type_of_user + "]" %>
               <%= comment.body %>
             </p>
             <% if comment.users_id == session[:current_username] %>
