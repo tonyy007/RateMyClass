@@ -1,6 +1,9 @@
 <h1>Editing Review</h1>
-
-<%= render 'form', review: @review %>
+<% if @review.users_id == session[:current_username] %>
+    <%= render 'form', review: @review %>
+<% else %>
+    <h1>You can only edit reviews for which you are the author of.</h1>
+<% end %>
 
 <%= link_to 'Show', @review %> |
 <%= link_to 'Back', reviews_path %>

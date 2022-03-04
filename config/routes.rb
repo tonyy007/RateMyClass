@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'signup' => 'signup#signup', :as => 'signup'
   get 'homepage' => 'homepage#homepage', :as => 'homepage'
   get 'homepage_s' => 'homepage#homepage_s', :as => 'homepage_s'
+  get 'homepage_a' => 'homepage#homepage_a', :as => 'homepage_a'
   post 'homepage' => 'homepage#homepage', :as => 'homepage_p'
   get 'indexlower' => 'reviews#indexlower', :as =>'indexlower'
   get 'indexupper' => 'reviews#indexupper', :as =>'indexupper'

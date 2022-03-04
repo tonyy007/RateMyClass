@@ -7,6 +7,8 @@ class CommentsController < ApplicationController
     def create
         @review = Review.find(params[:review_id])
         $comment = @review.comments.create(comment_params)
+        $comment.users_id = session[:current_username]
+        $comment.save
         redirect_to (indexlower_path + "?index=" + params[:comment][:index])
     end
     
@@ -43,6 +45,6 @@ class CommentsController < ApplicationController
     
     private
         def comment_params
-          params.require(:comment).permit(:body)
+          params.require(:comment).permit(:body, :users_id)
         end
 end

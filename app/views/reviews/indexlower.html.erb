@@ -124,15 +124,20 @@
           <% if comment.body != nil %>
             <p>
               <strong>Comment:</strong>
+              <%= comment.users_id %>
+              <%= User.find(comment.users_id).type_of_user %>
               <%= comment.body %>
             </p>
-            <p>
-              <%= link_to "Edit Comment", edit_review_comment_path(review, comment, :index => index, :indexupper => @index), method: :edit, data: {turbo_confirm: "Are you sure?"}%>
-            </p>
-            <p>
-              <%= button_to "Destroy Comment", [comment.review, comment], method: :delete, data: {turbo_confirm: "Are you sure?"}, params: {index: @index}%>
-            </p>
-
+            <% if comment.users_id == session[:current_username] %>
+              <p>
+                <%= link_to "Edit Comment", edit_review_comment_path(review, comment, :index => index, :indexupper => @index), method: :edit, data: {turbo_confirm: "Are you sure?"}%>
+              </p>
+            <% end %>
+            <% if comment.users_id == session[:current_username] or session[:type] == 'admin' %>
+              <p>
+                <%= button_to "Destroy Comment", [comment.review, comment], method: :delete, data: {turbo_confirm: "Are you sure?"}, params: {index: @index}%>
+              </p>
+            <% end %>
           <% end %>
         <% end %>
         

@@ -1,0 +1,19 @@
+<%= form_tag homepage_path, :method => :post do %>
+  <head>
+    <title>Please Enter Your Admin Passcode</title>
+  </head>
+  <div class="form-group py-1">
+    <div><b>Sign Up</b></div>
+    <label for="adminpass">Admin Code</label>
+    <!--<input type="text" class="form-control" id="username">-->
+    <%= text_field(:adminpass, :field) %>
+    <%= hidden_field_tag(:username, :field, :value => @username) %>
+    <%= hidden_field_tag(:password, :field, :value => @password) %>
+  </div>
+  <div>
+    <p style="color:red;", id="notice"><%= notice %></p>
+  </div>
+  <div>
+    <%= submit_tag 'Submit', :class => "col-md-2 offset-md-5 btn btn-primary form-control" %>
+  </div>
+<% end %>

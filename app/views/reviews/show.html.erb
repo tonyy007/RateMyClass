@@ -44,6 +44,7 @@
   <strong>Thought:</strong>
   <%= @review.thought %>
 </p>
-
-<%= link_to 'Edit', edit_review_path(@review) %> |
+<% if @review.users_id == session[:current_username] %>
+  <%= link_to 'Edit', edit_review_path(@review) %> |
+<% end %>  
 <%= link_to 'Back', reviews_path %>
