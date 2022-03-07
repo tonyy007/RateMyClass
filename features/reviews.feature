@@ -7,11 +7,11 @@ As a professor
 Look at reviews
 
 Background:
-  Given I am logged in as "defaultaccount1" with password "defaultaccount1"
+  Given I am logged in as a student "dummystudent1" with password "dummystudent1"
   
   Given the following reviews exist:
-  | course_title | course_code | professor_name   | university_name        | workTime | studyTime | diffculty          | timeWish        |
-  | csce         | 121         | Robert Lightfoot | Texas A&M University   | 10       | 5         | review_diffculty_4 | 10              |
+  | course_title | course_code | professor_name   | university_name        | workTime | studyTime | diffculty          | timeWish        | thought        |
+  | csce         | 121         | Robert Lightfoot | Texas A&M University   | 10       | 5         | review_diffculty_4 | 10              | Easy Class     |
 
 Scenario: Creating a new review, meets all requirements
   When I go to new reviews page
@@ -50,7 +50,6 @@ Scenario: Creating a comment on a review that exists
   And I fill in "comment_body" with "Test Comment."
   And I press "Create Comment"
   
-  
 Scenario: Destory an existing comment
   Given I go to homepage
   When I fill in "search_field" with "CSCE 121"
@@ -60,3 +59,13 @@ Scenario: Destory an existing comment
   And I fill in "comment_body" with "Test Comment 2."
   And I press "Create Comment"
   And I press "Destroy Comment"
+  
+# Scenario: Flagging a review
+#   Given I go to homepage
+#   When I fill in "search_field" with "CSCE 121"
+#   And I press "Search"
+#   And I go to the indexupper page
+#   And I follow the first link "Show"
+  # And I flag a comment
+  # @browser.find(:linkText => "flagpost").click()
+  # And I follow the first link "Show"

@@ -84,6 +84,19 @@
                 <%= "[" + User.find(comment.users_id).type_of_user + "]" %>
               </strong>
               <%= comment.body %>
+              <% if comment.flag == false %>
+                <%= link_to flagpost_c_path(:comment => comment, :indexupper => @index) do %>
+                  <%= image_tag("whiteflag.png", height:"0.5%", width:"0.5%") %>
+                <% end %>
+              <% else %>
+                <% if session[:type] == "admin" %>
+                  <%= link_to unflagpost_c_path(:comment => comment, :indexupper => @index) do %>
+                    <%= image_tag("yellowflag.png", height:"0.5%", width:"0.5%") %>
+                  <% end %>
+                <% else %>
+                  <%= image_tag("yellowflag.png", height:"0.5%", width:"0.5%") %>
+                <% end %>
+              <% end %>
             </p>
             <% if comment.users_id == session[:current_username] %>
               <p>
@@ -111,3 +124,4 @@
         <% end %>
         <br>
     <% end %>
+  <td><%= link_to 'Homepage', homepage_path %></td>

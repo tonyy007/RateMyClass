@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get 'homepage_a' => 'homepage#homepage_a', :as => 'homepage_a'
   get 'flagpost' => 'reviews#flagpost', :as => 'flagpost'
   get 'unflagpost' => 'reviews#unflagpost', :as => 'unflagpost'
+  get 'flagpost_c' => 'comments#flagpost_c', :as => 'flagpost_c'
+  get 'unflagpost_c' => 'comments#unflagpost_c', :as => 'unflagpost_c'
   get 'pin' => 'reviews#pin', :as => 'pin'
   get 'unpin' => 'reviews#unpin', :as => 'unpin'
   post 'homepage' => 'homepage#homepage', :as => 'homepage_p'

@@ -4,6 +4,20 @@ class CommentsController < ApplicationController
         
     end
     
+    def flagpost_c
+        @comment = Comment.find(params[:comment])
+        @comment.flag = true
+        @comment.save
+        redirect_to(indexlower_path + "?index=" + params[:indexupper])
+    end
+    
+    def unflagpost_c
+        @comment = Comment.find(params[:comment])
+        @comment.flag = false
+        @comment.save
+        redirect_to(indexlower_path + "?index=" + params[:indexupper])
+    end
+    
     def create
         @review = Review.find(params[:review_id])
         $comment = @review.comments.create(comment_params)

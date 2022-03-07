@@ -15,7 +15,7 @@ require 'digest'
 Then /^a user with the name "(.+)" with a password "(.+)" exists$/ do |username, password|
   expect(User.find_by(:username => username).username).to eq(username)
   expect(User.find_by(:username => username).password_hash).to eq(Digest::SHA256.hexdigest password)
-  current_path.should == path_to('homepage')
+  current_path.should == path_to('homepage_s')
 end
 
 Then /^a user with the name "(.*)" with a password "(.*)" should not exist$/ do |username, password|

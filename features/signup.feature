@@ -8,6 +8,7 @@ Scenario: Signup Successful, meeting all required criteria
   When I go to the signup page
   And I fill in "user_field" with "account1"
   And I fill in "pass_field" with "account1"  
+  And I select "student" from "typeofuser"
   And I press "Sign up"
   Then a user with the name "account1" with a password "account1" exists  
   
@@ -15,6 +16,7 @@ Scenario: Another Signup Successful, meeting all required criteria
   When I go to the signup page
   And I fill in "user_field" with "account2"
   And I fill in "pass_field" with "account2"
+  And I select "student" from "typeofuser"
   And I press "Sign up"
   Then a user with the name "account2" with a password "account2" exists
 

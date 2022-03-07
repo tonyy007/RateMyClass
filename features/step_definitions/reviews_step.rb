@@ -32,3 +32,9 @@ Then /^(?:|I )create a comment with "(.+)"$/ do |comment|
   # find('comment[body]')
   # fill_in 'comment[index]', :with => comment
 end
+
+And /^(?:|I )flag a comment$/ do
+  # find("a", text: 'flagpost', exact: false).click
+  find(:xpath, "//a[contains(@href,'flagpost')]']").click
+  # //a[contains(@href,'api/users/confirm-register/')]
+end

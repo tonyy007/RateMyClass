@@ -11,6 +11,8 @@ module NavigationHelpers
       signup_path
     when /^homepage$/
       homepage_path
+    when /^homepage_s$/
+      homepage_s_path
     when /^users database page$/
       users_path
     when /^indexupper page$/

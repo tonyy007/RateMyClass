@@ -9,48 +9,39 @@ So that I have the ability to post/flag//comment etc. on RateMyClass
 I want to reach the homepage of the RateMyClass website.
 
 Background:
-  Given I am logged in as "defaultaccount1" with password "defaultaccount1"
+  Given I am logged in as an admin "defaultadmin1" with password "defaultadmin1"
   And I go to homepage
 
-Scenario: At the homepage, I am able to go to the reviews database
+Scenario: At the homepage, as an admin, I am able to go to the reviews database
   When I go to reviews page
   Then I should be on the reviews page
+  
+Scenario: At the homepage, as an admin, I am able to go to the Users Database
+When I go to users database page
+Then I should be on the users database page
+  
+Scenario: At the homepage, as an admin, I am able go to the new reviews page
+  When I go to reviews page
+  And I go to new reviews page
+  Then I should see "You are not signed in as a student!"
 
-
-Scenario: At the homepage, as an admin, I am able to update users in the reviews database
+Scenario: At the homepage, as an admin, I am unable to update reviews in the reviews database
   When I go to reviews page
   And I follow the first link "Show"
-  And I follow "Edit"
-  And I press "Update Review"
+  Then I should see "Back"
   And I follow "Back"
-
-Scenario: At the homepage, I am able go to the new reviews page
+  
+Scenario: At the homepage, as an admin, I should not be able to make a new review
   When I go to reviews page
   And I go to new reviews page
-  Then I should be on the new reviews page
-  
-  
-# Rewrite this
-Scenario: At the homepage, I am able to make a new review
-  When I go to reviews page
-  And I go to new reviews page
-  And I fill in "review_workTime" with "20"
-  And I fill in "review_studyTime" with "10"
-  And I check "review_diffculty_4"
-  And I fill in "review_timeWish" with "10"
-  And I press "Create Review"
   Then I should be on the reviews page
   
-Scenario: At the homepage, I am able to go to the Users Database
-  When I go to users database page
-  Then I should be on the users database page
-  
-Scenario: At the homepage, The course look up works on an existing class
+Scenario: At the homepage, as an admin, The course look up works on an existing class
   When I fill in "search_field" with "CSCE 121"
   And I press "Search"
   Then I should be on the indexupper page
 
-Scenario: At the homepage, The course look up should not work on a class that does not exist
+Scenario: At the homepage, as an admin, The course look up should not work on a class that does not exist
   When I fill in "search_field" with "Random 152324324"
   And I press "Search"
   Then I should not be on the reviews page
