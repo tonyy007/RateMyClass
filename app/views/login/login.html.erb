@@ -1,25 +1,42 @@
-<%= form_tag homepage_path, :method => :post do %>
-  <head>
-    <title>RateMyClass Log in</title>
-  </head>
-  <div class="form-group py-1">
-    <div><b>Log In</b></div>
-    <label for="username">Username</label>
-    <!--<input type="text" class="form-control" id="username">-->
-    <%= text_field(:user, :field) %>
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row h-100 d-flex justify-content-center align-items-center">
+      <div class="col-md-9 col-lg-6 col-xl-5" align="center">
+        <br><br><br><br><br><br>
+        <%= image_tag("logo.png", class: "img-fluid") %>
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <%= form_tag homepage_path, :method => :post do %>
+          <br><br><br><br><br><br><br><br>
+          <div class="d-flex flex-row align-items-start justify-content-start justify-content-lg-start">
+            <p class="lead fw-normal mb-0 me-3">Log in</p>
+          </div>
+          
+          <div class="form-outline mb-4">
+            <label class="form-label" for="user_field">Username</label>
+            <%= text_field(:user, :field, class: "form-control form-control-lg", placeholder: "Enter username", style: "width:500px") %>
+          </div>
+          
+          <div class="form-outline mb-3">
+            <label class="form-label" for="pass_field">Password</label>
+            <%= password_field(:pass, :field, class: "form-control form-control-lg", placeholder: "Enter password", style: "width:500px") %>
+          </div>
+          
+          <div>
+            <p style="color:red;", id="notice"><%= notice %></p>
+          </div>
+          
+          <br>
+          
+          <div class="text-start text-lg-start mt-4 pt-2">
+            <%= submit_tag('Log in', :class => "btn btn-primary btn-lg", style: "padding-left: 2.5rem; padding-right: 2.5rem;") %>
+          </div>
+          
+          <div class="text-start text-lg-start mt-4 pt-2">
+            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <%= link_to "Sign Up Here", signup_path %> </p>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-  <div class="form-group py-0">
-    <label for="password">Password</label>
-    <!--<input type="password" class="form-control" id="password">-->
-    <%= password_field(:pass, :field) %>
-  </div>
-  <div>
-    <p style="color:red;", id="notice"><%= notice %></p>
-  </div>
-  <div>
-    <%= submit_tag 'Log in', :class => "col-md-2 offset-md-5 btn btn-primary form-control" %>
-  </div>
-  <div style="text-align:center;">
-    <%= link_to "Don't Have An Account? Sign Up Here", signup_path %>
-  </div>
-<% end %>
+</section>

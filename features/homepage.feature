@@ -11,6 +11,11 @@ I want to reach the homepage of the RateMyClass website.
 Background:
   Given I am logged in as an admin "defaultadmin1" with password "defaultadmin1"
   And I go to homepage
+  
+Scenario: At the homepage, I am able to logout
+  When I follow "Log out"
+  And I press "Confirm Log Out"
+  Then I should be on the homepage
 
 Scenario: At the homepage, as an admin, I am able to go to the reviews database
   When I go to reviews page
@@ -42,6 +47,14 @@ Scenario: At the homepage, as an admin, The course look up works on an existing 
   Then I should be on the indexupper page
 
 Scenario: At the homepage, as an admin, The course look up should not work on a class that does not exist
-  When I fill in "search_field" with "Random 152324324"
+  When I fill in "search_field" with "abc"
   And I press "Search"
-  Then I should not be on the reviews page
+  Then I should be on the no reviews page
+
+Scenario: As any user, when I go to an unamed page, it should reroute to homepage
+  When I go to random page
+  Then I should be on the homepage
+
+Scenario: As any user, when I go to an unamed page, it should reroute to homepage and should see invalid path
+  When I go to random page
+  Then I should see "Invalid Path"

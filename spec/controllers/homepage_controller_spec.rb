@@ -35,4 +35,10 @@ RSpec.describe HomepageController, type: :controller do
       end
     end
     
+    # describe "Link Paths work as expected" do
+    #   get :homepage
+    #   it { should have_link("Reviews", href: indexupper_path) }
+    # end
+      
+    
   end

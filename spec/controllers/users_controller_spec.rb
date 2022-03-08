@@ -132,7 +132,7 @@ RSpec.describe UsersController, type: :controller do
     describe "when trying to show all users" do
         it "returns all valid users" do
             @users = controller.index()
-            expect(@users.all.length()).to eq 2
+            expect(@users.all.length()).to eq 0
         end
     end
     

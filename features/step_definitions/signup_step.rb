@@ -36,6 +36,14 @@ Then /^I should not be logged in$/ do
   page.should have_content('Incorrect Username or Password')
 end
 
+Then /^I create an invalid user$/ do
+  begin
+  click_button("Create User")
+  rescue
+    page.should_not have_content('User was successfully created.')
+  end
+end
+
 # Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
 #   #  ensure that that e1 occurs before e2.
 #   #  page.body is the entire content of the page as a string.

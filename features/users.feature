@@ -23,6 +23,11 @@ Scenario: I am able to create a new User to the Database
   And I press "Create User"
   Then I should be on the users database page
   
+Scenario: I do not meet the criteria to create a user
+  When I go to users database page
+  And I follow the first link "New User"
+  And I create an invalid user
+
 Scenario: I am able to edit a newly created User to the Database
   When I go to users database page
   Then I should be on the users database page

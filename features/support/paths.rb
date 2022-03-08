@@ -23,6 +23,10 @@ module NavigationHelpers
       reviews_path
     when /^new reviews page$/
       new_review_path
+    when /^no reviews page$/
+      noreview_path
+    when /^random page$/
+      "rg"
     # when /^the (RottenPotatoes )?home\s?page$/ then '/movies'
 
 

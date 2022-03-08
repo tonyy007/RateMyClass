@@ -37,8 +37,8 @@ class HomepageController < ApplicationController
                     session[:current_username] = @username
                     session[:type] = user.type_of_user
                     break
-                else
-                    @credentials = false
+                # else
+                #     @credentials = false
                 end
             end
             if @credentials == false

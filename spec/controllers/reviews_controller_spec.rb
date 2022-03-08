@@ -109,4 +109,40 @@ RSpec.describe ReviewsController, type: :controller do
             expect(@review.timeWish).to eq(nil) 
         end
     end
+    
+    
+    describe "Destroying a review" do
+        it "Destroys a review properly" do
+            @review = controller.new()
+            @review = @review.destroy()
+            expect(@review).to eq(nil)
+        end
+    end
+    
+    
+    describe "Pin feature on a Review" do
+        it "Pins a review" do
+            @review = Review.create({:workTime => 38, :studyTime => 16, :diffculty => 1, :timeWish => 28, :pin => true})
+            expect(@review.pin).to eq(true)
+        end
+        
+        it "Unpinning a review" do
+            @review = Review.create({:workTime => 38, :studyTime => 16, :diffculty => 1, :timeWish => 28, :pin => true})
+            @review.pin = false
+            expect(@review.pin).to eq(false)
+        end
+    end
+    
+    describe "Flag feature on a Review" do
+        it "Flagging a review" do
+            @review = Review.create({:workTime => 38, :studyTime => 16, :diffculty => 1, :timeWish => 28, :flag => true})
+            expect(@review.flag).to eq(true)
+        end
+        
+        it "Unflagging a review" do
+            @review = Review.create({:workTime => 38, :studyTime => 16, :diffculty => 1, :timeWish => 28, :flag => true})
+            @review.flag = false
+            expect(@review.flag).to eq(false)
+        end
+    end
 end

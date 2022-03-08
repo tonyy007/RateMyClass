@@ -25,12 +25,6 @@ When /^(?:|I )press the button "([^"]*)"$/ do |button|
   %{I press (button)}
 end
 
-
-# Fill in a numeric value
-# When /^(?:|I )fill in "([^"]*)" with ([^"]*)$/ do |field, value|
-#   fill_in(field, :with => value)
-# end
-
 When /^(?:|I )press "([^"]*)"$/ do |button|
   click_button(button)
 end
@@ -83,6 +77,14 @@ Given /^I am logged in as a student "([^"]*)" with password "([^\"]*)"$/ do |use
     step %{I press "Sign up"}
 end
 
+Given /^I am logged in as a professor "([^"]*)" with password "([^\"]*)"$/ do |username, password|
+    step %{I go to the signup page}
+    step %{I fill in "user_field" with "#{username}"}
+    step %{I fill in "pass_field" with "#{password}"}
+    step %{I select "professor" from "typeofuser"}
+    step %{I press "Sign up"}
+end
+
 
 # Then /^the "([^"]*)" field(?: within (.*))? should contain "([^"]*)"$/ do |field, parent, value|
 #   with_scope(parent) do
@@ -90,3 +92,7 @@ end
 #     field_value = (field.tag_name == 'textarea') ? field.text : field.value
 #   end
 # end
+
+When /^I reload the page$/ do
+  visit [ current_path, page.driver.request.env['QUERY_STRING'] ].reject(&:blank?).join('?')
+end

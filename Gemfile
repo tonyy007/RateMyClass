@@ -77,3 +77,4 @@ gem 'importmap-rails'
 gem 'activerecord'
 # Added devise gem
 gem "devise", "~> 4.8"
+gem 'bootstrap-sass'

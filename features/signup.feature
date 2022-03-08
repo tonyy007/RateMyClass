@@ -67,7 +67,7 @@ Scenario: User click Login but then clicks sign up
   When I go to the login page
   And I fill in "user_field" with "account1"
   And I fill in "pass_field" with "account1"
-  And I follow "Don't Have An Account? Sign Up Here"
+  And I follow "Sign Up Here"
   Then I should be on the homepage
 
 Scenario: Login Successful, username and password correct
@@ -81,3 +81,26 @@ Scenario: Login Successful, username and password correct
   And I fill in "pass_field" with "account1"
   And I press "Log in"
   Then I should be on the homepage
+  
+Scenario: I enter the incorrect admin code when creating an admin
+    When I go to the signup page
+    And I fill in "user_field" with "account1"
+    And I fill in "pass_field" with "account1"  
+    And I select "admin" from "typeofuser"
+    And I press "Sign up"
+    And I fill in "adminpass_field" with "abc"
+    And I press "Submit"
+    Then I should see "Incorrect Admin Code"
+  
+Scenario: Signup with already exisiting user name
+  When I go to the signup page
+  And I fill in "user_field" with "account1"
+  And I fill in "pass_field" with "account1"  
+  And I select "student" from "typeofuser"
+  And I press "Sign up"
+  Then a user with the name "account1" with a password "account1" exists 
+  When I go to the signup page
+  And I fill in "user_field" with "account1"
+  And I fill in "pass_field" with "account1"  
+  And I press "Sign up"
+  Then I should see "Username already exists"

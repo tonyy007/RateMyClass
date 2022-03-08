@@ -35,6 +35,14 @@ end
 
 And /^(?:|I )flag a comment$/ do
   # find("a", text: 'flagpost', exact: false).click
-  find(:xpath, "//a[contains(@href,'flagpost')]']").click
+  # find(:xpath, "//a[contains(@href,'flagpost')]']").click
+  # find(:linkText => "flagpost", :exact => false).click()
+  # find(:xpath, "//a[@href='/flagpost']").click
+  find("a", :text => /\A\z/).click
+
   # //a[contains(@href,'api/users/confirm-register/')]
+end
+
+And /^(?:|I )unflag a comment$/ do
+    find("a", :text => /\A\z/).click
 end
