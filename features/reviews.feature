@@ -62,7 +62,7 @@ Scenario: Editing a review that exists
   And I fill in "review_timeWish" with "7"
   And I fill in "review_thought" with "I liked the class."
   And I press "Create Review"
-  And I follow "Back"
+  # And I follow "Back"
   And I follow the first link "Edit"
   And I press "Update Review"
   Then I should see "Review was successfully updated."
