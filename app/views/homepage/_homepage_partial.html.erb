@@ -1,11 +1,3 @@
-<head>
-  <title>RateMyClass Homepage</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
 <body>
 
 <nav class="navbar navbar-default">
@@ -21,6 +13,10 @@
         <li><%= link_to 'Log In', login_path %></li>
       <% else %>
         <li><%= link_to 'Log out', logout_path %></li>
+      <% end %>
+      <% if session[:type] == 'admin' %>
+        <li><%= link_to 'Reviews Database', reviews_path %></li>
+        <li><%= link_to 'Users Database', users_path %></li>
       <% end %>
     </ul>
     <%= form_tag indexupper_path, :method => :get, class: "form-inline my-2 my-lg-0" do %>

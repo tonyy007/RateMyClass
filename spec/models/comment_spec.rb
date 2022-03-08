@@ -71,5 +71,42 @@ RSpec.describe Comment, type: :model do
             expect(subject).to_not be_valid
         end
         
+        it "Creating a valid comment" do
+            @comment = Comment.new(:body => "Great Professor!")
+        end
     end
+    
+    describe "Flagging feature for comments" do
+        it "Flagging a comment correctly" do
+            @comment = Comment.new(:body => "Great Professor!", :flag => false)
+            @comment.flag = true
+            expect(@comment.flag).to eq(true)
+        end
+        it "Unflagging a comment" do
+            @comment = Comment.new(:body => "Great Professor!", :flag => true)
+            @comment.flag = false
+            expect(@comment.flag).to eq(false)
+        end
+    end
+    
+    
+    describe "Updating feature for comments" do
+        it "Updating a comment correctly" do
+            @comment = Comment.new(:body => "Great Professor!")
+            @comment.update({:body => "Nevermind, he wasn't half bad."})
+            expect(@comment.body).to eq("Nevermind, he wasn't half bad.")
+        end
+        it "Updating another comment correctly" do
+            @comment = Comment.new(:body => "Great Professor!")
+            @comment.update({:body => "Wonderful Professor!"})
+            expect(@comment.body).to eq("Wonderful Professor!")
+        end
+        
+        it "Blank comment update" do
+            @comment = Comment.new(:body => "Great Professor!")
+            @comment.update({:body => ""})
+            expect(@comment.body).to eq("")
+        end
+    end
+    
 end

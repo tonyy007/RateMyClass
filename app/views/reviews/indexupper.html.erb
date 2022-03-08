@@ -12,6 +12,10 @@
       <% else %>
         <li><%= link_to 'Log out', logout_path %></li>
       <% end %>
+      <% if session[:type] == 'admin' %>
+        <li><%= link_to 'Reviews Database', reviews_path %></li>
+        <li><%= link_to 'Users Database', users_path %></li>
+      <% end %>
     </ul>
     <%= form_tag indexupper_path, :method => :get, class: "form-inline my-2 my-lg-0" do %>
         <div align="right", style="line-height:50%;">

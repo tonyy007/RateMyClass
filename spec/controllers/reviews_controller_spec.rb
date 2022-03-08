@@ -112,11 +112,18 @@ RSpec.describe ReviewsController, type: :controller do
     
     
     describe "Destroying a review" do
-        it "Destroys a review properly" do
+        it "Destroy method works properly" do
             @review = controller.new()
             @review = @review.destroy()
-            expect(@review).to eq(nil)
+            expect(@review.users_id).to eq(nil)
         end
+        
+        it 'Destroys a review that has non empty parameters' do 
+            @review = Review.create({:workTime => 38, :studyTime => 16, :diffculty => 1, :timeWish => 28, :users_id => "dummyuser"})
+            @review = @review.destroy()
+            expect(@review.users_id).to eq("dummyuser")
+        end
+        
     end
     
     
@@ -135,12 +142,24 @@ RSpec.describe ReviewsController, type: :controller do
     
     describe "Flag feature on a Review" do
         it "Flagging a review" do
-            @review = Review.create({:workTime => 38, :studyTime => 16, :diffculty => 1, :timeWish => 28, :flag => true})
+            @review = Review.create({:workTime => 38, :studyTime => 16, :diffculty => 1, :timeWish => 28, :flag => false})
+            @review.flag = true
+            expect(@review.flag).to eq(true)
+        end
+        it "Flagging another review" do
+            @review = Review.create({:workTime => 2, :studyTime => 3, :diffculty => 4, :timeWish => 5, :flag => false})
+            @review.flag = true
             expect(@review.flag).to eq(true)
         end
         
         it "Unflagging a review" do
             @review = Review.create({:workTime => 38, :studyTime => 16, :diffculty => 1, :timeWish => 28, :flag => true})
+            @review.flag = false
+            expect(@review.flag).to eq(false)
+        end
+        
+        it "Unflagging another review" do
+            @review = Review.create({:workTime => 1, :studyTime => 1, :diffculty => 2, :timeWish => 2, :flag => true})
             @review.flag = false
             expect(@review.flag).to eq(false)
         end

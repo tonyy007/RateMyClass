@@ -59,7 +59,7 @@
           null,
           null,
           1,
-          91,
+          93,
           19,
           19,
           18,
@@ -70,7 +70,7 @@
           1,
           1,
           null,
-          72,
+          74,
           3,
           3,
           null,
@@ -97,7 +97,7 @@
           1,
           null,
           null,
-          69,
+          71,
           42,
           42,
           42,
@@ -152,7 +152,7 @@
           4,
           4,
           null,
-          27,
+          29,
           0,
           0,
           null,
@@ -165,6 +165,15 @@
         "lines": [
           1,
           null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/ubuntu/project/RateMyClass/app/controllers/logout_controller.rb": {
+        "lines": [
+          1,
+          1,
           null,
           null,
           null
@@ -221,8 +230,8 @@
           8,
           8,
           8,
-          46,
-          45,
+          382,
+          381,
           1,
           0,
           null,
@@ -232,17 +241,17 @@
           8,
           8,
           8,
-          45,
+          381,
           8,
-          37,
-          32,
+          373,
+          368,
           null,
           5,
           5,
           5,
           5,
           null,
-          45,
+          381,
           null,
           8,
           8,
@@ -253,17 +262,17 @@
           7,
           7,
           7,
-          41,
+          335,
           7,
-          34,
-          28,
+          328,
+          322,
           null,
           6,
           6,
           6,
           6,
           null,
-          41,
+          335,
           null,
           7,
           7,
@@ -557,17 +566,6 @@
         "branches": {
         }
       },
-      "/home/ubuntu/project/RateMyClass/app/controllers/logout_controller.rb": {
-        "lines": [
-          0,
-          0,
-          null,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/home/ubuntu/project/RateMyClass/app/jobs/application_job.rb": {
         "lines": [
           0,
@@ -592,6 +590,6 @@
         }
       }
     },
-    "timestamp": 1646706064
+    "timestamp": 1646756849
   }
 }

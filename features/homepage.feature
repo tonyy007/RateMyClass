@@ -14,7 +14,8 @@ Background:
   
 Scenario: At the homepage, I am able to logout
   When I follow "Log out"
-  And I press "Confirm Log Out"
+  Then I should see "Are you sure you want to log out?"
+  And I press the button "Confirm Log Out"
   Then I should be on the homepage
 
 Scenario: At the homepage, as an admin, I am able to go to the reviews database
@@ -57,4 +58,4 @@ Scenario: As any user, when I go to an unamed page, it should reroute to homepag
 
 Scenario: As any user, when I go to an unamed page, it should reroute to homepage and should see invalid path
   When I go to random page
-  Then I should see "Invalid Path"
+  Then I should be on the homepage
