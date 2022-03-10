@@ -10,12 +10,18 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :username %>
-    <%= form.text_field :username %>
-  </div>
-
+  <% if params[:id] %> 
+    <div class="field">
+      <%= form.label :username %>
+      <%= form.text_field :username, style: "background-color:grey", readonly: true %>
+    </div>
+  <% else %>
+    <div class="field">
+      <%= form.label :username %>
+      <%= form.text_field :username%>
+    </div>
+  <% end %>
+  
   <div class="field">
     <%= form.label :password_hash %>
     <%= form.text_field :password_hash %>

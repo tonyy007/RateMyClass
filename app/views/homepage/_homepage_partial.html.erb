@@ -13,6 +13,7 @@
         <li><%= link_to 'Log In', login_path %></li>
       <% else %>
         <li><%= link_to 'Log out', logout_path %></li>
+        <li><%= link_to 'Change Password', edit_user_path(id: session[:current_username]) %></li>
       <% end %>
       <% if session[:type] == 'admin' %>
         <li><%= link_to 'Reviews Database', reviews_path %></li>

@@ -22,6 +22,7 @@ class UsersController < ApplicationController
   # POST /users or /users.json
   def create
     @user = User.new(user_params)
+    @user.password_hash = Digest::SHA256.hexdigest @user.password_hash 
 
     respond_to do |format|
       if @user.save
@@ -38,6 +39,8 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
+        @user.password_hash = Digest::SHA256.hexdigest @user.password_hash 
+        @user.save
         format.html { redirect_to user_url(@user), notice: "User was successfully updated." }
         format.json { render :show, status: :ok, location: @user }
       else
