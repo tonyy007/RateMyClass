@@ -1,4 +1,4 @@
-<h1>Editing User</h1>
+
 <% if session[:current_username] == @user.username or session[:type] == 'admin' %>
     <%= render 'form', user: @user %>
 <% else %>

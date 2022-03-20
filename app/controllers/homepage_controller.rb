@@ -1,4 +1,5 @@
 require 'digest'
+require 'open-uri'
 class HomepageController < ApplicationController
     def homepage_s
         
@@ -22,6 +23,9 @@ class HomepageController < ApplicationController
                 redirect_to({ :action=>'signup', :controller=>'signup' }, :alert => "Incorrect Admin Code")
             end
         elsif Rails.application.routes.recognize_path(request.referrer)[:action] == "login" #coming from the login page
+            if params[:user] == nil
+                return
+            end
             params[:user].each do |value|
                 @username = value[1]
             end
@@ -53,6 +57,9 @@ class HomepageController < ApplicationController
             @username_success = false
             @password_success = false
             @duplicate = false
+            if params[:user] == nil
+                return
+            end
             params[:user].each do |value|
                 if value[1].empty?
                     # flash[:notice] = "Invalid Username or Password"
@@ -107,6 +114,11 @@ class HomepageController < ApplicationController
             session[:type] = nil
             session[:current_username] = nil
             #redirect_to(homepage_path)
+        else
+            #WILL PRINT OUT A LOT, UNCOMMENT AT YOUR OWN PERIL
+            # URI.open("https://web-as.tamu.edu/GradeReports/PDFReports/20213/grd20213EN.pdf") {|f|
+            #     f.each_line {|line| p line}
+            # }
         end
     end 
 end

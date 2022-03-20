@@ -1,38 +1,53 @@
-<%= form_with(model: user) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-        <% user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row h-100 d-flex justify-content-center align-items-center">
+      <div class="col-md-9 col-lg-6 col-xl-5" align="center">
+        <br><br><br><br><br><br>
+        <%= image_tag("logo.png", class: "img-fluid") %>
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <%= form_with(model: user) do |form| %>
+          <br><br><br><br><br><br><br><br>
+          <% if user.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+        
+              <ul>
+                <% user.errors.each do |error| %>
+                  <li><%= error.full_message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <div class="d-flex flex-row align-items-start justify-content-start justify-content-lg-start">
+            <p class="lead fw-normal mb-0 me-3">Editing Password</p>
+          </div>
+          <div class="form-outline mb-4">
+          <% if params[:id] %> 
+              <%= form.label :username, class: "form-label" %>
+              <%= form.text_field :username, style: "background-color:grey;width:500px;",class:"form-control form-control-lg", readonly: true %>
+          <% else %>
+            <div class="field">
+              <%= form.label :username, class: "form-label" %>
+              <%= form.text_field :username, style: "background-color:grey;width:500px;",class:"form-control form-control-lg"%>
+            </div>
+          <% end %>
+          </div>
+          <div class = "form-outline mb-4">
+            <%= form.label :password_hash, class: "form-label"  %>
+            <%= form.text_field :password_hash, style: "width:500px;",class:"form-control form-control-lg"%>
+          </div>
+          <% if session[:type] == 'admin' %>
+            <div class="field">
+              <%= form.label :type_of_user, class: "form-label"  %>
+              <%= form.text_field :type_of_user, style: "width:500px;",class:"form-control form-control-lg" %>
+            </div>
+          <% end %>
+          <br>
+          <div class="text-start text-lg-start mt-4 pt-2">
+            <%= form.submit class: "btn btn-primary btn-lg" %>
+          </div>
         <% end %>
-      </ul>
     </div>
-  <% end %>
-  <% if params[:id] %> 
-    <div class="field">
-      <%= form.label :username %>
-      <%= form.text_field :username, style: "background-color:grey", readonly: true %>
-    </div>
-  <% else %>
-    <div class="field">
-      <%= form.label :username %>
-      <%= form.text_field :username%>
-    </div>
-  <% end %>
-  
-  <div class="field">
-    <%= form.label :password_hash %>
-    <%= form.text_field :password_hash %>
   </div>
-  <% if session[:type] == 'admin' %>
-    <div class="field">
-      <%= form.label :type_of_user %>
-      <%= form.text_field :type_of_user %>
-    </div>
-  <% end %>
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</section>

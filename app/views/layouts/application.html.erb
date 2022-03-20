@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RateMyClass</title>
+    <title>Rate My Class</title>
+    <link rel = "icon" type = "image/png" href = "/assets/logo-b7f6b246174e7fc7d8d81067be545dd16fabd1ff36d2c892090029b2b8194ef9.png">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +12,36 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header" style = "width:100px">
+      <!--<#%= link_to 'RateMyClass', homepage_path, class: "navbar-brand" %>-->
+      <%= link_to image_tag("logo.png", class: "img-fluid", style: "width:90%"), homepage_path %>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><%= link_to 'Reviews', indexupper_path %></li>
+      <% if !session[:current_username] %>
+        <li><%= link_to 'Sign Up', signup_path %></li>
+        <li><%= link_to 'Log In', login_path %></li>
+      <% else %>
+        <li><%= link_to 'New Review', new_review_path %></li>
+        <li><%= link_to 'Log out', logout_path %></li>
+        <li><%= link_to 'Change Password', edit_user_path(id: session[:current_username]) %></li>
+      <% end %>
+      <% if session[:type] == 'admin' %>
+        <li><%= link_to 'Reviews Database', reviews_path %></li>
+        <li><%= link_to 'Users Database', users_path %></li>
+      <% end %>
+    </ul>
+    <%= form_tag indexupper_path, :method => :get, class: "form-inline my-2 my-lg-0" do %>
+        <div align="right", style="line-height:50%;">
+            <br>
+            <%= text_field(:search, :field, placeholder: "Search", class: "form-control mr-sm-2") %>
+            <%= submit_tag 'Search', :class => "btn btn-outline-success my-2 my-sm-0" %>
+        </div>
+    <% end %>
+  </div>
+</nav>
     <%= yield %>
   </body>
 </html>

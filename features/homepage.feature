@@ -14,8 +14,8 @@ Background:
   
 Scenario: At the homepage, I am able to logout
   When I follow "Log out"
-  Then I should see "Are you sure you want to log out?"
-  And I press the button "Confirm Log Out"
+  Then I should see "You are now logged out!"
+  And I press the button "Click here to be redirected to homepage"
   Then I should be on the homepage
 
 Scenario: At the homepage, as an admin, I am able to go to the reviews database
