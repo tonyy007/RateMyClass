@@ -63,12 +63,12 @@
       <h4>Thoughts about the class</h4>
       <%= review.thought %>
       <% if review.flag == false %>
-        <%= link_to flagpost_path(:review => review, :indexupper => @index) do %>
+        <%= link_to flagpost_path(:review => review, :indexupper => @index), :id => "white_flag" do %>
           <%= image_tag("whiteflag.png", height:"0.5%", width:"0.5%") %>
         <% end %>
       <% else %>
         <% if session[:type] == "admin" %>
-          <%= link_to unflagpost_path(:review => review, :indexupper => @index) do %>
+          <%= link_to unflagpost_path(:review => review, :indexupper => @index), :id => "yellow_un_flag" do %>
             <%= image_tag("yellowflag.png", height:"0.5%", width:"0.5%") %>
           <% end %>
         <% else %>

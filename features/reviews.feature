@@ -146,3 +146,9 @@ Scenario: If I search for a class that does not exist, I should see a no review 
   When I fill in "search_field" with "poli"
   And I press "Search"
   Then I should be on the no reviews page
+
+Scenario: If I search for a class with empty string, I should see a no review page
+  Given I go to homepage
+  When I fill in "search_field" with ""
+  And I press "Search"
+  Then I should be on the no reviews page

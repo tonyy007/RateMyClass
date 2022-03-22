@@ -63,6 +63,12 @@ Scenario: I am able to edit the first user and return back to the database
 
 Scenario: I am able to destory the first user
   When I go to users database page
-  And I press the button "Destroy"
-  # Then I should see a user has been destroyed  # FIXME
-  
+  Then I should be on the users database page
+  Then I should see "New User"
+  And I follow the first link "New User"
+  And I fill in "user_username" with "student100"
+  And I fill in "user_password_hash" with "student100"
+  And I fill in "user_type_of_user" with "student"
+  And I press "Create User"
+  When I go to users database page
+  Then I press "destory_student100"

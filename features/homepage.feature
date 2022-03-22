@@ -59,3 +59,13 @@ Scenario: As any user, when I go to an unamed page, it should reroute to homepag
 Scenario: As any user, when I go to an unamed page, it should reroute to homepage and should see invalid path
   When I go to random page
   Then I should be on the homepage
+
+Scenario: Cancel login
+  When I go to the login page
+  And I follow "logo"
+  Then I should be on the homepage
+
+Scenario: Cancel Signup
+  When I go to the signup page
+  And I follow "logo"
+  Then I should be on the homepage

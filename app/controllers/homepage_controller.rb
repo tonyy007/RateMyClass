@@ -110,10 +110,6 @@ class HomepageController < ApplicationController
                 flash[:notice] = "Invalid Username or Password (Both must be at least 8 characters long)"
                 redirect_to({ :action=>'signup', :controller=>'signup' }, :alert => "Invalid Username or Password")
             end
-        elsif Rails.application.routes.recognize_path(request.referrer)[:action] == "logout"
-            session[:type] = nil
-            session[:current_username] = nil
-            #redirect_to(homepage_path)
         else
             #WILL PRINT OUT A LOT, UNCOMMENT AT YOUR OWN PERIL
             # URI.open("https://web-as.tamu.edu/GradeReports/PDFReports/20213/grd20213EN.pdf") {|f|
