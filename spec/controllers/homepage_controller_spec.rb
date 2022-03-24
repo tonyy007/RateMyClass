@@ -36,7 +36,7 @@ RSpec.describe HomepageController, type: :controller do
     end
     
     
-    
+    puts "HI THIS IS RUNNING HOMEPAGE"
     # describe "Link Paths work as expected" do
     #   it "Goes to homepage, checks reviews link" do 
     #     visit homepage_path

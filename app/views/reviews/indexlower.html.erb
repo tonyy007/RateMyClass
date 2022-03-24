@@ -85,12 +85,12 @@
               </strong>
               <%= comment.body %>
               <% if comment.flag == false %>
-                <%= link_to flagpost_c_path(:comment => comment, :indexupper => @index) do %>
+                <%= link_to flagpost_c_path(:comment => comment, :indexupper => @index), :id => "white_flag_comment" do %>
                   <%= image_tag("whiteflag.png", height:"0.5%", width:"0.5%") %>
                 <% end %>
               <% else %>
                 <% if session[:type] == "admin" %>
-                  <%= link_to unflagpost_c_path(:comment => comment, :indexupper => @index) do %>
+                  <%= link_to unflagpost_c_path(:comment => comment, :indexupper => @index),:id => "yellow_flag_uncomment" do %>
                     <%= image_tag("yellowflag.png", height:"0.5%", width:"0.5%") %>
                   <% end %>
                 <% else %>
@@ -100,7 +100,7 @@
             </p>
             <% if comment.users_id == session[:current_username] %>
               <p>
-                <%= link_to "Edit Comment", edit_review_comment_path(review, comment, :index => index, :indexupper => @index), method: :edit, data: {turbo_confirm: "Are you sure?"}%>
+                <%= link_to "Edit Comment", edit_review_comment_path(review, comment, :index => index, :indexupper => @index), data: {turbo_confirm: "Are you sure?"}, id: :"edit_comment" %>
               </p>
             <% end %>
             <% if comment.users_id == session[:current_username] or session[:type] == 'admin' %>

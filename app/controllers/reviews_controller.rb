@@ -1,6 +1,5 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: %i[ show edit update destroy ]
-
   # GET /reviews or /reviews.json
   def noreview
     
@@ -142,7 +141,6 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.users_id = session[:current_username]
-    puts @review.users_id
     respond_to do |format|
       if @review.save
         format.html { redirect_to review_url(@review), notice: "Review was successfully created." }
@@ -151,6 +149,7 @@ class ReviewsController < ApplicationController
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @review.errors, status: :unprocessable_entity }
       end
+    
     end
   end
 

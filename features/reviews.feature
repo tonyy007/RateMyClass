@@ -12,6 +12,9 @@ Background:
   Given the following reviews exist:
   | course_title | course_code | professor_name   | university_name        | workTime | studyTime | diffculty          | timeWish        | thought        | users_id      |
   | csce         | 121         | Robert Lightfoot | Texas A&M University   | 10       | 5         | review_diffculty_4 | 10              | Easy Class     | dummystudent1 |
+  | csce         | 222         | Teresa Leyk      | Texas A&M University   | 10       | 5         | review_diffculty_4 | 10              | Easy Class     | dummystudent1 |
+  | pols         | 206         | Jason Smith      | Texas A&M University   | 10       | 5         | review_diffculty_4 | 10              | Easy Class     | dummystudent1 |
+  | pols         | 207         | Jason Smith      | Texas A&M University   | 10       | 5         | review_diffculty_4 | 10              | Easy Class     | dummystudent1 |
 
 Scenario: Creating a new review, meets all requirements
   When I go to new reviews page
@@ -40,16 +43,7 @@ Scenario: Creating a new review, does not meet all requirements
   And I fill in "review_thought" with "I did not like the class."
   And I press "Create Review"
   Then a review with "csce", "121", "Lightfoot", "Texas A&M University", "2000", "1000000", "review_diffculty_4", "-12412" should not exist
-  
-Scenario: Creating a comment on a review that exists
-  Given I go to homepage
-  When I fill in "search_field" with "CSCE 121"
-  And I press "Search"
-  And I go to the indexupper page
-  And I follow the first link "Show"
-  And I fill in "comment_body" with "Test Comment."
-  And I press "Create Comment"
-  
+
 Scenario: Editing a review that exists
   When I go to new reviews page
   And I fill in "review_course_title" with "csce"
@@ -97,16 +91,6 @@ Scenario: As a professor, I can unpin a review
   And I follow "Unpin Post"
   Then I should not see "[Pinned]"
 
-Scenario: Destory an existing comment
-  Given I go to homepage
-  When I fill in "search_field" with "CSCE 121"
-  And I press "Search"
-  Then I should be on the indexupper page
-  And I follow the first link "Show"
-  And I fill in "comment_body" with "Test Comment 2."
-  And I press "Create Comment"
-  And I press "Destroy Comment"
-
 Scenario: Flagging a review
   Given I go to homepage
   When I fill in "search_field" with "CSCE 121"
@@ -152,3 +136,18 @@ Scenario: If I search for a class with empty string, I should see a no review pa
   When I fill in "search_field" with ""
   And I press "Search"
   Then I should be on the no reviews page
+
+Scenario: Editing a comment
+  Given I go to homepage
+  When I fill in "search_field" with "CSCE 121"
+  And I press "Search"
+  And I go to the indexupper page
+  And I follow the first link "Show"
+  And I fill in "comment_body" with "Test Comment 24."
+  And I press "Create Comment"
+  And I want to open
+  When I follow "edit_comment"
+  And I fill in "comment_body" with "Test Comment 27."
+  And I press "Update Comment"
+  Then I should see "Test Comment 27."
+  Then I should be on the indexlower page

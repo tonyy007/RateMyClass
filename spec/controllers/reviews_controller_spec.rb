@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe ReviewsController, type: :controller do
     before(:all) do
+        puts "HI THIS IS RUNNING REVIEWS"
         Review.create({:workTime => 5, :studyTime => 6, :diffculty => 7, :timeWish => 8}) 
     end
     

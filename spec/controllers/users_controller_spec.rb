@@ -4,7 +4,7 @@ RSpec.describe UsersController, type: :controller do
     # before(:all) do
         # User.create({:username => 'testuser1', :password_hash => 'passwordpasswordpasswordpasswordpasswordpassword', :type_of_user => 'student'}) 
     # end
-    
+    puts "HI THIS IS RUNNING Users"
     subject { 
          UsersController.new(username: "some_username",
                             password_hash: "some_password", 

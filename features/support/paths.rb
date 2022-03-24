@@ -25,6 +25,8 @@ module NavigationHelpers
       new_review_path
     when /^no reviews page$/
       noreview_path
+    when /^indexlower page$/
+      indexlower_path
     when /^random page$/
       "rg"
     # when /^the (RottenPotatoes )?home\s?page$/ then '/movies'
