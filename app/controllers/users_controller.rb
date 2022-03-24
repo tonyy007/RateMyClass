@@ -23,9 +23,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.password_hash = Digest::SHA256.hexdigest @user.password_hash 
-
     respond_to do |format|
-      if @user.save
+      if  user_params[:type_of_user] != "" and @user.save
         format.html { redirect_to user_url(@user), notice: "User was successfully created." }
         format.json { render :show, status: :created, location: @user }
       else
@@ -38,7 +37,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1 or /users/1.json
   def update
     respond_to do |format|
-      if @user.update(user_params)
+      if user_params[:type_of_user] != "" and @user.update(user_params)
         @user.password_hash = Digest::SHA256.hexdigest @user.password_hash 
         @user.save
         format.html { redirect_to user_url(@user), notice: "User was successfully updated." }

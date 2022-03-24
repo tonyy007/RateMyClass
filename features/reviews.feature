@@ -44,8 +44,40 @@ Scenario: Creating a new review, does not meet all requirements
   And I fill in "review_thought" with "I did not like the class."
   And I press "Create Review"
   Then a review with "csce", "121", "Lightfoot", "Texas A&M University", "2000", "1000000", "review_diffculty_4", "-12412" should not exist
+  
+  Scenario: Creating a new review, missing course code
+  When I go to new reviews page
+  And I fill in "review_course_title" with "csce"
+  And I fill in "review_course_code" with ""
+  And I fill in "review_professor_name" with "Lightfoot"
+  And I fill in "review_university_name" with "Texas A&M University"
+  And I fill in "review_workTime" with "2000"
+  And I fill in "review_studyTime" with "1000000"
+  And I check "review_diffculty_4"
+  And I fill in "review_timeWish" with "-12412"
+  And I fill in "review_thought" with "I did not like the class."
+  And I press "Create Review"
+  Then a review with "csce", "nil", "Lightfoot", "Texas A&M University", "2000", "1000000", "review_diffculty_4", "-12412" should not exist
 
-Scenario: Editing a review that exists
+Scenario: Editing a review that exists but update does not meet requirements
+  When I go to new reviews page
+  And I fill in "review_course_title" with "csce"
+  And I fill in "review_course_code" with "121"
+  And I fill in "review_professor_name" with "Lightfoot"
+  And I fill in "review_university_name" with "Texas A&M University"
+  And I fill in "review_workTime" with "30"
+  And I fill in "review_studyTime" with "12"
+  And I check "review_diffculty_4"
+  And I fill in "review_timeWish" with "7"
+  And I fill in "review_thought" with "I liked the class."
+  And I press "Create Review"
+  # And I follow "Back"
+  And I follow the first link "Edit"
+  And I fill in "review_course_code" with ""
+  And I press "Update Review"
+  Then I should not see "Review was successfully updated."
+  
+Scenario: Editing a review that exists 
   When I go to new reviews page
   And I fill in "review_course_title" with "csce"
   And I fill in "review_course_code" with "121"
@@ -146,7 +178,6 @@ Scenario: Editing a comment
   And I follow the first link "Show"
   And I fill in "comment_body" with "Test Comment 24."
   And I press "Create Comment"
-  And I want to open
   When I follow "edit_comment"
   And I fill in "comment_body" with "Test Comment 27."
   And I press "Update Comment"
@@ -158,3 +189,4 @@ Scenario: Searching for comment
   When I fill in "search_field" with "pols"
   And I press "Search"
   And I go to the indexupper page
+  

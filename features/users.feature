@@ -72,3 +72,26 @@ Scenario: I am able to destory the first user
   And I press "Create User"
   When I go to users database page
   Then I press "destory_student100"
+
+Scenario: User is not created due to missing type
+  When I go to users database page
+  Then I should be on the users database page
+  Then I should see "New User"
+  And I follow the first link "New User"
+  And I fill in "user_username" with "student100"
+  And I fill in "user_password_hash" with "student100"
+  And I press "Create User"
+
+Scenario: User is not updated due to missing type
+  When I go to users database page
+  Then I should be on the users database page
+  Then I should see "New User"
+  And I follow the first link "New User"
+  And I fill in "user_username" with "student100"
+  And I fill in "user_password_hash" with "student100"
+  And I press "Create User"
+  When I go to users database page
+  And I follow the first link "Edit"
+  And I fill in "user_password_hash" with "abcabcabc"
+  And I fill in "user_type_of_user" with ""
+  And I press "Update User"

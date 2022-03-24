@@ -142,7 +142,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.users_id = session[:current_username]
     respond_to do |format|
-      if @review.save
+      if review_params[:course_code] != "" and @review.save
         format.html { redirect_to review_url(@review), notice: "Review was successfully created." }
         format.json { render :show, status: :created, location: @review }
       else
@@ -156,7 +156,7 @@ class ReviewsController < ApplicationController
   # PATCH/PUT /reviews/1 or /reviews/1.json
   def update
     respond_to do |format|
-      if @review.update(review_params)
+      if review_params[:course_code] != "" and @review.update(review_params)
         format.html { redirect_to review_url(@review), notice: "Review was successfully updated." }
         format.json { render :show, status: :ok, location: @review }
       else
