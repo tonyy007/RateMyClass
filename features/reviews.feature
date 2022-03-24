@@ -15,6 +15,7 @@ Background:
   | csce         | 222         | Teresa Leyk      | Texas A&M University   | 10       | 5         | review_diffculty_4 | 10              | Easy Class     | dummystudent1 |
   | pols         | 206         | Jason Smith      | Texas A&M University   | 10       | 5         | review_diffculty_4 | 10              | Easy Class     | dummystudent1 |
   | pols         | 207         | Jason Smith      | Texas A&M University   | 10       | 5         | review_diffculty_4 | 10              | Easy Class     | dummystudent1 |
+  | pols         | 207         | Jason Smith      | Texas A&M University   | 12       | 7         | review_diffculty_4 | 13              | Easy Class     | dummystudent1 |
 
 Scenario: Creating a new review, meets all requirements
   When I go to new reviews page
@@ -151,3 +152,9 @@ Scenario: Editing a comment
   And I press "Update Comment"
   Then I should see "Test Comment 27."
   Then I should be on the indexlower page
+
+Scenario: Searching for comment
+  Given I go to homepage
+  When I fill in "search_field" with "pols"
+  And I press "Search"
+  And I go to the indexupper page
