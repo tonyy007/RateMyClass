@@ -19,6 +19,8 @@ module NavigationHelpers
       indexupper_path
     when /^login page$/
       login_path
+    when /^logout page$/
+      logout_path
     when /^reviews page$/
       reviews_path
     when /^new reviews page$/

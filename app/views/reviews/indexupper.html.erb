@@ -6,10 +6,10 @@
 <table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th>course_code</th>
-      <th>course_title</th>
-      <th>professor_name</th>
-      <th>university_name</th>
+      <th>Department</th>
+      <th>Code</th>
+      <th>Professor</th>
+      <th>University</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,8 +17,8 @@
   <tbody>
     <% @reviews.each_with_index do |review, index| %>
       <tr>
-        <td><%= review[0].course_code %></td>
         <td><%= review[0].course_title %></td>
+        <td><%= review[0].course_code %></td>
         <td><%= review[0].professor_name %></td>
         <td><%= review[0].university_name %></td>
         <td><%= link_to 'Show', indexlower_path(:index => index) %></td>
@@ -30,4 +30,4 @@
 </table>
 
 <br>
-<td><%= link_to 'Homepage', homepage_path %></td>
+<!--<td><#%= link_to 'Homepage', homepage_path %></td>-->

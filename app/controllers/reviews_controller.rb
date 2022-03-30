@@ -122,6 +122,7 @@ class ReviewsController < ApplicationController
     @reviews_averaged.insert(1, studyTimearr.inject{ |sum, el| sum + el }.to_f / studyTimearr.size)
     @reviews_averaged.insert(2, difficultyarr.inject{ |sum, el| sum + el }.to_f / difficultyarr.size)
     @reviews_averaged.insert(3, timeWisharr.inject{ |sum, el| sum + el }.to_f / timeWisharr.size)
+    
   end
 
   # GET /reviews/1 or /reviews/1.json
@@ -142,7 +143,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.users_id = session[:current_username]
     respond_to do |format|
-      if review_params[:course_code] != "" and @review.save
+      if review_params[:course_code] != "" and @review.save and review_params[:course_title] != "" and review_params[:professor_name] != "" and review_params[:university_name] != "" and review_params[:workTime] != "" and review_params[:studyTime] != "" and review_params[:diffculty] != "" and review_params[:timeWish] != ""
         format.html { redirect_to review_url(@review), notice: "Review was successfully created." }
         format.json { render :show, status: :created, location: @review }
       else
@@ -156,7 +157,7 @@ class ReviewsController < ApplicationController
   # PATCH/PUT /reviews/1 or /reviews/1.json
   def update
     respond_to do |format|
-      if review_params[:course_code] != "" and @review.update(review_params)
+      if review_params[:course_code] != "" and @review.update(review_params) and review_params[:course_title] != "" and review_params[:professor_name] != "" and review_params[:university_name] != "" and review_params[:workTime] != "" and review_params[:studyTime] != "" and review_params[:diffculty] != "" and review_params[:timeWish] != ""
         format.html { redirect_to review_url(@review), notice: "Review was successfully updated." }
         format.json { render :show, status: :ok, location: @review }
       else
