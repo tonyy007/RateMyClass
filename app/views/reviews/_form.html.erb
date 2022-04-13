@@ -1,7 +1,5 @@
 
 <h2 style="text-align:center">New Review</h2>
-<%= form_with(model: review) do |form| %>
-
   <% if review.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
@@ -13,83 +11,111 @@
       </ul>
     </div>
   <% end %>
-  <!--<img src="./project/RateMyClass/app/assets/images/logo.png" alt="..." height="100">-->
-  <%= image_tag("logo.png", class: "img-fluid", style: "display: block; margin-left: auto; margin-right: auto;", size: "960x540") %>
 
-
-  <!-- Questions -->
-  <div class="form-group row" style = "text-align:center; display:flex;">
-    <%= form.label 'Q1: What is the course department? ex: CSCE, ECEN, etc.', class: "col-sm-2 col-form-label", style: "margin-left:33.33%;" %>
-    <div class="col-sm-4" style = "width:250px;margin-right:20%;">
-      <%= form.text_field :course_title, class: "form-control" %>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="post-content">
+              <%= image_tag("logo.png", class: "img-responsive post-image", alt: "post-image") %>
+              <!--<img src="https://via.placeholder.com/400x150/FFB6C1/000000" alt="post-image" class="img-responsive post-image">-->
+              <div class="post-container">
+                <!--<img src="https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg" alt="user" class="profile-photo-md pull-left">-->
+                <div class="post-detail">
+                  <div class="container-fluid">
+                    <%= form_with(model: review) do |form| %>
+                      <div class="row">
+                        <div class="col-sm-20">
+                          <%= form.label 'Q1: What is the course department?', class: "col-sm-8 col-form-label" %>
+                          <div class="col-sm-8" style = "width:300px;margin-right:20%;">
+                            <%= form.text_field :course_title, class: "form-control", placeholder: "CSCE, ECEN, etc." %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-20">
+                          <%= form.label 'Q2: What is the course code?', class: "col-sm-8 col-form-label" %>
+                          <div class="col-sm-8" style = "width:300px;margin-right:20%;">
+                            <%= form.text_field :course_code, class: "form-control", placeholder: "121, 222, etc." %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-20">
+                          <%= form.label 'Q3: What is the professors name?', class: "col-sm-8 col-form-label" %>
+                          <div class="col-sm-8" style = "width:300px;margin-right:20%;">
+                            <%= form.text_field :professor_name, class: "form-control", placeholder: "Robert Lightfoot, Phillip Richey, etc." %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-20">
+                          <%= form.label 'Q4: What is the name of the university you took this course?', class: "col-sm-8 col-form-label" %>
+                          <div class="col-sm-8" style = "width:300px;margin-right:20%;">
+                            <%= form.text_field :university_name, class: "form-control", placeholder: "Texas A&M University, University of Texas, etc." %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-20">
+                          <%= form.label 'Q5: On average, how many hours did you spend on assignments/homework for this course per week?', class: "col-sm-8 col-form-label" %>
+                          <div class="col-sm-8" style = "width:300px;margin-right:20%;">
+                            <%= form.text_field :workTime, class: "form-control", placeholder: "1, 2, 3, etc." %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-20">
+                          <%= form.label 'Q6: On average, how many hours did you spend on studying/test preparation for this course per week?', class: "col-sm-8 col-form-label" %>
+                          <div class="col-sm-8" style = "width:300px;margin-right:20%;">
+                            <%= form.text_field :studyTime, class: "form-control", placeholder: "1, 2, 3, etc." %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-20">
+                          <%= form.label 'Q7: On a scale of 1 - 10, how difficult was this course? (Easiest to Hardest)', class: "col-sm-8 col-form-label" %>
+                          <div class="col-sm-8" style = "width:400px;margin-right:20%;">
+                            <%= form.radio_button :diffculty, 1 %> 1
+                            <%= form.radio_button :diffculty, 2 %> 2
+                            <%= form.radio_button :diffculty, 3 %> 3
+                            <%= form.radio_button :diffculty, 4 %> 4
+                            <%= form.radio_button :diffculty, 5 %> 5
+                            <%= form.radio_button :diffculty, 6 %> 6
+                            <%= form.radio_button :diffculty, 7 %> 7
+                            <%= form.radio_button :diffculty, 8 %> 8
+                            <%= form.radio_button :diffculty, 9 %> 9
+                            <%= form.radio_button :diffculty, 10 %> 10
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-20">
+                          <%= form.label 'Q8: On average, how many hours did you wish you had spent on completing assignments and/or preparing for this course per week?', class: "col-sm-8 col-form-label" %>
+                          <div class="col-sm-8" style = "width:300px;margin-right:20%;">
+                            <%= form.text_field :timeWish, class: "form-control", placeholder: "1, 2, 3, etc." %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-20">
+                          <%= form.label 'Q9: What are your thoughts about the course? 300 Character Limit', class: "col-sm-8 col-form-label" %>
+                          <div class="col-sm-8" style = "width:300px;margin-right:20%;">
+                            <%= form.text_area :thought, class: "form-control", style: "width:500px", maxlength: 300 %>
+                          </div>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="row">
+                        <div class="actions" style="text-align:center" class="text-start text-lg-start mt-4 pt-2">
+                          <%= form.submit class: "btn btn-primary btn-lg"%>
+                        </div>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
     </div>
-  </div>
-  
-  <div class="form-group row" style = "text-align:center; display:flex;">
-    <%= form.label 'Q2: What is the course code? ex: 121, 222, etc.', class: "col-sm-2 col-form-label", style: "margin-left:33.33%;" %>
-    <div class="col-sm-4" style = "width:250px;margin-right:20%;">
-      <%= form.text_field :course_code, class: "form-control" %>
-    </div>
-  </div>
-  
-  <div class="form-group row" style = "text-align:center; display:flex;">
-    <%= form.label 'Q3: What is the professors name? ex: Robert Lightfoot, Phillip Richey, etc.', class: "col-sm-2 col-form-label", style: "margin-left:33.33%;" %>
-    <div class="col-sm-4" style = "width:250px;margin-right:20%;">
-      <%= form.text_field :professor_name, class: "form-control" %>
-    </div>
-  </div>
-  
-  <div class="form-group row" style = "text-align:center; display:flex;">
-    <%= form.label 'Q4: What is the name of the university you took this course? ex: Texas A&M University, University of Texas, etc.', class: "col-sm-2 col-form-label", style: "margin-left:33.33%;" %>
-    <div class="col-sm-4" style = "width:250px;margin-right:20%;">
-      <%= form.text_field :university_name, class: "form-control" %>
-    </div>
-  </div>
-  
-  <div class="form-group row" style = "text-align:center; display:flex;">
-    <%= form.label 'Q5: On average, how many hours did you spend on assignments/homework for this course per week?', class: "col-sm-2 col-form-label", style: "margin-left:33.33%;" %>
-    <div class="col-sm-4" style = "width:250px;margin-right:20%;">
-      <%= form.text_field :workTime, class:"form-control" %>
-    </div>  
-  </div>
-
-  <div class="form-group row" style = "text-align:center; display:flex;">
-    <%= form.label 'Q6: On average, how many hours did you spend on studying/test preparation for this course per week?', class: "col-sm-2 col-form-label", style: "margin-left:33.33%;" %>
-    <div class="col-sm-4" style = "width:250px;margin-right:20%;">
-      <%= form.text_field :studyTime, class:"form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group row" style = "text-align:center; display:flex;">
-    <%= form.label 'Q7: On a scale of 1 - 10, how difficult was this course? (Easiest to Hardest)', class: "col-sm-2 col-form-label", style: "margin-left:33.33%;" %>
-    <div class="col-sm-4" style = "width:250px;margin-right:20%;">
-      <%= form.radio_button :diffculty, 1 %> 1
-      <%= form.radio_button :diffculty, 2 %> 2
-      <%= form.radio_button :diffculty, 3 %> 3
-      <%= form.radio_button :diffculty, 4 %> 4
-      <%= form.radio_button :diffculty, 5 %> 5
-      <%= form.radio_button :diffculty, 6 %> 6
-      <%= form.radio_button :diffculty, 7 %> 7
-      <%= form.radio_button :diffculty, 8 %> 8
-      <%= form.radio_button :diffculty, 9 %> 9
-      <%= form.radio_button :diffculty, 10 %> 10
-    </div>
-  </div>
-
-  <div class="form-group row" style = "text-align:center; display:flex;">
-    <%= form.label 'Q8: On average, how many hours did you wish you had spent on completing assignments and/or preparing for this course per week?', class: "col-sm-2 col-form-label", style: "margin-left:33.33%;" %>
-    <div class="col-sm-4" style = "width:250px;margin-right:20%;">
-      <%= form.text_field :timeWish, class:"form-control" %>
-    </div>
-  </div>
-  
-  <div class="form-group row" style = "text-align:center; display:flex;">
-    <%= form.label 'Q9: What are your thoughts about the course? 300 Character Limit', class: "col-sm-2 col-form-label", style: "margin-left:33.33%;" %>
-    <div class="col-sm-4" style = "width:250px;margin-right:20%;">
-      <%= form.text_area :thought, style: "height:40px;width:300px",maxlength: 300, class:"form-control" %>
-    </div>
-  </div>
-  <div class="actions" style="text-align:center" class="text-start text-lg-start mt-4 pt-2">
-    <%= form.submit class: "btn btn-primary btn-lg"%>
-  </div>
-<% end %>
+</div>

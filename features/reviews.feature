@@ -16,6 +16,7 @@ Background:
   | pols         | 206         | Jason Smith      | Texas A&M University   | 10       | 5         | review_diffculty_4 | 10              | Easy Class     | dummystudent1 |
   | pols         | 207         | Jason Smith      | Texas A&M University   | 10       | 5         | review_diffculty_4 | 10              | Easy Class     | dummystudent1 |
   | pols         | 207         | Jason Smith      | Texas A&M University   | 12       | 7         | review_diffculty_4 | 13              | Easy Class     | dummystudent1 |
+  | pols         | 206         | Phaik Lim        | Texas A&M University   | 12       | 7         | review_diffculty_4 | 13              | Easy Class     | dummystudent1 |
 
 Scenario: Creating a new review, meets all requirements
   When I go to new reviews page
@@ -114,7 +115,7 @@ Scenario: As a professor, I can pin a review
   And I go to the indexupper page
   And I follow the first link "Show"
   And I follow "Pin Post"
-  Then I should see "[Pinned]"
+  Then I should see "Pinned"
   
 Scenario: As a professor, I can unpin a review
   Given I am logged in as a professor "dummyprof1" with password "dummyprof1"
@@ -122,7 +123,7 @@ Scenario: As a professor, I can unpin a review
   And I follow the first link "Show"
   And I follow "Pin Post"
   And I follow "Unpin Post"
-  Then I should not see "[Pinned]"
+  Then I should not see "Pinned"
 
 Scenario: Flagging a review
   Given I go to homepage
@@ -190,3 +191,23 @@ Scenario: Searching for comment
   And I press "Search"
   And I go to the indexupper page
   
+Scenario: Searching for other classes taught by professor
+  Given I go to homepage
+  When I fill in "search_field" with "pols 206"
+  And I press "Search"
+  And I follow the first link "Show"
+  And I follow the first link "Show Other Courses With Jason Smith"
+  
+Scenario: Searching for same class taught by other professors
+  Given I go to homepage
+  When I fill in "search_field" with "pols 206"
+  And I press "Search"
+  And I follow the first link "Show"
+  And I follow the first link "Show Other pols 206 Courses"
+Scenario: Searching for same class taught by other professors (One Professor)
+  Given I go to homepage
+  When I fill in "search_field" with "207"
+  And I press "Search"
+  And I follow the first link "Show"
+  And I follow the first link "Show Other pols 207 Courses"
+

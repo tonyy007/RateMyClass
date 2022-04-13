@@ -86,7 +86,7 @@ class ReviewsController < ApplicationController
         # @courses_with_same_professor_2d = Array.new
         # @courses_with_same_professor_2d.append(@courses_with_same_professor.clone)
         if @courses_with_same_professor.empty?
-          redirect_to({ :action=>'noreview', :controller=>'reviews' })
+          #redirect_to({ :action=>'noreview', :controller=>'reviews' })
         else
           @reviews = @courses_with_same_professor
           @reviews_grouped = Array.new #outer layer array for set of grouped reviews of same type
@@ -121,7 +121,7 @@ class ReviewsController < ApplicationController
           end
         end
         if @same_courses.empty?
-          redirect_to({ :action=>'noreview', :controller=>'reviews' })
+          #redirect_to({ :action=>'noreview', :controller=>'reviews' })
         else
           @reviews = @same_courses
           p @reviews
