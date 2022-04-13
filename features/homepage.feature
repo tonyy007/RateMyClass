@@ -15,11 +15,11 @@ Background:
   Given the following reviews exist:
   | course_title | course_code | professor_name   | university_name        | workTime | studyTime | diffculty          | timeWish        | thought        | users_id      |
   | csce         | 121         | Robert Lightfoot | Texas A&M University   | 10       | 5         | review_diffculty_4 | 10              | Easy Class     | dummystudent1 |
+  | pols         | 207         | Bobbak Mortazavi | Texas A&M University   | 10       | 4         | review_diffculty_4 | 11              | Easy Class     | dummystudent1 |
+  | agls         | 234         | Philip Argumaniz | Texas A&M University   | 10       | 6         | review_diffculty_4 | 12              | Easy Class     | dummystudent1 |
   
 Scenario: At the homepage, I am able to logout
   When I follow "Log out"
-  Then I should see "You are now logged out!"
-  And I press the button "Click here to be redirected to homepage"
   Then I should be on the homepage
 
 Scenario: At the homepage, as an admin, I am able to go to the reviews database
@@ -42,19 +42,15 @@ Scenario: At the homepage, as an admin, I am unable to update reviews in the rev
   Then I should see "Back"
   And I follow "Back"
   
-Scenario: At the homepage, as an admin, I should not be able to make a new review
-  When I go to reviews page
-  And I go to new reviews page
-  Then I should be on the reviews page
-  
 Scenario: At the homepage, as an admin, The course look up works on an existing class
   When I fill in "search_field" with "CSCE 121"
   And I press "Search"
   Then I should be on the indexupper page
 
 Scenario: At the homepage, as an admin, The course look up should not work on a class that does not exist
-  When I fill in "search_field" with "abc"
+  When I fill in "search_field" with "9"
   And I press "Search"
+  And I want to open
   Then I should be on the no reviews page
 
 Scenario: As any user, when I go to an unamed page, it should reroute to homepage

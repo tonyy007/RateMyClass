@@ -34,8 +34,8 @@
           <% end %>
           </div>
           <div class = "form-outline mb-4">
-            <%= form.label :password_hash, class: "form-label"  %>
-            <%= form.text_field :password_hash, style: "width:500px;",class:"form-control form-control-lg"%>
+            <%= form.label :password, class: "form-label"  %>
+            <%= form.password_field :password_hash, placeholder: "Enter New Password", style: "width:500px;",class:"form-control form-control-lg"%>
           </div>
           <% if session[:type] == 'admin' %>
             <div class="field">

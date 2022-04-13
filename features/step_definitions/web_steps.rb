@@ -39,7 +39,6 @@ Then /^(?:|I )should be on the (.+)$/ do |page_name|
     current_path.should == path_to(page_name)
   else
     assert_equal path_to(page_name), current_path
-    puts current_path
   end
 end
 

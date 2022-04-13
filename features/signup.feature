@@ -68,7 +68,7 @@ Scenario: User click Login but then clicks sign up
   And I fill in "user_field" with "account1"
   And I fill in "pass_field" with "account1"
   And I follow "Sign Up Here"
-  Then I should be on the homepage
+  Then I should be on the signup page
 
 Scenario: Login Successful, username and password correct
   When I go to the signup page
@@ -80,7 +80,7 @@ Scenario: Login Successful, username and password correct
   And I fill in "user_field" with "account1"
   And I fill in "pass_field" with "account1"
   And I press "Log in"
-  Then I should be on the homepage
+  Then I should be on the homepage_s
   
 Scenario: I enter the incorrect admin code when creating an admin
     When I go to the signup page

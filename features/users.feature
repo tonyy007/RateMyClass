@@ -21,6 +21,7 @@ Scenario: I am able to create a new User to the Database
   And I fill in "user_password_hash" with "Account100"
   And I fill in "user_type_of_user" with "admin"
   And I press "Create User"
+  And I follow "Back"
   Then I should be on the users database page
   
 Scenario: I do not meet the criteria to create a user
@@ -59,6 +60,7 @@ Scenario: I am able to edit the first user and return back to the database
   And I fill in "user_password_hash" with "abcabcabc"
   And I press "Update User"
   Then I should see "User was successfully updated."
+  And I follow "Back"
   Then I should be on the users database page
 
 Scenario: I am able to destory the first user

@@ -1,13 +1,11 @@
 <body>
   <div style="color:red">
-    <%= form_tag homepage_path, :method => :get do %>
       <head>
         <title>RateMyClass Log out</title>
       </head>
       <h1 style="text-align:center;">You are now logged out!</h1>
       <div align="center">
-        <%= submit_tag 'Click here to be redirected to homepage', :class => "btn btn-primary btn-lg", style: "padding-left: 2.5rem; padding-right: 2.5rem;" %>
+        <%= button_to 'Click here to be redirected to homepage', homepage_path, :class => "btn btn-primary btn-lg", :id => "Redirect", style: "padding-left: 2.5rem; padding-right: 2.5rem;" %>
       </div>
-    <% end %>
   </div>
 </body>

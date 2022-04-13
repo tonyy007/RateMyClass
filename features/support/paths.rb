@@ -7,7 +7,7 @@ module NavigationHelpers
   #
   def path_to(page_name)
     case page_name
-    when /^the signup page$/
+    when /^signup page$/
       signup_path
     when /^homepage$/
       homepage_path

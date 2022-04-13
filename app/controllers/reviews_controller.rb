@@ -46,8 +46,8 @@ class ReviewsController < ApplicationController
       @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name)
       @reviews_search = Array.new
       @reviews.each_with_index do |review, index|
-        if (@searchval.match(review.course_code.to_s.downcase) != nil) or (@searchval.match(review.course_title.to_s.downcase) != nil) #choose what to sort by here
-          @reviews_search.append(review) 
+        if ((@searchval.match(review.course_code.to_s.downcase) != nil) or (@searchval.match(review.course_title.to_s.downcase) != nil)) and !review.course_code.nil?   #choose what to sort by here
+          @reviews_search.append(review)
         elsif (index == @reviews.length - 1) and (@reviews_search.empty?)
           redirect_to({ :action=>'noreview', :controller=>'reviews' })
         end
@@ -73,27 +73,101 @@ class ReviewsController < ApplicationController
       $reviews_global = @reviews_grouped
       @reviews = @reviews_grouped
     else #search bar not used
-      @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name)
-      @reviews_grouped = Array.new #outer layer array for set of grouped reviews of same type
-      @reviews_singular = Array.new #inner layer array for grouped reviews of same type
-      @i = 0
-      @reviews.each do |review|
-        if(@i == 0)
-          @reviews_singular.append(review)
-        elsif((review.course_code == @reviews_singular[@i - 1].course_code) and (review.course_title == @reviews_singular[@i - 1].course_title) and (review.professor_name == @reviews_singular[@i - 1].professor_name) and (review.university_name == @reviews_singular[@i - 1].university_name)) 
-          @reviews_singular.append(review)
-        else
-          @reviews_grouped.append(@reviews_singular.clone)
-          @reviews_singular.clear()
-          @reviews_singular.append(review)
-          @i = 0
+      if params[:prof_search] == "true"
+        @current_professor = params[:prof]
+        #create array of other courses taught by this professor
+        @courses_with_same_professor = Array.new
+        @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name)
+        @reviews.each_with_index do |review, index|
+          if review.professor_name == @current_professor
+            @courses_with_same_professor.append(review.clone)
+          end
         end
-        @i += 1
+        # @courses_with_same_professor_2d = Array.new
+        # @courses_with_same_professor_2d.append(@courses_with_same_professor.clone)
+        if @courses_with_same_professor.empty?
+          redirect_to({ :action=>'noreview', :controller=>'reviews' })
+        else
+          @reviews = @courses_with_same_professor
+          @reviews_grouped = Array.new #outer layer array for set of grouped reviews of same type
+          @reviews_singular = Array.new #inner layer array for grouped reviews of same type
+          @i = 0
+          @reviews.each do |review|
+            if(@i == 0)
+              @reviews_singular.append(review)
+            elsif((review.course_code == @reviews_singular[@i - 1].course_code) and (review.course_title == @reviews_singular[@i - 1].course_title) and (review.professor_name == @reviews_singular[@i - 1].professor_name) and (review.university_name == @reviews_singular[@i - 1].university_name)) 
+              @reviews_singular.append(review)
+            else
+              @reviews_grouped.append(@reviews_singular.clone)
+              @reviews_singular.clear()
+              @reviews_singular.append(review)
+              @i = 0
+            end
+            @i += 1
+          end
+          @reviews_grouped.append(@reviews_singular.clone)
+          $reviews_global = @reviews_grouped
+          @reviews = @reviews_grouped
+        end
+      elsif params[:course_search] == "true"
+        @current_course_code = params[:coursecode]
+        @current_course_title = params[:coursetitle]
+        #create array of other courses taught by this professor
+        @same_courses = Array.new
+        @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name)
+        @reviews.each_with_index do |review, index|
+          if (review.course_code == @current_course_code) and (review.course_title == @current_course_title)
+            @same_courses.append(review.clone)
+          end
+        end
+        if @same_courses.empty?
+          redirect_to({ :action=>'noreview', :controller=>'reviews' })
+        else
+          @reviews = @same_courses
+          p @reviews
+          @reviews_grouped = Array.new #outer layer array for set of grouped reviews of same type
+          @reviews_singular = Array.new #inner layer array for grouped reviews of same type
+          @i = 0
+          @reviews.each do |review|
+            if(@i == 0)
+              @reviews_singular.append(review)
+            elsif((review.course_code == @reviews_singular[@i - 1].course_code) and (review.course_title == @reviews_singular[@i - 1].course_title) and (review.professor_name == @reviews_singular[@i - 1].professor_name) and (review.university_name == @reviews_singular[@i - 1].university_name)) 
+              @reviews_singular.append(review)
+            else
+              @reviews_grouped.append(@reviews_singular.clone)
+              @reviews_singular.clear()
+              @reviews_singular.append(review)
+              @i = 0
+            end
+            @i += 1
+          end
+          @reviews_grouped.append(@reviews_singular.clone)
+          $reviews_global = @reviews_grouped
+          @reviews = @reviews_grouped
+        end
+      else
+        @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name)
+        @reviews_grouped = Array.new #outer layer array for set of grouped reviews of same type
+        @reviews_singular = Array.new #inner layer array for grouped reviews of same type
+        @i = 0
+        @reviews.each do |review|
+          if(@i == 0)
+            @reviews_singular.append(review)
+          elsif((review.course_code == @reviews_singular[@i - 1].course_code) and (review.course_title == @reviews_singular[@i - 1].course_title) and (review.professor_name == @reviews_singular[@i - 1].professor_name) and (review.university_name == @reviews_singular[@i - 1].university_name)) 
+            @reviews_singular.append(review)
+          else
+            @reviews_grouped.append(@reviews_singular.clone)
+            @reviews_singular.clear()
+            @reviews_singular.append(review)
+            @i = 0
+          end
+          @i += 1
+        end
+        @reviews_grouped.append(@reviews_singular.clone)
+        $reviews_global = @reviews_grouped
+        @reviews = @reviews_grouped
+        #@reviews = Review.all
       end
-      @reviews_grouped.append(@reviews_singular.clone)
-      $reviews_global = @reviews_grouped
-      @reviews = @reviews_grouped
-      #@reviews = Review.all
     end
   end
   
@@ -122,7 +196,6 @@ class ReviewsController < ApplicationController
     @reviews_averaged.insert(1, studyTimearr.inject{ |sum, el| sum + el }.to_f / studyTimearr.size)
     @reviews_averaged.insert(2, difficultyarr.inject{ |sum, el| sum + el }.to_f / difficultyarr.size)
     @reviews_averaged.insert(3, timeWisharr.inject{ |sum, el| sum + el }.to_f / timeWisharr.size)
-    
   end
 
   # GET /reviews/1 or /reviews/1.json
