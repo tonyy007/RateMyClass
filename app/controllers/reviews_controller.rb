@@ -50,11 +50,17 @@ class ReviewsController < ApplicationController
         @profnamearr[0] = "/" + @profnamearr[0] + "/"
         if !@profnamearr[1].nil?
           @profnamearr[1] = "/" + @profnamearr[1] + "/"
-        end
-        if ((@searchval.match(review.course_code.to_s.downcase) != nil) or (@searchval.match(review.course_title.to_s.downcase) != nil) or (@searchval.match(@profnamearr[0]) != nil) or (@searchval.match(@profnamearr[1]) != nil)) and !review.course_code.nil?   #choose what to sort by here
-          @reviews_search.append(review)
-        elsif (index == @reviews.length - 1) and (@reviews_search.empty?)
-          redirect_to({ :action=>'noreview', :controller=>'reviews' })
+          if ((@searchval.match(review.course_code.to_s.downcase) != nil) or (@searchval.match(review.course_title.to_s.downcase) != nil) or (@searchval.match(@profnamearr[0]) != nil) or (@searchval.match(@profnamearr[1]) != nil)) and !review.course_code.nil?   #choose what to sort by here
+            @reviews_search.append(review)
+          elsif (index == @reviews.length - 1) and (@reviews_search.empty?)
+            redirect_to({ :action=>'noreview', :controller=>'reviews' })
+          end
+        else
+          if ((@searchval.match(review.course_code.to_s.downcase) != nil) or (@searchval.match(review.course_title.to_s.downcase) != nil) or (@searchval.match(@profnamearr[0]) != nil)) and !review.course_code.nil?   #choose what to sort by here
+            @reviews_search.append(review)
+          elsif (index == @reviews.length - 1) and (@reviews_search.empty?)
+            redirect_to({ :action=>'noreview', :controller=>'reviews' })
+          end
         end
       end
       @reviews = @reviews_search #from this list combine reviews whose course, prof, uni, etc are equal and display a set of matches to the user
