@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-04-13T01:53:48+00:00">2022-04-13T01:53:48+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-04-14T03:08:57+00:00">2022-04-14T03:08:57+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  96.13%
+  95.55%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         11.64
+         12.64
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>362</b> relevant lines,
-    <span class="green"><b>348</b> lines covered</span> and
-    <span class="red"><b>14</b> lines missed. </span>
+    <b>382</b> relevant lines,
+    <span class="green"><b>365</b> lines covered</span> and
+    <span class="red"><b>17</b> lines missed. </span>
     (<span class="green">
-  96.13%
+  95.55%
 </span>
 )
   </div>
@@ -149,12 +149,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#b6fdac089e81e40a1e9544a48c4a25f549ca9732" class="src_link" title="app/controllers/reviews_controller.rb">app/controllers/reviews_controller.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">263</td>
-            <td class="cell--number">175</td>
-            <td class="cell--number">175</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">12.51</td>
+            <td class="green strong cell--number t-file__coverage">98.46 %</td>
+            <td class="cell--number">289</td>
+            <td class="cell--number">195</td>
+            <td class="cell--number">192</td>
+            <td class="cell--number">3</td>
+            <td class="cell--number">14.37</td>
             
           </tr>
         
@@ -302,14 +302,14 @@
     <span class="group_name">Controllers</span>
     (<span class="covered_percent">
       <span class="green">
-  100.0%
+  99.16%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         12.47
+         13.49
        </span>
     </span> hits/line
     )
@@ -322,11 +322,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>337</b> relevant lines,
-    <span class="green"><b>337</b> lines covered</span> and
-    <span class="red"><b>0</b> lines missed. </span>
+    <b>357</b> relevant lines,
+    <span class="green"><b>354</b> lines covered</span> and
+    <span class="red"><b>3</b> lines missed. </span>
     (<span class="green">
-  100.0%
+  99.16%
 </span>
 )
   </div>
@@ -406,12 +406,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#b6fdac089e81e40a1e9544a48c4a25f549ca9732" class="src_link" title="app/controllers/reviews_controller.rb">app/controllers/reviews_controller.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">263</td>
-            <td class="cell--number">175</td>
-            <td class="cell--number">175</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">12.51</td>
+            <td class="green strong cell--number t-file__coverage">98.46 %</td>
+            <td class="cell--number">289</td>
+            <td class="cell--number">195</td>
+            <td class="cell--number">192</td>
+            <td class="cell--number">3</td>
+            <td class="cell--number">14.37</td>
             
           </tr>
         
@@ -3454,7 +3454,7 @@
     <h3>app/controllers/reviews_controller.rb</h3>
     <h4>
       <span class="green">
-  100.0%
+  98.46%
 </span>
 
       lines covered
@@ -3463,9 +3463,9 @@
     
 
     <div class="t-line-summary">
-      <b>175</b> relevant lines.
-      <span class="green"><b>175</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>195</b> relevant lines.
+      <span class="green"><b>192</b> lines covered</span> and
+      <span class="red"><b>3</b> lines missed.</span>
     </div>
 
     
@@ -3955,40 +3955,40 @@
 
             
 
-            <code class="ruby">        @searchval = &quot;/&quot; + value[1].to_s.downcase + &quot;/&quot;</code>
+            <code class="ruby">        @profsearchval = value[1].to_s.downcase.split</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="45">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="17" data-linenumber="46">
+          <li class="covered" data-hits="17" data-linenumber="45">
             <span class="hits">17</span>
             
 
             
 
-            <code class="ruby">      @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name)</code>
+            <code class="ruby">        if !@profsearchval[0].nil?</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="17" data-linenumber="47">
-            <span class="hits">17</span>
+          <li class="covered" data-hits="16" data-linenumber="46">
+            <span class="hits">16</span>
             
 
             
 
-            <code class="ruby">      @reviews_search = Array.new</code>
+            <code class="ruby">          @profsearchval[0] = &quot;/&quot; + @profsearchval[0] + &quot;/&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="47">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
           </li>
         </div>
       
@@ -3999,51 +3999,51 @@
 
             
 
-            <code class="ruby">      @reviews.each_with_index do |review, index|</code>
+            <code class="ruby">        if !@profsearchval[1].nil?</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="156" data-linenumber="49">
-            <span class="hits">156</span>
+          <li class="covered" data-hits="12" data-linenumber="49">
+            <span class="hits">12</span>
             
 
             
 
-            <code class="ruby">        if ((@searchval.match(review.course_code.to_s.downcase) != nil) or (@searchval.match(review.course_title.to_s.downcase) != nil)) and !review.course_code.nil?   #choose what to sort by here</code>
+            <code class="ruby">          @profsearchval[1] = &quot;/&quot; + @profsearchval[1] + &quot;/&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="28" data-linenumber="50">
-            <span class="hits">28</span>
+          <li class="never" data-hits="" data-linenumber="50">
+            
             
 
             
 
-            <code class="ruby">          @reviews_search.append(review)</code>
+            <code class="ruby">        end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="128" data-linenumber="51">
-            <span class="hits">128</span>
+          <li class="covered" data-hits="17" data-linenumber="51">
+            <span class="hits">17</span>
             
 
             
 
-            <code class="ruby">        elsif (index == @reviews.length - 1) and (@reviews_search.empty?)</code>
+            <code class="ruby">        @searchval = &quot;/&quot; + value[1].to_s.downcase + &quot;/&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="52">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="17" data-linenumber="52">
+            <span class="hits">17</span>
             
 
             
 
-            <code class="ruby">          redirect_to({ :action=&gt;&#39;noreview&#39;, :controller=&gt;&#39;reviews&#39; })</code>
+            <code class="ruby">        @searchvalreg = value[1].to_s.downcase</code>
           </li>
         </div>
       
@@ -4054,18 +4054,18 @@
 
             
 
-            <code class="ruby">        end</code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="54">
-            
-            
-
+          <li class="covered" data-hits="17" data-linenumber="54">
+            <span class="hits">17</span>
             
 
-            <code class="ruby">      end</code>
+            
+
+            <code class="ruby">      @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name)</code>
           </li>
         </div>
       
@@ -4076,7 +4076,7 @@
 
             
 
-            <code class="ruby">      @reviews = @reviews_search #from this list combine reviews whose course, prof, uni, etc are equal and display a set of matches to the user</code>
+            <code class="ruby">      @reviews_search = Array.new</code>
           </li>
         </div>
       
@@ -4087,309 +4087,111 @@
 
             
 
-            <code class="ruby">      @reviews_grouped = Array.new #outer layer array for set of grouped reviews of same type</code>
+            <code class="ruby">      @reviews.each_with_index do |review, index|</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="17" data-linenumber="57">
-            <span class="hits">17</span>
+          <li class="covered" data-hits="146" data-linenumber="57">
+            <span class="hits">146</span>
             
 
             
 
-            <code class="ruby">      @reviews_singular = Array.new #inner layer array for grouped reviews of same type</code>
+            <code class="ruby">        @profnamearr = review.professor_name.to_s.downcase.split</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="17" data-linenumber="58">
-            <span class="hits">17</span>
+          <li class="covered" data-hits="146" data-linenumber="58">
+            <span class="hits">146</span>
             
 
             
 
-            <code class="ruby">      @i = 0</code>
+            <code class="ruby">        if @searchvalreg.empty?</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="17" data-linenumber="59">
-            <span class="hits">17</span>
-            
-
-            
-
-            <code class="ruby">      @reviews.each do |review|</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="28" data-linenumber="60">
-            <span class="hits">28</span>
-            
-
-            
-
-            <code class="ruby">        if(@i == 0)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="14" data-linenumber="61">
-            <span class="hits">14</span>
-            
-
-            
-
-            <code class="ruby">          @reviews_singular.append(review)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="14" data-linenumber="62">
-            <span class="hits">14</span>
-            
-
-            
-
-            <code class="ruby">        elsif((review.course_code == @reviews_singular[@i - 1].course_code) and (review.course_title == @reviews_singular[@i - 1].course_title) and (review.professor_name == @reviews_singular[@i - 1].professor_name) and (review.university_name == @reviews_singular[@i - 1].university_name)) </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="4" data-linenumber="63">
-            <span class="hits">4</span>
-            
-
-            
-
-            <code class="ruby">          @reviews_singular.append(review)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="64">
-            
-            
-
-            
-
-            <code class="ruby">        else</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="10" data-linenumber="65">
-            <span class="hits">10</span>
-            
-
-            
-
-            <code class="ruby">          @reviews_grouped.append(@reviews_singular.clone)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="10" data-linenumber="66">
-            <span class="hits">10</span>
-            
-
-            
-
-            <code class="ruby">          @reviews_singular.clear()</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="10" data-linenumber="67">
-            <span class="hits">10</span>
-            
-
-            
-
-            <code class="ruby">          @reviews_singular.append(review)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="10" data-linenumber="68">
-            <span class="hits">10</span>
-            
-
-            
-
-            <code class="ruby">          @i = 0</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="69">
-            
-            
-
-            
-
-            <code class="ruby">        end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="28" data-linenumber="70">
-            <span class="hits">28</span>
-            
-
-            
-
-            <code class="ruby">        @i += 1</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="71">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="17" data-linenumber="72">
-            <span class="hits">17</span>
-            
-
-            
-
-            <code class="ruby">      @reviews_grouped.append(@reviews_singular.clone)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="17" data-linenumber="73">
-            <span class="hits">17</span>
-            
-
-            
-
-            <code class="ruby">      $reviews_global = @reviews_grouped</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="17" data-linenumber="74">
-            <span class="hits">17</span>
-            
-
-            
-
-            <code class="ruby">      @reviews = @reviews_grouped</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="75">
-            
-            
-
-            
-
-            <code class="ruby">    else #search bar not used</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="12" data-linenumber="76">
-            <span class="hits">12</span>
-            
-
-            
-
-            <code class="ruby">      if params[:prof_search] == &quot;true&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="77">
+          <li class="covered" data-hits="1" data-linenumber="59">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">        @current_professor = params[:prof]</code>
+            <code class="ruby">          redirect_to({ :action=&gt;&#39;noreview&#39;, :controller=&gt;&#39;reviews&#39; })</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="78">
-            
-            
-
-            
-
-            <code class="ruby">        #create array of other courses taught by this professor</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="79">
+          <li class="covered" data-hits="1" data-linenumber="60">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">        @courses_with_same_professor = Array.new</code>
+            <code class="ruby">          break</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="80">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="145" data-linenumber="61">
+            <span class="hits">145</span>
             
 
             
 
-            <code class="ruby">        @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name)</code>
+            <code class="ruby">        elsif !@profnamearr[1].nil? and !@profsearchval[1].nil?</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="81">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="44" data-linenumber="62">
+            <span class="hits">44</span>
             
 
             
 
-            <code class="ruby">        @reviews.each_with_index do |review, index|</code>
+            <code class="ruby">          if ((@searchval.match(review.course_code.to_s.downcase) != nil) or (@searchval.match(review.course_title.to_s.downcase) != nil) or (@profsearchval[0].match(@profnamearr[0]) != nil) or (@profsearchval[1].match(@profnamearr[1]) != nil)) and !review.course_code.nil?   #choose what to sort by here</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="11" data-linenumber="82">
-            <span class="hits">11</span>
+          <li class="covered" data-hits="22" data-linenumber="63">
+            <span class="hits">22</span>
             
 
             
 
-            <code class="ruby">          if review.professor_name == @current_professor</code>
+            <code class="ruby">            @reviews_search.append(review)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="83">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="22" data-linenumber="64">
+            <span class="hits">22</span>
             
 
             
 
-            <code class="ruby">            @courses_with_same_professor.append(review.clone)</code>
+            <code class="ruby">          elsif (index == @reviews.length - 1) and (@reviews_search.empty?)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="84">
+          <li class="missed" data-hits="0" data-linenumber="65">
+            
+            
+
+            
+
+            <code class="ruby">            redirect_to({ :action=&gt;&#39;noreview&#39;, :controller=&gt;&#39;reviews&#39; })</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="66">
             
             
 
@@ -4400,7 +4202,139 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="85">
+          <li class="covered" data-hits="101" data-linenumber="67">
+            <span class="hits">101</span>
+            
+
+            
+
+            <code class="ruby">        elsif !@profnamearr[1].nil? and @profsearchval[1].nil?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="21" data-linenumber="68">
+            <span class="hits">21</span>
+            
+
+            
+
+            <code class="ruby">          if ((@searchval.match(review.course_code.to_s.downcase) != nil) or (@searchval.match(review.course_title.to_s.downcase) != nil) or (@profsearchval[0].match(@profnamearr[1]) != nil) or (@profsearchval[0].match(@profnamearr[0]) != nil)) and !review.course_code.nil?   #choose what to sort by here</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="6" data-linenumber="69">
+            <span class="hits">6</span>
+            
+
+            
+
+            <code class="ruby">            @reviews_search.append(review)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="15" data-linenumber="70">
+            <span class="hits">15</span>
+            
+
+            
+
+            <code class="ruby">          elsif (index == @reviews.length - 1) and (@reviews_search.empty?)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="71">
+            
+            
+
+            
+
+            <code class="ruby">            redirect_to({ :action=&gt;&#39;noreview&#39;, :controller=&gt;&#39;reviews&#39; })</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="72">
+            
+            
+
+            
+
+            <code class="ruby">          end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="73">
+            
+            
+
+            
+
+            <code class="ruby">        else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="80" data-linenumber="74">
+            <span class="hits">80</span>
+            
+
+            
+
+            <code class="ruby">          if ((@searchval.match(review.course_code.to_s.downcase) != nil) or (@searchval.match(review.course_title.to_s.downcase) != nil) or (@profsearchval[0].match(@profnamearr[0]) != nil)) and !review.course_code.nil?   #choose what to sort by here</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="75">
+            
+            
+
+            
+
+            <code class="ruby">            @reviews_search.append(review)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="80" data-linenumber="76">
+            <span class="hits">80</span>
+            
+
+            
+
+            <code class="ruby">          elsif (index == @reviews.length - 1) and (@reviews_search.empty?)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="77">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">            redirect_to({ :action=&gt;&#39;noreview&#39;, :controller=&gt;&#39;reviews&#39; })</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="78">
+            
+            
+
+            
+
+            <code class="ruby">          end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="79">
             
             
 
@@ -4411,46 +4345,112 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="86">
+          <li class="never" data-hits="" data-linenumber="80">
             
             
 
             
 
-            <code class="ruby">        # @courses_with_same_professor_2d = Array.new</code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="87">
-            
-            
-
+          <li class="covered" data-hits="17" data-linenumber="81">
+            <span class="hits">17</span>
             
 
-            <code class="ruby">        # @courses_with_same_professor_2d.append(@courses_with_same_professor.clone)</code>
+            
+
+            <code class="ruby">      @reviews = @reviews_search #from this list combine reviews whose course, prof, uni, etc are equal and display a set of matches to the user</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="88">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="17" data-linenumber="82">
+            <span class="hits">17</span>
             
 
             
 
-            <code class="ruby">        if @courses_with_same_professor.empty?</code>
+            <code class="ruby">      @reviews_grouped = Array.new #outer layer array for set of grouped reviews of same type</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="89">
+          <li class="covered" data-hits="17" data-linenumber="83">
+            <span class="hits">17</span>
             
+
+            
+
+            <code class="ruby">      @reviews_singular = Array.new #inner layer array for grouped reviews of same type</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="17" data-linenumber="84">
+            <span class="hits">17</span>
             
 
             
 
-            <code class="ruby">          #redirect_to({ :action=&gt;&#39;noreview&#39;, :controller=&gt;&#39;reviews&#39; })</code>
+            <code class="ruby">      @i = 0</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="17" data-linenumber="85">
+            <span class="hits">17</span>
+            
+
+            
+
+            <code class="ruby">      @reviews.each do |review|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="28" data-linenumber="86">
+            <span class="hits">28</span>
+            
+
+            
+
+            <code class="ruby">        if(@i == 0)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="14" data-linenumber="87">
+            <span class="hits">14</span>
+            
+
+            
+
+            <code class="ruby">          @reviews_singular.append(review)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="14" data-linenumber="88">
+            <span class="hits">14</span>
+            
+
+            
+
+            <code class="ruby">        elsif((review.course_code == @reviews_singular[@i - 1].course_code) and (review.course_title == @reviews_singular[@i - 1].course_title) and (review.professor_name == @reviews_singular[@i - 1].professor_name) and (review.university_name == @reviews_singular[@i - 1].university_name)) </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="89">
+            <span class="hits">4</span>
+            
+
+            
+
+            <code class="ruby">          @reviews_singular.append(review)</code>
           </li>
         </div>
       
@@ -4466,41 +4466,41 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="91">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="10" data-linenumber="91">
+            <span class="hits">10</span>
             
 
             
 
-            <code class="ruby">          @reviews = @courses_with_same_professor</code>
+            <code class="ruby">          @reviews_grouped.append(@reviews_singular.clone)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="92">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="10" data-linenumber="92">
+            <span class="hits">10</span>
             
 
             
 
-            <code class="ruby">          @reviews_grouped = Array.new #outer layer array for set of grouped reviews of same type</code>
+            <code class="ruby">          @reviews_singular.clear()</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="93">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="10" data-linenumber="93">
+            <span class="hits">10</span>
             
 
             
 
-            <code class="ruby">          @reviews_singular = Array.new #inner layer array for grouped reviews of same type</code>
+            <code class="ruby">          @reviews_singular.append(review)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="94">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="10" data-linenumber="94">
+            <span class="hits">10</span>
             
 
             
@@ -4510,90 +4510,90 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="95">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="95">
+            
             
 
             
 
-            <code class="ruby">          @reviews.each do |review|</code>
+            <code class="ruby">        end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="96">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="28" data-linenumber="96">
+            <span class="hits">28</span>
             
 
             
 
-            <code class="ruby">            if(@i == 0)</code>
+            <code class="ruby">        @i += 1</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="97">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="97">
+            
             
 
             
 
-            <code class="ruby">              @reviews_singular.append(review)</code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="98">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="17" data-linenumber="98">
+            <span class="hits">17</span>
             
 
             
 
-            <code class="ruby">            elsif((review.course_code == @reviews_singular[@i - 1].course_code) and (review.course_title == @reviews_singular[@i - 1].course_title) and (review.professor_name == @reviews_singular[@i - 1].professor_name) and (review.university_name == @reviews_singular[@i - 1].university_name)) </code>
+            <code class="ruby">      @reviews_grouped.append(@reviews_singular.clone)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="99">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="17" data-linenumber="99">
+            <span class="hits">17</span>
             
 
             
 
-            <code class="ruby">              @reviews_singular.append(review)</code>
+            <code class="ruby">      $reviews_global = @reviews_grouped</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="100">
-            
-            
-
+          <li class="covered" data-hits="17" data-linenumber="100">
+            <span class="hits">17</span>
             
 
-            <code class="ruby">            else</code>
+            
+
+            <code class="ruby">      @reviews = @reviews_grouped</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="101">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="101">
+            
             
 
             
 
-            <code class="ruby">              @reviews_grouped.append(@reviews_singular.clone)</code>
+            <code class="ruby">    else #search bar not used</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="102">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="12" data-linenumber="102">
+            <span class="hits">12</span>
             
 
             
 
-            <code class="ruby">              @reviews_singular.clear()</code>
+            <code class="ruby">      if params[:prof_search] == &quot;true&quot;</code>
           </li>
         </div>
       
@@ -4604,84 +4604,84 @@
 
             
 
-            <code class="ruby">              @reviews_singular.append(review)</code>
+            <code class="ruby">        @current_professor = params[:prof]</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="104">
+          <li class="never" data-hits="" data-linenumber="104">
+            
+            
+
+            
+
+            <code class="ruby">        #create array of other courses taught by this professor</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="105">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">              @i = 0</code>
+            <code class="ruby">        @courses_with_same_professor = Array.new</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="105">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="106">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">            end</code>
+            
+
+            <code class="ruby">        @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="106">
+          <li class="covered" data-hits="1" data-linenumber="107">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        @reviews.each_with_index do |review, index|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="11" data-linenumber="108">
+            <span class="hits">11</span>
+            
+
+            
+
+            <code class="ruby">          if review.professor_name == @current_professor</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="109">
             <span class="hits">3</span>
             
 
             
 
-            <code class="ruby">            @i += 1</code>
+            <code class="ruby">            @courses_with_same_professor.append(review.clone)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="107">
+          <li class="never" data-hits="" data-linenumber="110">
             
             
 
             
 
             <code class="ruby">          end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="108">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">          @reviews_grouped.append(@reviews_singular.clone)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="109">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">          $reviews_global = @reviews_grouped</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="110">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">          @reviews = @reviews_grouped</code>
           </li>
         </div>
       
@@ -4697,35 +4697,35 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="11" data-linenumber="112">
-            <span class="hits">11</span>
+          <li class="never" data-hits="" data-linenumber="112">
+            
             
 
             
 
-            <code class="ruby">      elsif params[:course_search] == &quot;true&quot;</code>
+            <code class="ruby">        # @courses_with_same_professor_2d = Array.new</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="113">
-            <span class="hits">2</span>
+          <li class="never" data-hits="" data-linenumber="113">
+            
             
 
             
 
-            <code class="ruby">        @current_course_code = params[:coursecode]</code>
+            <code class="ruby">        # @courses_with_same_professor_2d.append(@courses_with_same_professor.clone)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="114">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="1" data-linenumber="114">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">        @current_course_title = params[:coursetitle]</code>
+            <code class="ruby">        if @courses_with_same_professor.empty?</code>
           </li>
         </div>
       
@@ -4736,111 +4736,12 @@
 
             
 
-            <code class="ruby">        #create array of other courses taught by this professor</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="116">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">        @same_courses = Array.new</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="117">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">        @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="118">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">        @reviews.each_with_index do |review, index|</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="22" data-linenumber="119">
-            <span class="hits">22</span>
-            
-
-            
-
-            <code class="ruby">          if (review.course_code == @current_course_code) and (review.course_title == @current_course_title)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="4" data-linenumber="120">
-            <span class="hits">4</span>
-            
-
-            
-
-            <code class="ruby">            @same_courses.append(review.clone)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="121">
-            
-            
-
-            
-
-            <code class="ruby">          end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="122">
-            
-            
-
-            
-
-            <code class="ruby">        end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="123">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">        if @same_courses.empty?</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="124">
-            
-            
-
-            
-
             <code class="ruby">          #redirect_to({ :action=&gt;&#39;noreview&#39;, :controller=&gt;&#39;reviews&#39; })</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="125">
+          <li class="never" data-hits="" data-linenumber="116">
             
             
 
@@ -4851,30 +4752,19 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="126">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="1" data-linenumber="117">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">          @reviews = @same_courses</code>
+            <code class="ruby">          @reviews = @courses_with_same_professor</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="127">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">          p @reviews</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="128">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="1" data-linenumber="118">
+            <span class="hits">1</span>
             
 
             
@@ -4884,8 +4774,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="129">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="1" data-linenumber="119">
+            <span class="hits">1</span>
             
 
             
@@ -4895,8 +4785,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="130">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="1" data-linenumber="120">
+            <span class="hits">1</span>
             
 
             
@@ -4906,8 +4796,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="131">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="1" data-linenumber="121">
+            <span class="hits">1</span>
             
 
             
@@ -4917,8 +4807,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="132">
-            <span class="hits">4</span>
+          <li class="covered" data-hits="3" data-linenumber="122">
+            <span class="hits">3</span>
             
 
             
@@ -4928,8 +4818,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="133">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="1" data-linenumber="123">
+            <span class="hits">1</span>
             
 
             
@@ -4939,7 +4829,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="134">
+          <li class="covered" data-hits="2" data-linenumber="124">
             <span class="hits">2</span>
             
 
@@ -4950,7 +4840,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="135">
+          <li class="covered" data-hits="1" data-linenumber="125">
             <span class="hits">1</span>
             
 
@@ -4961,7 +4851,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="136">
+          <li class="never" data-hits="" data-linenumber="126">
             
             
 
@@ -4972,7 +4862,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="137">
+          <li class="covered" data-hits="1" data-linenumber="127">
             <span class="hits">1</span>
             
 
@@ -4983,7 +4873,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="138">
+          <li class="covered" data-hits="1" data-linenumber="128">
             <span class="hits">1</span>
             
 
@@ -4994,7 +4884,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="139">
+          <li class="covered" data-hits="1" data-linenumber="129">
             <span class="hits">1</span>
             
 
@@ -5005,7 +4895,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="140">
+          <li class="covered" data-hits="1" data-linenumber="130">
             <span class="hits">1</span>
             
 
@@ -5016,7 +4906,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="141">
+          <li class="never" data-hits="" data-linenumber="131">
             
             
 
@@ -5027,8 +4917,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="142">
-            <span class="hits">4</span>
+          <li class="covered" data-hits="3" data-linenumber="132">
+            <span class="hits">3</span>
             
 
             
@@ -5038,13 +4928,123 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="143">
+          <li class="never" data-hits="" data-linenumber="133">
             
             
 
             
 
             <code class="ruby">          end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="134">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">          @reviews_grouped.append(@reviews_singular.clone)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="135">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">          $reviews_global = @reviews_grouped</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="136">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">          @reviews = @reviews_grouped</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="137">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="11" data-linenumber="138">
+            <span class="hits">11</span>
+            
+
+            
+
+            <code class="ruby">      elsif params[:course_search] == &quot;true&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="139">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">        @current_course_code = params[:coursecode]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="140">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">        @current_course_title = params[:coursetitle]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="141">
+            
+            
+
+            
+
+            <code class="ruby">        #create array of other courses taught by this professor</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="142">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">        @same_courses = Array.new</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="143">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">        @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name)</code>
           </li>
         </div>
       
@@ -5055,29 +5055,29 @@
 
             
 
-            <code class="ruby">          @reviews_grouped.append(@reviews_singular.clone)</code>
+            <code class="ruby">        @reviews.each_with_index do |review, index|</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="145">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="22" data-linenumber="145">
+            <span class="hits">22</span>
             
 
             
 
-            <code class="ruby">          $reviews_global = @reviews_grouped</code>
+            <code class="ruby">          if (review.course_code == @current_course_code) and (review.course_title == @current_course_title)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="146">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="4" data-linenumber="146">
+            <span class="hits">4</span>
             
 
             
 
-            <code class="ruby">          @reviews = @reviews_grouped</code>
+            <code class="ruby">            @same_courses.append(review.clone)</code>
           </li>
         </div>
       
@@ -5088,7 +5088,7 @@
 
             
 
-            <code class="ruby">        end</code>
+            <code class="ruby">          end</code>
           </li>
         </div>
       
@@ -5099,227 +5099,227 @@
 
             
 
-            <code class="ruby">      else</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="9" data-linenumber="149">
-            <span class="hits">9</span>
-            
-
-            
-
-            <code class="ruby">        @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="9" data-linenumber="150">
-            <span class="hits">9</span>
-            
-
-            
-
-            <code class="ruby">        @reviews_grouped = Array.new #outer layer array for set of grouped reviews of same type</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="9" data-linenumber="151">
-            <span class="hits">9</span>
-            
-
-            
-
-            <code class="ruby">        @reviews_singular = Array.new #inner layer array for grouped reviews of same type</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="9" data-linenumber="152">
-            <span class="hits">9</span>
-            
-
-            
-
-            <code class="ruby">        @i = 0</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="9" data-linenumber="153">
-            <span class="hits">9</span>
-            
-
-            
-
-            <code class="ruby">        @reviews.each do |review|</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="92" data-linenumber="154">
-            <span class="hits">92</span>
-            
-
-            
-
-            <code class="ruby">          if(@i == 0)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="9" data-linenumber="155">
-            <span class="hits">9</span>
-            
-
-            
-
-            <code class="ruby">            @reviews_singular.append(review)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="83" data-linenumber="156">
-            <span class="hits">83</span>
-            
-
-            
-
-            <code class="ruby">          elsif((review.course_code == @reviews_singular[@i - 1].course_code) and (review.course_title == @reviews_singular[@i - 1].course_title) and (review.professor_name == @reviews_singular[@i - 1].professor_name) and (review.university_name == @reviews_singular[@i - 1].university_name)) </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="43" data-linenumber="157">
-            <span class="hits">43</span>
-            
-
-            
-
-            <code class="ruby">            @reviews_singular.append(review)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="158">
-            
-            
-
-            
-
-            <code class="ruby">          else</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="40" data-linenumber="159">
-            <span class="hits">40</span>
-            
-
-            
-
-            <code class="ruby">            @reviews_grouped.append(@reviews_singular.clone)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="40" data-linenumber="160">
-            <span class="hits">40</span>
-            
-
-            
-
-            <code class="ruby">            @reviews_singular.clear()</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="40" data-linenumber="161">
-            <span class="hits">40</span>
-            
-
-            
-
-            <code class="ruby">            @reviews_singular.append(review)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="40" data-linenumber="162">
-            <span class="hits">40</span>
-            
-
-            
-
-            <code class="ruby">            @i = 0</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="163">
-            
-            
-
-            
-
-            <code class="ruby">          end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="92" data-linenumber="164">
-            <span class="hits">92</span>
-            
-
-            
-
-            <code class="ruby">          @i += 1</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="165">
-            
-            
-
-            
-
             <code class="ruby">        end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="9" data-linenumber="166">
-            <span class="hits">9</span>
+          <li class="covered" data-hits="2" data-linenumber="149">
+            <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">        @reviews_grouped.append(@reviews_singular.clone)</code>
+            <code class="ruby">        if @same_courses.empty?</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="9" data-linenumber="167">
-            <span class="hits">9</span>
+          <li class="never" data-hits="" data-linenumber="150">
+            
             
 
             
 
-            <code class="ruby">        $reviews_global = @reviews_grouped</code>
+            <code class="ruby">          #redirect_to({ :action=&gt;&#39;noreview&#39;, :controller=&gt;&#39;reviews&#39; })</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="9" data-linenumber="168">
-            <span class="hits">9</span>
+          <li class="never" data-hits="" data-linenumber="151">
+            
             
 
             
 
-            <code class="ruby">        @reviews = @reviews_grouped</code>
+            <code class="ruby">        else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="152">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">          @reviews = @same_courses</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="153">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">          p @reviews</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="154">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">          @reviews_grouped = Array.new #outer layer array for set of grouped reviews of same type</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="155">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">          @reviews_singular = Array.new #inner layer array for grouped reviews of same type</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="156">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">          @i = 0</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="157">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">          @reviews.each do |review|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="158">
+            <span class="hits">4</span>
+            
+
+            
+
+            <code class="ruby">            if(@i == 0)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="159">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">              @reviews_singular.append(review)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="160">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">            elsif((review.course_code == @reviews_singular[@i - 1].course_code) and (review.course_title == @reviews_singular[@i - 1].course_title) and (review.professor_name == @reviews_singular[@i - 1].professor_name) and (review.university_name == @reviews_singular[@i - 1].university_name)) </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="161">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">              @reviews_singular.append(review)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="162">
+            
+            
+
+            
+
+            <code class="ruby">            else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="163">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">              @reviews_grouped.append(@reviews_singular.clone)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="164">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">              @reviews_singular.clear()</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="165">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">              @reviews_singular.append(review)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="166">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">              @i = 0</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="167">
+            
+            
+
+            
+
+            <code class="ruby">            end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="168">
+            <span class="hits">4</span>
+            
+
+            
+
+            <code class="ruby">            @i += 1</code>
           </li>
         </div>
       
@@ -5330,40 +5330,40 @@
 
             
 
-            <code class="ruby">        #@reviews = Review.all</code>
+            <code class="ruby">          end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="170">
-            
-            
-
+          <li class="covered" data-hits="2" data-linenumber="170">
+            <span class="hits">2</span>
             
 
-            <code class="ruby">      end</code>
+            
+
+            <code class="ruby">          @reviews_grouped.append(@reviews_singular.clone)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="171">
-            
-            
-
+          <li class="covered" data-hits="2" data-linenumber="171">
+            <span class="hits">2</span>
             
 
-            <code class="ruby">    end</code>
+            
+
+            <code class="ruby">          $reviews_global = @reviews_grouped</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="172">
-            
-            
-
+          <li class="covered" data-hits="2" data-linenumber="172">
+            <span class="hits">2</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">          @reviews = @reviews_grouped</code>
           </li>
         </div>
       
@@ -5374,100 +5374,254 @@
 
             
 
-            <code class="ruby">  </code>
+            <code class="ruby">        end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="174">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="174">
+            
             
 
             
 
-            <code class="ruby">  def indexlower</code>
+            <code class="ruby">      else</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="30" data-linenumber="175">
-            <span class="hits">30</span>
+          <li class="covered" data-hits="9" data-linenumber="175">
+            <span class="hits">9</span>
             
 
             
 
-            <code class="ruby">    @comment = $comment</code>
+            <code class="ruby">        @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="30" data-linenumber="176">
-            <span class="hits">30</span>
+          <li class="covered" data-hits="9" data-linenumber="176">
+            <span class="hits">9</span>
             
 
             
 
-            <code class="ruby">    @reviews = $reviews_global</code>
+            <code class="ruby">        @reviews_grouped = Array.new #outer layer array for set of grouped reviews of same type</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="30" data-linenumber="177">
-            <span class="hits">30</span>
+          <li class="covered" data-hits="9" data-linenumber="177">
+            <span class="hits">9</span>
             
 
             
 
-            <code class="ruby">    @index = params[:index].to_i</code>
+            <code class="ruby">        @reviews_singular = Array.new #inner layer array for grouped reviews of same type</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="30" data-linenumber="178">
-            <span class="hits">30</span>
+          <li class="covered" data-hits="9" data-linenumber="178">
+            <span class="hits">9</span>
             
 
             
 
-            <code class="ruby">    @reviews[@index].each do |review|</code>
+            <code class="ruby">        @i = 0</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="31" data-linenumber="179">
-            <span class="hits">31</span>
+          <li class="covered" data-hits="9" data-linenumber="179">
+            <span class="hits">9</span>
             
 
             
 
-            <code class="ruby">      review.reload</code>
+            <code class="ruby">        @reviews.each do |review|</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="31" data-linenumber="180">
-            <span class="hits">31</span>
+          <li class="covered" data-hits="92" data-linenumber="180">
+            <span class="hits">92</span>
             
 
             
 
-            <code class="ruby">      if review.pin == true</code>
+            <code class="ruby">          if(@i == 0)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="181">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="9" data-linenumber="181">
+            <span class="hits">9</span>
             
 
             
 
-            <code class="ruby">        @reviews[@index].insert(0, @reviews[@index].delete(review))</code>
+            <code class="ruby">            @reviews_singular.append(review)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="182">
+          <li class="covered" data-hits="83" data-linenumber="182">
+            <span class="hits">83</span>
+            
+
+            
+
+            <code class="ruby">          elsif((review.course_code == @reviews_singular[@i - 1].course_code) and (review.course_title == @reviews_singular[@i - 1].course_title) and (review.professor_name == @reviews_singular[@i - 1].professor_name) and (review.university_name == @reviews_singular[@i - 1].university_name)) </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="43" data-linenumber="183">
+            <span class="hits">43</span>
+            
+
+            
+
+            <code class="ruby">            @reviews_singular.append(review)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="184">
+            
+            
+
+            
+
+            <code class="ruby">          else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="40" data-linenumber="185">
+            <span class="hits">40</span>
+            
+
+            
+
+            <code class="ruby">            @reviews_grouped.append(@reviews_singular.clone)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="40" data-linenumber="186">
+            <span class="hits">40</span>
+            
+
+            
+
+            <code class="ruby">            @reviews_singular.clear()</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="40" data-linenumber="187">
+            <span class="hits">40</span>
+            
+
+            
+
+            <code class="ruby">            @reviews_singular.append(review)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="40" data-linenumber="188">
+            <span class="hits">40</span>
+            
+
+            
+
+            <code class="ruby">            @i = 0</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="189">
+            
+            
+
+            
+
+            <code class="ruby">          end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="92" data-linenumber="190">
+            <span class="hits">92</span>
+            
+
+            
+
+            <code class="ruby">          @i += 1</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="191">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="9" data-linenumber="192">
+            <span class="hits">9</span>
+            
+
+            
+
+            <code class="ruby">        @reviews_grouped.append(@reviews_singular.clone)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="9" data-linenumber="193">
+            <span class="hits">9</span>
+            
+
+            
+
+            <code class="ruby">        $reviews_global = @reviews_grouped</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="9" data-linenumber="194">
+            <span class="hits">9</span>
+            
+
+            
+
+            <code class="ruby">        @reviews = @reviews_grouped</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="195">
+            
+            
+
+            
+
+            <code class="ruby">        #@reviews = Review.all</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="196">
             
             
 
@@ -5478,7 +5632,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="183">
+          <li class="never" data-hits="" data-linenumber="197">
             
             
 
@@ -5489,167 +5643,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="30" data-linenumber="184">
-            <span class="hits">30</span>
-            
-
-            
-
-            <code class="ruby">    workTimearr = Array.new</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="30" data-linenumber="185">
-            <span class="hits">30</span>
-            
-
-            
-
-            <code class="ruby">    studyTimearr = Array.new</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="30" data-linenumber="186">
-            <span class="hits">30</span>
-            
-
-            
-
-            <code class="ruby">    difficultyarr = Array.new</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="30" data-linenumber="187">
-            <span class="hits">30</span>
-            
-
-            
-
-            <code class="ruby">    timeWisharr = Array.new</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="30" data-linenumber="188">
-            <span class="hits">30</span>
-            
-
-            
-
-            <code class="ruby">    @reviews_averaged = Array.new #[workTime, studyTime, difficulty, timeWish]</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="30" data-linenumber="189">
-            <span class="hits">30</span>
-            
-
-            
-
-            <code class="ruby">    @reviews[@index].each_with_index do |review, index|</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="31" data-linenumber="190">
-            <span class="hits">31</span>
-            
-
-            
-
-            <code class="ruby">      workTimearr.append(review.workTime)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="31" data-linenumber="191">
-            <span class="hits">31</span>
-            
-
-            
-
-            <code class="ruby">      studyTimearr.append(review.studyTime)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="31" data-linenumber="192">
-            <span class="hits">31</span>
-            
-
-            
-
-            <code class="ruby">      difficultyarr.append(review.diffculty)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="31" data-linenumber="193">
-            <span class="hits">31</span>
-            
-
-            
-
-            <code class="ruby">      timeWisharr.append(review.timeWish)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="194">
+          <li class="never" data-hits="" data-linenumber="198">
             
             
 
             
 
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="31" data-linenumber="195">
-            <span class="hits">31</span>
-            
-
-            
-
-            <code class="ruby">    @reviews_averaged.insert(0, workTimearr.inject{ |sum, el| sum + el }.to_f / workTimearr.size)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="31" data-linenumber="196">
-            <span class="hits">31</span>
-            
-
-            
-
-            <code class="ruby">    @reviews_averaged.insert(1, studyTimearr.inject{ |sum, el| sum + el }.to_f / studyTimearr.size)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="31" data-linenumber="197">
-            <span class="hits">31</span>
-            
-
-            
-
-            <code class="ruby">    @reviews_averaged.insert(2, difficultyarr.inject{ |sum, el| sum + el }.to_f / difficultyarr.size)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="31" data-linenumber="198">
-            <span class="hits">31</span>
-            
-
-            
-
-            <code class="ruby">    @reviews_averaged.insert(3, timeWisharr.inject{ |sum, el| sum + el }.to_f / timeWisharr.size)</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -5660,95 +5660,95 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">  </code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="200">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="201">
-            
-            
-
-            
-
-            <code class="ruby">  # GET /reviews/1 or /reviews/1.json</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="202">
+          <li class="covered" data-hits="1" data-linenumber="200">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def show</code>
+            <code class="ruby">  def indexlower</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="203">
-            
-            
-
+          <li class="covered" data-hits="30" data-linenumber="201">
+            <span class="hits">30</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">    @comment = $comment</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="204">
-            
-            
-
+          <li class="covered" data-hits="30" data-linenumber="202">
+            <span class="hits">30</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">    @reviews = $reviews_global</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="205">
-            
-            
-
+          <li class="covered" data-hits="30" data-linenumber="203">
+            <span class="hits">30</span>
             
 
-            <code class="ruby">  # GET /reviews/new</code>
+            
+
+            <code class="ruby">    @index = params[:index].to_i</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="206">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="30" data-linenumber="204">
+            <span class="hits">30</span>
             
 
             
 
-            <code class="ruby">  def new</code>
+            <code class="ruby">    @reviews[@index].each do |review|</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="7" data-linenumber="207">
-            <span class="hits">7</span>
+          <li class="covered" data-hits="31" data-linenumber="205">
+            <span class="hits">31</span>
             
 
             
 
-            <code class="ruby">    @review = Review.new</code>
+            <code class="ruby">      review.reload</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="31" data-linenumber="206">
+            <span class="hits">31</span>
+            
+
+            
+
+            <code class="ruby">      if review.pin == true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="207">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">        @reviews[@index].insert(0, @reviews[@index].delete(review))</code>
           </li>
         </div>
       
@@ -5759,7 +5759,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
@@ -5770,172 +5770,172 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="210">
-            
-            
-
+          <li class="covered" data-hits="30" data-linenumber="210">
+            <span class="hits">30</span>
             
 
-            <code class="ruby">  # GET /reviews/1/edit</code>
+            
+
+            <code class="ruby">    workTimearr = Array.new</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="211">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="30" data-linenumber="211">
+            <span class="hits">30</span>
             
 
             
 
-            <code class="ruby">  def edit</code>
+            <code class="ruby">    studyTimearr = Array.new</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="212">
-            
-            
-
+          <li class="covered" data-hits="30" data-linenumber="212">
+            <span class="hits">30</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">    difficultyarr = Array.new</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="213">
-            
-            
-
+          <li class="covered" data-hits="30" data-linenumber="213">
+            <span class="hits">30</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">    timeWisharr = Array.new</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="214">
-            
-            
-
+          <li class="covered" data-hits="30" data-linenumber="214">
+            <span class="hits">30</span>
             
 
-            <code class="ruby">  # POST /reviews or /reviews.json</code>
+            
+
+            <code class="ruby">    @reviews_averaged = Array.new #[workTime, studyTime, difficulty, timeWish]</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="215">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="30" data-linenumber="215">
+            <span class="hits">30</span>
             
 
             
 
-            <code class="ruby">  def create</code>
+            <code class="ruby">    @reviews[@index].each_with_index do |review, index|</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="216">
-            <span class="hits">6</span>
+          <li class="covered" data-hits="31" data-linenumber="216">
+            <span class="hits">31</span>
             
 
             
 
-            <code class="ruby">    @review = Review.new(review_params)</code>
+            <code class="ruby">      workTimearr.append(review.workTime)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="217">
-            <span class="hits">6</span>
+          <li class="covered" data-hits="31" data-linenumber="217">
+            <span class="hits">31</span>
             
 
             
 
-            <code class="ruby">    @review.users_id = session[:current_username]</code>
+            <code class="ruby">      studyTimearr.append(review.studyTime)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="218">
-            <span class="hits">6</span>
+          <li class="covered" data-hits="31" data-linenumber="218">
+            <span class="hits">31</span>
             
 
             
 
-            <code class="ruby">    respond_to do |format|</code>
+            <code class="ruby">      difficultyarr.append(review.diffculty)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="219">
-            <span class="hits">6</span>
+          <li class="covered" data-hits="31" data-linenumber="219">
+            <span class="hits">31</span>
             
 
             
 
-            <code class="ruby">      if review_params[:course_code] != &quot;&quot; and @review.save and review_params[:course_title] != &quot;&quot; and review_params[:professor_name] != &quot;&quot; and review_params[:university_name] != &quot;&quot; and review_params[:workTime] != &quot;&quot; and review_params[:studyTime] != &quot;&quot; and review_params[:diffculty] != &quot;&quot; and review_params[:timeWish] != &quot;&quot;</code>
+            <code class="ruby">      timeWisharr.append(review.timeWish)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="10" data-linenumber="220">
-            <span class="hits">10</span>
+          <li class="never" data-hits="" data-linenumber="220">
+            
             
 
             
 
-            <code class="ruby">        format.html { redirect_to review_url(@review), notice: &quot;Review was successfully created.&quot; }</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="221">
-            <span class="hits">5</span>
+          <li class="covered" data-hits="31" data-linenumber="221">
+            <span class="hits">31</span>
             
 
             
 
-            <code class="ruby">        format.json { render :show, status: :created, location: @review }</code>
+            <code class="ruby">    @reviews_averaged.insert(0, workTimearr.inject{ |sum, el| sum + el }.to_f / workTimearr.size)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="222">
-            
-            
-
+          <li class="covered" data-hits="31" data-linenumber="222">
+            <span class="hits">31</span>
             
 
-            <code class="ruby">      else</code>
+            
+
+            <code class="ruby">    @reviews_averaged.insert(1, studyTimearr.inject{ |sum, el| sum + el }.to_f / studyTimearr.size)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="223">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="31" data-linenumber="223">
+            <span class="hits">31</span>
             
 
             
 
-            <code class="ruby">        format.html { render :new, status: :unprocessable_entity }</code>
+            <code class="ruby">    @reviews_averaged.insert(2, difficultyarr.inject{ |sum, el| sum + el }.to_f / difficultyarr.size)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="224">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="31" data-linenumber="224">
+            <span class="hits">31</span>
             
 
             
 
-            <code class="ruby">        format.json { render json: @review.errors, status: :unprocessable_entity }</code>
+            <code class="ruby">    @reviews_averaged.insert(3, timeWisharr.inject{ |sum, el| sum + el }.to_f / timeWisharr.size)</code>
           </li>
         </div>
       
@@ -5946,7 +5946,7 @@
 
             
 
-            <code class="ruby">      end</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -5957,7 +5957,7 @@
 
             
 
-            <code class="ruby">    </code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -5968,18 +5968,18 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">  # GET /reviews/1 or /reviews/1.json</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="228">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="228">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">  def show</code>
           </li>
         </div>
       
@@ -5990,7 +5990,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -6001,62 +6001,62 @@
 
             
 
-            <code class="ruby">  # PATCH/PUT /reviews/1 or /reviews/1.json</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="231">
+          <li class="never" data-hits="" data-linenumber="231">
+            
+            
+
+            
+
+            <code class="ruby">  # GET /reviews/new</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="232">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def update</code>
+            <code class="ruby">  def new</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="232">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="7" data-linenumber="233">
+            <span class="hits">7</span>
             
 
             
 
-            <code class="ruby">    respond_to do |format|</code>
+            <code class="ruby">    @review = Review.new</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="233">
-            <span class="hits">2</span>
+          <li class="never" data-hits="" data-linenumber="234">
+            
             
 
             
 
-            <code class="ruby">      if review_params[:course_code] != &quot;&quot; and @review.update(review_params) and review_params[:course_title] != &quot;&quot; and review_params[:professor_name] != &quot;&quot; and review_params[:university_name] != &quot;&quot; and review_params[:workTime] != &quot;&quot; and review_params[:studyTime] != &quot;&quot; and review_params[:diffculty] != &quot;&quot; and review_params[:timeWish] != &quot;&quot;</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="234">
-            <span class="hits">2</span>
+          <li class="never" data-hits="" data-linenumber="235">
+            
             
 
             
 
-            <code class="ruby">        format.html { redirect_to review_url(@review), notice: &quot;Review was successfully updated.&quot; }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="235">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">        format.json { render :show, status: :ok, location: @review }</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -6067,29 +6067,29 @@
 
             
 
-            <code class="ruby">      else</code>
+            <code class="ruby">  # GET /reviews/1/edit</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="237">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">        format.html { render :edit, status: :unprocessable_entity }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="238">
+          <li class="covered" data-hits="1" data-linenumber="237">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">        format.json { render json: @review.errors, status: :unprocessable_entity }</code>
+            <code class="ruby">  def edit</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="238">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -6100,7 +6100,7 @@
 
             
 
-            <code class="ruby">      end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -6111,79 +6111,46 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">  # POST /reviews or /reviews.json</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="241">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="242">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="243">
-            
-            
-
-            
-
-            <code class="ruby">  # DELETE /reviews/1 or /reviews/1.json</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="244">
+          <li class="covered" data-hits="1" data-linenumber="241">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def destroy</code>
+            <code class="ruby">  def create</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="245">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="6" data-linenumber="242">
+            <span class="hits">6</span>
             
 
             
 
-            <code class="ruby">    @review.destroy</code>
+            <code class="ruby">    @review = Review.new(review_params)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="246">
-            
-            
-
+          <li class="covered" data-hits="6" data-linenumber="243">
+            <span class="hits">6</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">    @review.users_id = session[:current_username]</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="247">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="6" data-linenumber="244">
+            <span class="hits">6</span>
             
 
             
@@ -6193,35 +6160,68 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="248">
+          <li class="covered" data-hits="6" data-linenumber="245">
+            <span class="hits">6</span>
+            
+
+            
+
+            <code class="ruby">      if review_params[:course_code] != &quot;&quot; and @review.save and review_params[:course_title] != &quot;&quot; and review_params[:professor_name] != &quot;&quot; and review_params[:university_name] != &quot;&quot; and review_params[:workTime] != &quot;&quot; and review_params[:studyTime] != &quot;&quot; and review_params[:diffculty] != &quot;&quot; and review_params[:timeWish] != &quot;&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="10" data-linenumber="246">
+            <span class="hits">10</span>
+            
+
+            
+
+            <code class="ruby">        format.html { redirect_to review_url(@review), notice: &quot;Review was successfully created.&quot; }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="247">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">        format.json { render :show, status: :created, location: @review }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="248">
+            
+            
+
+            
+
+            <code class="ruby">      else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="249">
             <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">      format.html { redirect_to reviews_url, notice: &quot;Review was successfully destroyed.&quot; }</code>
+            <code class="ruby">        format.html { render :new, status: :unprocessable_entity }</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="249">
+          <li class="covered" data-hits="1" data-linenumber="250">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">      format.json { head :no_content }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="250">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
+            <code class="ruby">        format.json { render json: @review.errors, status: :unprocessable_entity }</code>
           </li>
         </div>
       
@@ -6232,7 +6232,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
@@ -6243,18 +6243,18 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    </code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="253">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="253">
+            
             
 
             
 
-            <code class="ruby">  private</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -6265,45 +6265,12 @@
 
             
 
-            <code class="ruby">    # Use callbacks to share common setup or constraints between actions.</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="255">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    def set_review</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="12" data-linenumber="256">
-            <span class="hits">12</span>
-            
-
-            
-
-            <code class="ruby">      @review = Review.find(params[:id])</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="257">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="258">
+          <li class="never" data-hits="" data-linenumber="255">
             
             
 
@@ -6314,35 +6281,68 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="259">
+          <li class="never" data-hits="" data-linenumber="256">
             
             
 
             
 
-            <code class="ruby">    # Only allow a list of trusted parameters through.</code>
+            <code class="ruby">  # PATCH/PUT /reviews/1 or /reviews/1.json</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="260">
+          <li class="covered" data-hits="1" data-linenumber="257">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    def review_params</code>
+            <code class="ruby">  def update</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="57" data-linenumber="261">
-            <span class="hits">57</span>
+          <li class="covered" data-hits="2" data-linenumber="258">
+            <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">      params.require(:review).permit(:workTime, :studyTime, :diffculty, :timeWish, :course_code, :course_title, :professor_name, :university_name, :thought)</code>
+            <code class="ruby">    respond_to do |format|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="259">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">      if review_params[:course_code] != &quot;&quot; and @review.update(review_params) and review_params[:course_title] != &quot;&quot; and review_params[:professor_name] != &quot;&quot; and review_params[:university_name] != &quot;&quot; and review_params[:workTime] != &quot;&quot; and review_params[:studyTime] != &quot;&quot; and review_params[:diffculty] != &quot;&quot; and review_params[:timeWish] != &quot;&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="260">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">        format.html { redirect_to review_url(@review), notice: &quot;Review was successfully updated.&quot; }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="261">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        format.json { render :show, status: :ok, location: @review }</code>
           </li>
         </div>
       
@@ -6353,12 +6353,298 @@
 
             
 
+            <code class="ruby">      else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="263">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">        format.html { render :edit, status: :unprocessable_entity }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="264">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        format.json { render json: @review.errors, status: :unprocessable_entity }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="265">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="266">
+            
+            
+
+            
+
             <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="263">
+          <li class="never" data-hits="" data-linenumber="267">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="268">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="269">
+            
+            
+
+            
+
+            <code class="ruby">  # DELETE /reviews/1 or /reviews/1.json</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="270">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def destroy</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="271">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @review.destroy</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="272">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="273">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    respond_to do |format|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="274">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">      format.html { redirect_to reviews_url, notice: &quot;Review was successfully destroyed.&quot; }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="275">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      format.json { head :no_content }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="276">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="277">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="278">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="279">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  private</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="280">
+            
+            
+
+            
+
+            <code class="ruby">    # Use callbacks to share common setup or constraints between actions.</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="281">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    def set_review</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="12" data-linenumber="282">
+            <span class="hits">12</span>
+            
+
+            
+
+            <code class="ruby">      @review = Review.find(params[:id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="283">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="284">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="285">
+            
+            
+
+            
+
+            <code class="ruby">    # Only allow a list of trusted parameters through.</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="286">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    def review_params</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="57" data-linenumber="287">
+            <span class="hits">57</span>
+            
+
+            
+
+            <code class="ruby">      params.require(:review).permit(:workTime, :studyTime, :diffculty, :timeWish, :course_code, :course_title, :professor_name, :university_name, :thought)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="288">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="289">
             
             
 
