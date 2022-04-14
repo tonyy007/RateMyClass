@@ -46,7 +46,8 @@ class ReviewsController < ApplicationController
       @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name)
       @reviews_search = Array.new
       @reviews.each_with_index do |review, index|
-        if ((@searchval.match(review.course_code.to_s.downcase) != nil) or (@searchval.match(review.course_title.to_s.downcase) != nil)) and !review.course_code.nil?   #choose what to sort by here
+        @profnamearr = review.professor_name.to_s.downcase.split
+        if ((@searchval.match(review.course_code.to_s.downcase) != nil) or (@searchval.match(review.course_title.to_s.downcase) != nil) or (@searchval.match(@profnamearr[0]) != nil) or (@searchval.match(@profnamearr[1]) != nil)) and !review.course_code.nil?   #choose what to sort by here
           @reviews_search.append(review)
         elsif (index == @reviews.length - 1) and (@reviews_search.empty?)
           redirect_to({ :action=>'noreview', :controller=>'reviews' })
