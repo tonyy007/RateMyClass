@@ -134,8 +134,19 @@ RSpec.describe ReviewsController, type: :controller do
             expect(@review.pin).to eq(true)
         end
         
+        it "Pinning another review" do
+            @review = Review.create({:workTime => 1, :studyTime => 2, :diffculty => 3, :timeWish => 4, :pin => true})
+            expect(@review.pin).to eq(true)
+        end
+        
         it "Unpinning a review" do
             @review = Review.create({:workTime => 38, :studyTime => 16, :diffculty => 1, :timeWish => 28, :pin => true})
+            @review.pin = false
+            expect(@review.pin).to eq(false)
+        end
+        
+        it "Unpinning another review" do
+            @review = Review.create({:workTime => 6, :studyTime => 5, :diffculty => 4, :timeWish => 3, :pin => true})
             @review.pin = false
             expect(@review.pin).to eq(false)
         end

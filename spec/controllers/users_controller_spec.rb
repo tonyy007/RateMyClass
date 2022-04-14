@@ -143,5 +143,12 @@ RSpec.describe UsersController, type: :controller do
             expect(@user.password_hash).to eq(nil)
             expect(@user.type_of_user).to eq(nil) 
         end
+        
+        it "returns another valid user" do
+            @user = controller.new()
+            expect(@user.username).to eq(nil)
+            expect(@user.password_hash).to eq(nil)
+            expect(@user.type_of_user).to eq(nil) 
+        end
     end
 end
