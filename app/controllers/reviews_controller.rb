@@ -1,59 +1,72 @@
+# reviews controller, controls how reviews are displayed on each page and their various supporting functions; extends application controller
 class ReviewsController < ApplicationController
   before_action :set_review, only: %i[ show edit update destroy ]
   # GET /reviews or /reviews.json
+  
+  # will render the no reviews page when using the search bar
   def noreview
     
   end
   
+  # allows for a review to be flagged
   def flagpost
-    @review = Review.find(params[:review])
-    @review.flag = true
+    @review = Review.find(params[:review]) # get review to be flagged
+    @review.flag = true # set flag to true on that review
     @review.save
-    redirect_to(indexlower_path + "?index=" + params[:indexupper])
+    redirect_to(indexlower_path + "?index=" + params[:indexupper]) # redirect to page user was on
   end
   
+  # allows for a review to be unflagged by an admin
   def unflagpost
-    @review = Review.find(params[:review])
-    @review.flag = false
+    @review = Review.find(params[:review]) # get review to be unflagged
+    @review.flag = false # set flag to true on that review
     @review.save
-    redirect_to(indexlower_path + "?index=" + params[:indexupper])
+    redirect_to(indexlower_path + "?index=" + params[:indexupper]) # redirect to page user was on
   end
   
+  # allows for a review to be pinned by a professor
   def pin
-    @review = Review.find(params[:review])
-    @review.pin = true
+    @review = Review.find(params[:review]) # get review to be pinned
+    @review.pin = true # set pin to true on that review
     @review.save
-    redirect_to(indexlower_path + "?index=" + params[:indexupper])
+    redirect_to(indexlower_path + "?index=" + params[:indexupper]) # redirect to page user was on
   end
   
+  # allows for a review to be unpinned by a professor
   def unpin
-    @review = Review.find(params[:review])
-    @review.pin = false
+    @review = Review.find(params[:review]) # get review to be unpinned
+    @review.pin = false # set pin to false on that review
     @review.save
-    redirect_to(indexlower_path + "?index=" + params[:indexupper])
+    redirect_to(indexlower_path + "?index=" + params[:indexupper]) # redirect to page user was on
   end
   
+  # will render the index page: table form showing all reviews 
   def index
     @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name)
   end
   
+  # will render the index upper page: showing a top level grouping of reviews by similar type
   def indexupper
-    if params[:search] != nil #search bar used
+    if params[:search] != nil # search bar used
       params[:search].each do |value|
-        $searchvalstr = value[1].to_s.downcase
-        @profsearchval = value[1].to_s.downcase.split
+        $searchvalstr = value[1].to_s.downcase # get string in search bar
+        @profsearchval = value[1].to_s.downcase.split # split search string
+        # construct seperate regexs for professor names
         if !@profsearchval[0].nil?
           @profsearchval[0] = "/" + @profsearchval[0] + "/"
         end
         if !@profsearchval[1].nil?
           @profsearchval[1] = "/" + @profsearchval[1] + "/"
         end
+        # construct regex for general search term
         @searchval = "/" + value[1].to_s.downcase + "/"
         @searchvalreg = value[1].to_s.downcase
       end
-      @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name)
+      
+      @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name) # get all reviews in this order
       @reviews_search = Array.new
-      @reviews.each_with_index do |review, index|
+      @reviews.each_with_index do |review, index| # loop through all reviews
+        # try to match reviews with search terms and store matches
         @profnamearr = review.professor_name.to_s.downcase.split
         if @searchvalreg.empty?
           redirect_to({ :action=>'noreview', :controller=>'reviews' })
@@ -78,16 +91,18 @@ class ReviewsController < ApplicationController
           end
         end
       end
-      @reviews = @reviews_search #from this list combine reviews whose course, prof, uni, etc are equal and display a set of matches to the user
-      @reviews_grouped = Array.new #outer layer array for set of grouped reviews of same type
-      @reviews_singular = Array.new #inner layer array for grouped reviews of same type
+      @reviews = @reviews_search # from this list combine reviews whose course, prof, uni, etc are equal and display a set of matches to the user
+      @reviews_grouped = Array.new # outer layer array for set of grouped reviews of same type
+      @reviews_singular = Array.new # inner layer array for grouped reviews of same type
       @i = 0
-      @reviews.each do |review|
-        if(@i == 0)
+      @reviews.each do |review| # loop through all matched reviews
+        # group reviews of the same type (same prof, uni, dept, and code) into their own sub-arrays
+        if(@i == 0) # populate the first review in a set with whatever is next
           @reviews_singular.append(review)
+        # if the current review matches the previous one, group it with the previous review
         elsif((review.course_code == @reviews_singular[@i - 1].course_code) and (review.course_title == @reviews_singular[@i - 1].course_title) and (review.professor_name == @reviews_singular[@i - 1].professor_name) and (review.university_name == @reviews_singular[@i - 1].university_name)) 
           @reviews_singular.append(review)
-        else
+        else # if the current review does not match the previous review, move to the next sub-array
           @reviews_grouped.append(@reviews_singular.clone)
           @reviews_singular.clear()
           @reviews_singular.append(review)
@@ -98,32 +113,32 @@ class ReviewsController < ApplicationController
       @reviews_grouped.append(@reviews_singular.clone)
       $reviews_global = @reviews_grouped
       @reviews = @reviews_grouped
-    else #search bar not used
-      if params[:prof_search] == "true"
+    else # search bar not used
+      if params[:prof_search] == "true" # if clicked on the show courses with same professor
         @current_professor = params[:prof]
-        #create array of other courses taught by this professor
-        @courses_with_same_professor = Array.new
-        @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name)
-        @reviews.each_with_index do |review, index|
+        @courses_with_same_professor = Array.new # create array of other courses taught by this professor
+        @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name) # get all reviews
+        @reviews.each_with_index do |review, index| # loop through all reviews
+          # find all reviews with same professor
           if review.professor_name == @current_professor
             @courses_with_same_professor.append(review.clone)
           end
         end
-        # @courses_with_same_professor_2d = Array.new
-        # @courses_with_same_professor_2d.append(@courses_with_same_professor.clone)
         if @courses_with_same_professor.empty?
-          #redirect_to({ :action=>'noreview', :controller=>'reviews' })
+          # no courses with same professor
         else
           @reviews = @courses_with_same_professor
-          @reviews_grouped = Array.new #outer layer array for set of grouped reviews of same type
-          @reviews_singular = Array.new #inner layer array for grouped reviews of same type
+          @reviews_grouped = Array.new # outer layer array for set of grouped reviews of same type
+          @reviews_singular = Array.new # inner layer array for grouped reviews of same type
           @i = 0
-          @reviews.each do |review|
-            if(@i == 0)
+          @reviews.each do |review| # loop through all matched reviews
+            # group reviews of the same type (same prof, uni, dept, and code) into their own sub-arrays
+            if(@i == 0) # populate the first review in a set with whatever is next
               @reviews_singular.append(review)
+            # if the current review matches the previous one, group it with the previous review
             elsif((review.course_code == @reviews_singular[@i - 1].course_code) and (review.course_title == @reviews_singular[@i - 1].course_title) and (review.professor_name == @reviews_singular[@i - 1].professor_name) and (review.university_name == @reviews_singular[@i - 1].university_name)) 
               @reviews_singular.append(review)
-            else
+            else # if the current review does not match the previous review, move to the next sub-array
               @reviews_grouped.append(@reviews_singular.clone)
               @reviews_singular.clear()
               @reviews_singular.append(review)
@@ -135,31 +150,34 @@ class ReviewsController < ApplicationController
           $reviews_global = @reviews_grouped
           @reviews = @reviews_grouped
         end
-      elsif params[:course_search] == "true"
+      elsif params[:course_search] == "true" # if clicked on the show courses of the same type
         @current_course_code = params[:coursecode]
         @current_course_title = params[:coursetitle]
-        #create array of other courses taught by this professor
+        # create array of this course taught by other professors
         @same_courses = Array.new
-        @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name)
-        @reviews.each_with_index do |review, index|
+        @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name) # get all reviews
+        @reviews.each_with_index do |review, index| # loop through all reviews
+          # find all reviews with same course
           if (review.course_code == @current_course_code) and (review.course_title == @current_course_title)
             @same_courses.append(review.clone)
           end
         end
         if @same_courses.empty?
-          #redirect_to({ :action=>'noreview', :controller=>'reviews' })
+          # no similar courses
         else
           @reviews = @same_courses
-          p @reviews
-          @reviews_grouped = Array.new #outer layer array for set of grouped reviews of same type
-          @reviews_singular = Array.new #inner layer array for grouped reviews of same type
+          #p @reviews
+          @reviews_grouped = Array.new # outer layer array for set of grouped reviews of same type
+          @reviews_singular = Array.new # inner layer array for grouped reviews of same type
           @i = 0
-          @reviews.each do |review|
-            if(@i == 0)
+          @reviews.each do |review| # loop through all matched reviews
+            # group reviews of the same type (same prof, uni, dept, and code) into their own sub-arrays
+            if(@i == 0) # populate the first review in a set with whatever is next
               @reviews_singular.append(review)
+            # if the current review matches the previous one, group it with the previous review
             elsif((review.course_code == @reviews_singular[@i - 1].course_code) and (review.course_title == @reviews_singular[@i - 1].course_title) and (review.professor_name == @reviews_singular[@i - 1].professor_name) and (review.university_name == @reviews_singular[@i - 1].university_name)) 
               @reviews_singular.append(review)
-            else
+            else # if the current review does not match the previous review, move to the next sub-array
               @reviews_grouped.append(@reviews_singular.clone)
               @reviews_singular.clear()
               @reviews_singular.append(review)
@@ -172,16 +190,18 @@ class ReviewsController < ApplicationController
           @reviews = @reviews_grouped
         end
       else
-        @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name)
-        @reviews_grouped = Array.new #outer layer array for set of grouped reviews of same type
-        @reviews_singular = Array.new #inner layer array for grouped reviews of same type
+        @reviews = Review.order(:course_code, :course_title, :professor_name, :university_name) # get all reviews
+        @reviews_grouped = Array.new # outer layer array for set of grouped reviews of same type
+        @reviews_singular = Array.new # inner layer array for grouped reviews of same type
         @i = 0
-        @reviews.each do |review|
-          if(@i == 0)
+        @reviews.each do |review| # loop through all matched reviews
+          # group reviews of the same type (same prof, uni, dept, and code) into their own sub-arrays 
+          if(@i == 0) # populate the first review in a set with whatever is next
             @reviews_singular.append(review)
+          # if the current review matches the previous one, group it with the previous review
           elsif((review.course_code == @reviews_singular[@i - 1].course_code) and (review.course_title == @reviews_singular[@i - 1].course_title) and (review.professor_name == @reviews_singular[@i - 1].professor_name) and (review.university_name == @reviews_singular[@i - 1].university_name)) 
             @reviews_singular.append(review)
-          else
+          else # if the current review does not match the previous review, move to the next sub-array
             @reviews_grouped.append(@reviews_singular.clone)
             @reviews_singular.clear()
             @reviews_singular.append(review)
@@ -192,11 +212,11 @@ class ReviewsController < ApplicationController
         @reviews_grouped.append(@reviews_singular.clone)
         $reviews_global = @reviews_grouped
         @reviews = @reviews_grouped
-        #@reviews = Review.all
       end
     end
   end
   
+  # will render the index lower page: showing the reviews inside each individual larger grouping
   def indexlower
     @comment = $comment
     @reviews = $reviews_global
@@ -207,6 +227,7 @@ class ReviewsController < ApplicationController
         @reviews[@index].insert(0, @reviews[@index].delete(review))
       end
     end
+    # get all user review points from each review in this grouping and average each category for display
     workTimearr = Array.new
     studyTimearr = Array.new
     difficultyarr = Array.new
@@ -238,6 +259,7 @@ class ReviewsController < ApplicationController
   end
 
   # POST /reviews or /reviews.json
+  # will create a review and add to database
   def create
     @review = Review.new(review_params)
     @review.users_id = session[:current_username]
@@ -254,6 +276,7 @@ class ReviewsController < ApplicationController
   end
 
   # PATCH/PUT /reviews/1 or /reviews/1.json
+  # will update a singular review and reflect in the database
   def update
     respond_to do |format|
       if review_params[:course_code] != "" and @review.update(review_params) and review_params[:course_title] != "" and review_params[:professor_name] != "" and review_params[:university_name] != "" and review_params[:workTime] != "" and review_params[:studyTime] != "" and review_params[:diffculty] != "" and review_params[:timeWish] != ""
@@ -267,6 +290,7 @@ class ReviewsController < ApplicationController
   end
 
   # DELETE /reviews/1 or /reviews/1.json
+  # will destroy a review and remove from database
   def destroy
     @review.destroy
 

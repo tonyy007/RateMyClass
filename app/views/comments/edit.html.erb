@@ -1,5 +1,5 @@
 <h1>Editing Comment</h1>
-
+<!--comment edit page: used to edit individual comments on a review-->
 <%= form_with model: [@review, @review.comments[@index]] do |form| %>
           <p>
             <%= form.label :body %><br>
