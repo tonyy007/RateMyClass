@@ -46,7 +46,7 @@ Scenario: Creating a new review, does not meet all requirements
   And I press "Create Review"
   Then a review with "csce", "121", "Lightfoot", "Texas A&M University", "2000", "1000000", "review_diffculty_4", "-12412" should not exist
   
-  Scenario: Creating a new review, missing course code
+Scenario: Creating a new review, missing course code
   When I go to new reviews page
   And I fill in "review_course_title" with "csce"
   And I fill in "review_course_code" with ""
@@ -62,17 +62,21 @@ Scenario: Creating a new review, does not meet all requirements
 
 Scenario: Editing a review that exists but update does not meet requirements
   When I go to new reviews page
-  And I fill in "review_course_title" with "csce"
-  And I fill in "review_course_code" with "121"
-  And I fill in "review_professor_name" with "Lightfoot"
+  And I fill in "review_course_title" with "chem"
+  And I fill in "review_course_code" with "120"
+  And I fill in "review_professor_name" with "Saber"
   And I fill in "review_university_name" with "Texas A&M University"
-  And I fill in "review_workTime" with "30"
+  And I fill in "review_workTime" with "1"
   And I fill in "review_studyTime" with "12"
-  And I check "review_diffculty_4"
+  And I check "review_diffculty_8"
   And I fill in "review_timeWish" with "7"
-  And I fill in "review_thought" with "I liked the class."
+  And I fill in "review_thought" with "I hate the class."
   And I press "Create Review"
   # And I follow "Back"
+  Then I should be on the homepage
+  When I fill in "search_field" with "120"
+  And I press "Search"
+  And I follow the first link "Show"
   And I follow the first link "Edit"
   And I fill in "review_course_code" with ""
   And I press "Update Review"
@@ -80,36 +84,44 @@ Scenario: Editing a review that exists but update does not meet requirements
   
 Scenario: Editing a review that exists 
   When I go to new reviews page
-  And I fill in "review_course_title" with "csce"
-  And I fill in "review_course_code" with "121"
-  And I fill in "review_professor_name" with "Lightfoot"
+  And I fill in "review_course_title" with "stat"
+  And I fill in "review_course_code" with "211"
+  And I fill in "review_professor_name" with "Ding"
   And I fill in "review_university_name" with "Texas A&M University"
-  And I fill in "review_workTime" with "30"
-  And I fill in "review_studyTime" with "12"
-  And I check "review_diffculty_4"
-  And I fill in "review_timeWish" with "7"
+  And I fill in "review_workTime" with "3"
+  And I fill in "review_studyTime" with "1"
+  And I check "review_diffculty_6"
+  And I fill in "review_timeWish" with "3"
   And I fill in "review_thought" with "I liked the class."
   And I press "Create Review"
   # And I follow "Back"
+  Then I should be on the homepage
+  When I fill in "search_field" with "211"
+  And I press "Search"
+  And I follow the first link "Show"
   And I follow the first link "Edit"
   And I press "Update Review"
   Then I should see "Review was successfully updated."
 
 Scenario: Deleting a review that exists
   When I go to new reviews page
-  And I fill in "review_course_title" with "csce"
-  And I fill in "review_course_code" with "121"
-  And I fill in "review_professor_name" with "Lightfoot"
-  And I fill in "review_university_name" with "Texas A&M University"
+  And I fill in "review_course_title" with "math"
+  And I fill in "review_course_code" with "304"
+  And I fill in "review_professor_name" with "Liu"
+  And I fill in "review_university_name" with "University of North Texas"
   And I fill in "review_workTime" with "30"
   And I fill in "review_studyTime" with "12"
   And I check "review_diffculty_4"
   And I fill in "review_timeWish" with "7"
   And I fill in "review_thought" with "I liked the class."
   And I press "Create Review"
-  And I follow "Back"
+  Then I should be on the homepage
+  When I fill in "search_field" with "304"
+  And I press "Search"
+  And I follow the first link "Show"
   And I press the button "Destroy"
-
+  Then a review with "math", "304", "Liu", "University of North Texas", "30", "12", "review_diffculty_4", "7" should not exist
+  
 Scenario: As a professor, I can pin a review
   Given I am logged in as a professor "dummyprof1" with password "dummyprof1"
   And I go to the indexupper page

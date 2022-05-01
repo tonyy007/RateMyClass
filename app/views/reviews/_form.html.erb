@@ -26,7 +26,7 @@
                     <%= form_with(model: review) do |form| %>
                       <div class="row">
                         <div class="col-sm-20">
-                          <%= form.label 'Q1: What is the course department?', class: "col-sm-8 col-form-label" %>
+                          <%= form.label 'Q1: What is the course department?*', class: "col-sm-8 col-form-label" %>
                           <div class="col-sm-8" style = "width:300px;margin-right:20%;">
                             <%= form.text_field :course_title, class: "form-control", placeholder: "CSCE, ECEN, etc." %>
                           </div>
@@ -34,7 +34,7 @@
                       </div>
                       <div class="row">
                         <div class="col-sm-20">
-                          <%= form.label 'Q2: What is the course code?', class: "col-sm-8 col-form-label" %>
+                          <%= form.label 'Q2: What is the course code?*', class: "col-sm-8 col-form-label" %>
                           <div class="col-sm-8" style = "width:300px;margin-right:20%;">
                             <%= form.text_field :course_code, class: "form-control", placeholder: "121, 222, etc." %>
                           </div>
@@ -42,7 +42,7 @@
                       </div>
                       <div class="row">
                         <div class="col-sm-20">
-                          <%= form.label 'Q3: What is the professors name?', class: "col-sm-8 col-form-label" %>
+                          <%= form.label 'Q3: What is the professors name?*', class: "col-sm-8 col-form-label" %>
                           <div class="col-sm-8" style = "width:300px;margin-right:20%;">
                             <%= form.text_field :professor_name, class: "form-control", placeholder: "Robert Lightfoot, Phillip Richey, etc." %>
                           </div>
@@ -50,7 +50,7 @@
                       </div>
                       <div class="row">
                         <div class="col-sm-20">
-                          <%= form.label 'Q4: What is the name of the university you took this course?', class: "col-sm-8 col-form-label" %>
+                          <%= form.label 'Q4: What is the name of the university you took this course?*', class: "col-sm-8 col-form-label" %>
                           <div class="col-sm-8" style = "width:300px;margin-right:20%;">
                             <%= form.text_field :university_name, class: "form-control", placeholder: "Texas A&M University, University of Texas, etc." %>
                           </div>
@@ -58,7 +58,7 @@
                       </div>
                       <div class="row">
                         <div class="col-sm-20">
-                          <%= form.label 'Q5: On average, how many hours did you spend on assignments/homework for this course per week?', class: "col-sm-8 col-form-label" %>
+                          <%= form.label 'Q5: On average, how many hours did you spend on assignments/homework for this course per week?*', class: "col-sm-8 col-form-label" %>
                           <div class="col-sm-8" style = "width:300px;margin-right:20%;">
                             <%= form.text_field :workTime, class: "form-control", placeholder: "1, 2, 3, etc." %>
                           </div>
@@ -66,7 +66,7 @@
                       </div>
                       <div class="row">
                         <div class="col-sm-20">
-                          <%= form.label 'Q6: On average, how many hours did you spend on studying/test preparation for this course per week?', class: "col-sm-8 col-form-label" %>
+                          <%= form.label 'Q6: On average, how many hours did you spend on studying/test preparation for this course per week?*', class: "col-sm-8 col-form-label" %>
                           <div class="col-sm-8" style = "width:300px;margin-right:20%;">
                             <%= form.text_field :studyTime, class: "form-control", placeholder: "1, 2, 3, etc." %>
                           </div>
@@ -74,7 +74,7 @@
                       </div>
                       <div class="row">
                         <div class="col-sm-20">
-                          <%= form.label 'Q7: On a scale of 1 - 10, how difficult was this course? (Easiest to Hardest)', class: "col-sm-8 col-form-label" %>
+                          <%= form.label 'Q7: On a scale of 1 - 10, how difficult was this course? (Easiest to Hardest)*', class: "col-sm-8 col-form-label" %>
                           <div class="col-sm-8" style = "width:400px;margin-right:20%;">
                             <%= form.radio_button :diffculty, 1 %> 1
                             <%= form.radio_button :diffculty, 2 %> 2
@@ -91,7 +91,7 @@
                       </div>
                       <div class="row">
                         <div class="col-sm-20">
-                          <%= form.label 'Q8: On average, how many hours did you wish you had spent on completing assignments and/or preparing for this course per week?', class: "col-sm-8 col-form-label" %>
+                          <%= form.label 'Q8: On average, how many hours did you wish you had spent on completing assignments and/or preparing for this course per week?*', class: "col-sm-8 col-form-label" %>
                           <div class="col-sm-8" style = "width:300px;margin-right:20%;">
                             <%= form.text_field :timeWish, class: "form-control", placeholder: "1, 2, 3, etc." %>
                           </div>

@@ -265,7 +265,7 @@ class ReviewsController < ApplicationController
     @review.users_id = session[:current_username]
     respond_to do |format|
       if review_params[:course_code] != "" and @review.save and review_params[:course_title] != "" and review_params[:professor_name] != "" and review_params[:university_name] != "" and review_params[:workTime] != "" and review_params[:studyTime] != "" and review_params[:diffculty] != "" and review_params[:timeWish] != ""
-        format.html { redirect_to review_url(@review), notice: "Review was successfully created." }
+        format.html { redirect_to homepage_path, notice: "Review was successfully created." }
         format.json { render :show, status: :created, location: @review }
       else
         format.html { render :new, status: :unprocessable_entity }

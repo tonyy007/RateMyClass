@@ -1,10 +1,11 @@
 <body>
 <!--partial html for use in rendering different homepages; shows the main content on the homepage-->
 <div class="container">
-  <h3>Welcome to RateMyClass</h3>
-  <p>
-      Here you can search for a course with a given professor at a given university and find reviews from your peers about there experience taking the class. 
-      Get started by searching for a course above or write your own review!
+  <p id="notice" style="font-size:20px"><%= notice %></p>
+  <h3 style="font-size:50px">Welcome to <strong><span style="color:green">Rate</span>My<span style="color:blue">Class</span><span style="color:red">!</span></strong></h3>
+  <p style="font-size:18px">
+      Here you can <strong><span style="color:green">search</span></strong> for a course with a given professor at a given university and <strong><span style="color:black">find</span></strong> reviews from your peers about there experience taking the class. 
+      Get started by searching for a course above or <strong><span style="color:blue">write</span></strong> your own review!
   </p>
   <div align="center">
       <%= image_tag("logo.png", class: "img-fluid", size: "960x540") %>
