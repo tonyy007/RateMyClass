@@ -1,5 +1,6 @@
-<h1>Editing Comment</h1>
+<h1 style = "text-align:center">Editing Comment</h1>
 <!--comment edit page: used to edit individual comments on a review-->
+<div style = 'justify-content:center;display:flex'>
 <%= form_with model: [@review, @review.comments[@index]] do |form| %>
           <p>
             <%= form.label :body %><br>
@@ -11,3 +12,4 @@
             <%= form.submit %>
           </p>
 <% end %>
+</div>
