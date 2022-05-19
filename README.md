@@ -1,28 +1,3 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
 <p align="center">
   <a>
     <img src="/project/RateMyClass/app/assets/images/logo.png" alt="RateMyClass" width="500" height="auto">
@@ -45,7 +20,6 @@ Things you may want to cover:
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#sources">Sources</a></li>
   </ol>
 </details>
 
@@ -63,11 +37,43 @@ Our aim is to help all colleges students make informed decisions about their fut
 
 ## Usage
 
-## Acknowledgements
-* 
+* Ruby version: 
 
-### Images
-* 
+3.0.3
+
+* Database initialization:
+
+Use `rake db:migrate` to set up the database. 
+
+* Configuration: 
+
+Use `rbenv` to switch the rails version. 
+
+`bundle install` command to install the gems used in the rails application. 
+
+* Development:
+
+`rails s -b 0.0.0.0 -p 8080` command was used to run the rails app through the EC2 instance.
+
+* Deployment:
+
+`git add <file>` command was used to stage the files to be committed.
+
+`git commit -m “<message here>”` command was used to leave a commit message to the files.
+
+`git push heroku HEAD:master` command was used to deploy the application.
+
+* How to run the test suite: 
+
+Use `rake cucumber` to run cucumber tests. 
+
+Use `rake spec` to run spec. `rake` also has other commands. 
+
+Run `rake –tasks` to see other tasks.
+
+* Services: 
+
+AWS EC2, GitHub
 
 ## License
 Distributed under the MIT License. See `LICENSE` for more information.
